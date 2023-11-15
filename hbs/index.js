@@ -115,9 +115,10 @@ app.get('/membresiasCliente', (req, res)=>{
     res.render('membresiasCliente')
 })
 
+//FIN WEIMAR
+
 // INICIO RUTINA *JUANES*
 
-//Rutinas
 
 app.get('/rutinas', (req, res)=>{
     res.render('rutinas', { datos: formArray});
@@ -135,11 +136,11 @@ app.post('/guardar-rutinas', (req, res)=>{
     res.redirect('/rutinas');
 });
 
-//
+// FIN RUTINAS 
 
 
 
-//FIN WEIMAR
+
 
 // FIN SERVICIOS
 
