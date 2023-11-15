@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Beneficiario</title>
+    {{> header}}
+</head>
+<body class="  ">
+        <!-- Inicio del cargar -->
+    <div id="loading">
+      <div class="loader simple-loader">
+          <div class="loader-body">
+          </div>
+      </div>    </div>
+    <!-- Fin cargar -->
+
+    <!-- Inicio Barra lateral -->
+
+        {{> sidebar}}    
+ 
+    <!-- Fin Barra lateral -->
+
+
+    <!-- Inicio Barra superior -->
+        {{> topbar}}
+    <!-- Fin Barra superior -->
+
+              
+    <!-- Inicio contenido -->      
+    <div class="container-fluid content-inner">
+        <!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <h1>Formulario de Registro</h1>
+  <div id="registration-form-image">
+    <img src="/GymSystem/hbs/public/assets/images/LOGO GYM SYSTEM.jpg" alt="Imagen de registro">
+  </div>
+  <form id="registration-form">
+    <div class="form-group">
+      <label for="nombreCompleto">Nombre completo:</label>
+      <input type="text" id="nombreCompleto" name="nombreCompleto">
+      <span class="error-message" id="nombreCompleto-error"></span>
+    </div>
+    <div class="form-group">
+      <label for="tipoDocumento">Tipo de documento:</label>
+      <select id="tipoDocumento" name="tipoDocumento">
+        <option value="CedulaCiudadania">Cédula de Ciudadanía</option>
+        <option value="CedulaExtranjeria">Cédula de Extranjería</option>
+        <option value="TarjetaIdentidad">Tarjeta de Identidad</option>
+      </select>
+      <span class="error-message" id="tipoDocumento-error"></span>
+    </div>
+    <div class="form-group">
+      <label for="numeroDocumento">Número de documento:</label>
+      <input type="text" id="numeroDocumento" name="numeroDocumento">
+      <span class="error-message" id="numeroDocumento-error"></span>
+    </div>
+    <div class="form-group">
+      <label for="correoElectronico">Correo electrónico:</label>
+      <input type="email" id="correoElectronico" name="correoElectronico">
+      <span class="error-message" id="correoElectronico-error"></span>
+    </div>
+    <div class="form-group">
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion">
+      <span class="error-message" id="direccion-error"></span>
+    </div>
+    <div class="form-group">
+      <label for="contacto">Contacto:</label>
+      <input type="text" id="contacto" name="contacto">
+      <span class="error-message" id="contacto-error"></span>
+    </div>
+    <input type="submit" value="Enviar">
+  </form>
+  <script src="/GymSystem/hbs/public/assets/js/validacionesFormulario.js"></script>
+</body>
+</html>
+    </div>
+        
+    </div>
+    <!-- Fin contenido --> 
+
+    <!-- Footer Section Start -->
+    <footer class="footer">
+        {{> copyright}}
+    </footer>
+    <!-- Footer Section End -->
+
+    {{> footer}}
+</body>
+</html>

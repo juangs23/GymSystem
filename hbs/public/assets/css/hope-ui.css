@@ -3472,12 +3472,12 @@ textarea.form-control-lg {
   --bs-btn-bg: #FF5733;
   --bs-btn-border-color: #FF5733;
   --bs-btn-hover-color: #ffffff;
-  --bs-btn-hover-bg: #314ac5;
-  --bs-btn-hover-border-color: #2e46ba;
+  --bs-btn-hover-bg: #ffffff;
+  --bs-btn-hover-border-color: #ffffff;
   --bs-btn-focus-shadow-rgb: 88, 112, 235;
   --bs-btn-active-color: #ffffff;
-  --bs-btn-active-bg: #2e46ba;
-  --bs-btn-active-border-color: #2c41ae;
+  --bs-btn-active-bg: #ffffff;
+  --bs-btn-active-border-color: #ffffff;
   --bs-btn-active-shadow: 0 0px 0px rgba(0, 0, 0, 0);
   --bs-btn-disabled-color: #ffffff;
   --bs-btn-disabled-bg: #FF5733;
@@ -25434,4 +25434,77 @@ pre[class*=language-] {
     max-width: 100%;
     min-width: 260px;
   }
+}
+
+/* 
+YONIER FORM
+*/
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+}
+
+#registration-form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.error-message {
+  color: red;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Espacio para la imagen */
+#registration-form-image {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#registration-form-image img {
+  max-width: 100%;
+  height: auto;
 }
