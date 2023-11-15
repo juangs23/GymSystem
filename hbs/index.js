@@ -25,7 +25,7 @@ app.get('/', (req, res)=>{
     })//Redireccionar hacia el archivo hbs
 })
 
-// Inicio Gestion de acceso
+// INICIO GESTION ACCESO *JUANES*
 app.get('/ingresar', (req, res)=>{
     res.render('auth/sign-in')
 })
@@ -50,9 +50,85 @@ app.get('/restablecer', (req, res)=>{
     res.render('auth/new-password')
 })
 
-// Fin Gestion de acceso
+// FIN GESTION ACCESO
 
-// Inicio Ventas
+// INICIO COMPRAS *ALEJANDRO*
+
+app.get('/Proveedores', (req, res)=>{
+    res.render('Proveedores')
+})
+
+app.get('/Compras', (req, res)=>{
+    res.render('Compras')
+})
+
+app.get('/Productos', (req, res)=>{
+    res.render('Productos')
+})
+
+app.get('/Devolucioncom', (req, res)=>{
+    res.render('Devolucioncom')
+})
+
+app.get('/Categoriaprod', (req, res)=>{
+    res.render('Categoriaprod')
+})
+
+app.get('/formproveedores', (req, res)=>{
+    res.render('formproveedores')
+})
+
+// FIN COMPRAS
+
+
+// INICIO SERVICIOS
+
+//WEIMAR
+
+app.get('/usuariosAdmin', (req, res)=>{
+    res.render('usuariosAdmin')
+})
+
+
+app.get('/usuariosEntrenador', (req, res)=>{
+    res.render('usuariosEntrenador')
+})
+
+app.get('/serviciosAdmin', (req, res)=>{
+    res.render('serviciosAdmin')
+})
+
+app.get('/serviciosEntrenador', (req, res)=>{
+    res.render('serviciosEntrenador')
+})
+
+
+app.get('/membresiasAdmin', (req, res)=>{
+    res.render('membresiasAdmin')
+})
+
+app.get('/membresiasEntrenador', (req, res)=>{
+    res.render('membresiasEntrenador')
+})
+
+app.get('/membresiasCliente', (req, res)=>{
+    res.render('membresiasCliente')
+})
+
+//FIN WEIMAR
+
+// FIN SERVICIOS
+
+
+// ROLES *JOHANY* 
+
+app.get('/roles', (req, res)=>{
+    res.render('roles')
+})
+
+// FIN ROLES
+
+// Inicio Ventas *YONIER*
 
 app.get('/clientes', (req, res)=>{
     res.render('clientes')
@@ -78,6 +154,19 @@ app.get('/ventas', (req, res)=>{
 app.get('/devoluciones', (req, res)=>{
     res.render('devoluciones')
 })
+
+// JOHANY
+
+app.get('/GestionVentas', (req, res)=>{
+    res.render('GestionVentas')
+})
+
+app.get('/GestionDevoluciones', (req, res)=>{
+    res.render('GestionDevoluciones')
+})
+
+// FIN JOHANY
+
 
 //Fin Ventas
 

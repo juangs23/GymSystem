@@ -1,0 +1,51 @@
+:root {
+    --bg: #110921;
+    --purple: rgba(47, 32, 180, 0.219);
+    --green: rgb(53, 187, 41);
+    --font: 'Roboto Mono', sans-serif;
+  }
+  
+  /* html {
+    font-size: 10px;
+  }
+   */
+  .wrap-toggle {
+    padding: 0rem;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: var(--purple);
+    border-radius: 40px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  .switch:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: white;
+    top: 5px;
+    left: 5px;
+    transition: all 0.3s;
+  }
+  
+  input[type='checkbox']:checked + .switch:after {
+    transform: translateX(20px);
+    background-color: var(--bg);
+  }
+  
+  input[type='checkbox']:checked + .switch {
+    background-color: var(--green);
+  }
+  
+  .offscreen {
+    position: absolute;
+    left: -9999px;
+  }
