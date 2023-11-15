@@ -115,6 +115,30 @@ app.get('/membresiasCliente', (req, res)=>{
     res.render('membresiasCliente')
 })
 
+// INICIO RUTINA *JUANES*
+
+//Rutinas
+
+app.get('/rutinas', (req, res)=>{
+    res.render('rutinas', { datos: formArray});
+});
+
+app.get('/nueva-rutina', (req, res)=>{
+    res.render('formRutina')
+});
+
+app.post('/guardar-rutinas', (req, res)=>{
+    const { nombreRutina, dia, exercise1, repeticion } = req.body;
+
+    formArray.push ({ nombreRutina, dia, exercise1, repeticion });
+
+    res.redirect('/rutinas');
+});
+
+//
+
+
+
 //FIN WEIMAR
 
 // FIN SERVICIOS
@@ -170,22 +194,6 @@ app.get('/GestionDevoluciones', (req, res)=>{
 
 //Fin Ventas
 
-//Rutinas
-app.get('/rutinas', (req, res)=>{
-    res.render('rutinas', { datos: formArray});
-});
-
-app.get('/nueva-rutina', (req, res)=>{
-    res.render('formRutina')
-});
-
-app.post('/guardar-rutinas', (req, res)=>{
-    const { nombreRutina, dia, exercise1, repeticion } = req.body;
-
-    formArray.push ({ nombreRutina, dia, exercise1, repeticion });
-
-    res.redirect('/rutinas');
-});
 
 // Fin rutinas
 
