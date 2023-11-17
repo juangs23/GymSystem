@@ -74,6 +74,10 @@ app.get('/Categoriaprod', (req, res)=>{
     res.render('Categoriaprod')
 })
 
+app.get('/formDevolucioncom', (req, res)=>{
+    res.render('formDevolucioncom')
+})
+
 app.get('/formproveedores', (req, res)=>{
     res.render('formproveedores')
 })
