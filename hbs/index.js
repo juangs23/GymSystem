@@ -78,6 +78,9 @@ app.get('/formproveedores', (req, res)=>{
     res.render('formproveedores')
 })
 
+app.get('/formcompras', (req, res)=>{
+    res.render('formcompras')
+})
 // FIN COMPRAS
 
 
