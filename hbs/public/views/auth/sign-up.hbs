@@ -23,8 +23,8 @@
     
       <div class="wrapper">
       <section class="login-content">
-         <div class="row m-0 align-items-center bg-white vh-200">            
-               <div class="col-md-6 d-md-block d-none bg-primary p-1 mt-n1 vh-100 overflow-hidden">
+         <div class="row m-0 align-items-center bg-white vh-100">            
+               <div class="col-md-6 d-md-block d-none p-1 mt-n1 vh-100 overflow-hidden">
                <img src="../../assets/images/auth/02.jpg" class="img-fluid gradient-main animated-scaleX" alt="images">
             </div>
             <div class="col-md-6">               
@@ -62,93 +62,115 @@
                            </a>
                            <h2 class="mb-2 text-center">Regístrate</h2>
                            <p class="text-center">Crea tu cuenta en GS.</p>
-                           <form>
-                              <div class="row">
-                                 <div class="col-lg-6">
-                                    <div class="form-group">
-                                       <label for="full-name" class="form-label">Nombres *</label>
-                                       <input type="text" class="form-control" id="full-name" placeholder=" ">
+                              <form id="registroForm">
+                                 <div class="row">
+                                    <div class="col-lg-6">
+                                          <div class="form-group">
+                                             <label for="nombres" class="form-label">Nombres *</label>
+                                             <input type="text" class="form-control" id="nombres" placeholder=" ">
+                                             <div id="errorNombres" class="error-message"></div>
+                                          </div>
                                     </div>
-                                 </div>
-                                 <div class="col-lg-6">
-                                    <div class="form-group">
-                                       <label for="last-name" class="form-label">Apellidos *</label>
-                                       <input type="text" class="form-control" id="last-name" placeholder=" ">
+                                    <div class="col-lg-6">
+                                          <div class="form-group">
+                                             <label for="apellidos" class="form-label">Apellidos *</label>
+                                             <input type="text" class="form-control" id="apellidos" placeholder=" ">
+                                             <div id="errorApellidos" class="error-message"></div>
+                                          </div>
                                     </div>
-                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                       <label for="email" class="form-label"># Documento</label>
-                                       <input type="email" class="form-control" id="email" placeholder=" ">
+                                    <div class="col-lg-6">
+                                          <div class="form-group">
+                                             <label for="num-documento" class="form-label"># Documento *</label>
+                                             <input type="number" class="form-control" id="num-documento" placeholder=" ">
+                                             <div id="errorNumDocumento" class="error-message"></div>
+                                          </div>
                                     </div>
-                                 </div>
-                                 <div class="col-lg-6">
-                                    <div class="form-group">
-                                       <label for="email" class="form-label">Correo Electronico *</label>
-                                       <input type="email" class="form-control" id="email" placeholder=" ">
+                                    <div class="col-lg-6">
+                                          <div class="form-group">
+                                             <label for="email" class="form-label">Correo Electrónico *</label>
+                                             <input type="email" class="form-control" id="email" placeholder=" ">
+                                             <div id="errorEmail" class="error-message"></div>
+                                          </div>
                                     </div>
-                                 </div>
-                                 <div class="col-lg-6">
-                                    <div class="form-group">
-                                       <label for="phone" class="form-label">Numero de telefono *</label>
-                                       <input type="text" class="form-control" id="phone" placeholder=" ">
+                                    <div class="col-lg-6">
+                                          <div class="form-group">
+                                             <label for="telefono" class="form-label">Número de Teléfono *</label>
+                                             <input type="text" class="form-control" id="telefono" placeholder=" ">
+                                             <div id="errorTelefono" class="error-message"></div>
+                                          </div>
                                     </div>
-                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                       <label for="last-name" class="form-label">Edad *</label>
-                                       <input type="text" class="form-control" id="last-name" placeholder=" ">
+                                    <div class="col-lg-6">
+                                          <div class="form-group">
+                                             <label for="edad" class="form-label">Edad *</label>
+                                             <input type="number" class="form-control" id="edad" placeholder=" ">
+                                             <div id="errorEdad" class="error-message"></div>
+                                          </div>
                                     </div>
-                                 </div>
-                                 <div class="col-lg-6">
-                                    <div class="form-group">
-                                       <label for="direccion" class="form-label">Direccion *</label>
-                                       <input type="text" class="form-control" id="direccion" placeholder=" ">
+                                    <div class="col-lg-6">
+                                          <div class="form-group">
+                                             <label for="direccion" class="form-label">Dirección *</label>
+                                             <input type="text" class="form-control" id="direccion" placeholder="ej: Calle 11s # 50-29">
+                                             <div id="errorDireccion" class="error-message"></div>
+                                          </div>
                                     </div>
-                                 </div>
-                                 <div class="col-lg-6">
-                                    <div class="form-group">
-                                       <label for="password" class="form-label">Contraseña *</label>
-                                       <input type="password" class="form-control" id="password" placeholder=" ">
+                                    <div class="col-lg-6">
+                                          <div class="form-group">
+                                             <label for="password" class="form-label">Contraseña *</label>
+                                             <input type="password" class="form-control" id="password" placeholder=" ">
+                                             <div id="errorPassword" class="error-message"></div>
+                                          </div>
                                     </div>
-                                 </div>
-                                 <div class="col-lg-6">
-                                    <div class="form-group">
-                                       <label for="confirm-password" class="form-label">Confirmar Contraseña *</label>
-                                       <input type="text" class="form-control" id="confirm-password" placeholder=" ">
+                                    <div class="col-lg-6">
+                                          <div class="form-group">
+                                             <label for="confirm-password" class="form-label">Confirmar Contraseña *</label>
+                                             <input type="password" class="form-control" id="confirm-password" placeholder=" ">
+                                             <div id="errorConfirmPassword" class="error-message"></div>
+                                          </div>
                                     </div>
-                                 </div>
-                                 <div class="col-lg-12 d-flex justify-content-center">
-                                    <div class="form-check mb-3">
-                                       <input type="checkbox" class="form-check-input" id="customCheck1">
-                                       <label class="form-check-label" for="customCheck1">Acepto las condiciones de uso</label>
-                                    </div>
+                                       <div class="col-lg-12 d-flex justify-content-center">
+                                          <div class="form-check mb-3">
+                                             <input type="checkbox" class="form-check-input" id="customCheck1">
+                                             <label class="form-check-label" for="customCheck1">Acepto las condiciones de uso</label>
+                                          </div>
+                                       </div>
+                                       <div  id="errorCondiciones" class="error-message col-lg-12 d-flex justify-content-center"></div>
+
+
+                                       {{!-- <!--Modal terminos y condiciones-->
+                                          <!-- Button trigger modal -->
+                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                             Launch static backdrop modal
+                                             </button>
+
+                                             <!-- Modal -->
+                                             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                             <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                   <div class="modal-header">
+                                                   <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                   </div>
+                                                   <div class="modal-body">
+                                                   ...
+                                                   </div>
+                                                   <div class="modal-footer">
+                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                   <button type="button" class="btn btn-primary">Understood</button>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             </div> --}}
+
                                  </div>
                               </div>
                               <div class="d-flex justify-content-center">
-                                 <button type="submit" class="btn btn-primary">Registrate</button>
+                                    <button type="submit" class="btn btn-primary">Registrarse</button>
                               </div>
-                              <p class="text-center my-3">o ¿iniciar sesión con otras cuentas?</p>
-                              <div class="d-flex justify-content-center">
-                                 <ul class="list-group list-group-horizontal list-group-flush">
-                                    <li class="list-group-item border-0 pb-0">
-                                       <a href="#"><img src="../../assets/images/brands/fb.svg" alt="fb"></a>
-                                    </li>
-                                    <li class="list-group-item border-0 pb-0">
-                                       <a href="#"><img src="../../assets/images/brands/gm.svg" alt="gm"></a>
-                                    </li>
-                                    <li class="list-group-item border-0 pb-0">
-                                       <a href="#"><img src="../../assets/images/brands/im.svg" alt="im"></a>
-                                    </li>
-                                    <li class="list-group-item border-0 pb-0">
-                                       <a href="#"><img src="../../assets/images/brands/li.svg" alt="li"></a>
-                                    </li>
-                                 </ul>
-                              </div>
+                            </form>
                               <p class="mt-3 text-center">
                                  Ya tiene una cuenta? <a href="sign-in.html" class="text-underline">Inicie sesión</a>
                               </p>
-                           </form>
+
                         </div>
                      </div>    
                   </div>
@@ -167,35 +189,9 @@
          </div>
       </section>
       </div>
-    
-    <!-- Library Bundle Script -->
-    <script src="../../assets/js/core/libs.min.js"></script>
-    
-    <!-- External Library Bundle Script -->
-    <script src="../../assets/js/core/external.min.js"></script>
-    
-    <!-- Widgetchart Script -->
-    <script src="../../assets/js/charts/widgetcharts.js"></script>
-    
-    <!-- mapchart Script -->
-    <script src="../../assets/js/charts/vectore-chart.js"></script>
-    <script src="../../assets/js/charts/dashboard.js" ></script>
-    
-    <!-- fslightbox Script -->
-    <script src="../../assets/js/plugins/fslightbox.js"></script>
-    
-    <!-- Settings Script -->
-    <script src="../../assets/js/plugins/setting.js"></script>
-    
-    <!-- Slider-tab Script -->
-    <script src="../../assets/js/plugins/slider-tabs.js"></script>
-    
-    <!-- Form Wizard Script -->
-    <script src="../../assets/js/plugins/form-wizard.js"></script>
-    
-    <!-- AOS Animation Plugin-->
-    
-    <!-- App Script -->
-    <script src="../../assets/js/hope-ui.js" defer></script>
+
+         <!-- Validaciones form registro -->
+    <script src="../assets/js/sign-up.js"></script>
+    {{> footer}}
   </body>
 </html>
