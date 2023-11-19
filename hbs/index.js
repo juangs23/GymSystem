@@ -50,6 +50,10 @@ app.get('/restablecer', (req, res)=>{
     res.render('auth/new-password')
 })
 
+app.get('/google', (req, res)=>{
+    res.render('auth/google')
+})
+
 // FIN GESTION ACCESO
 
 // INICIO COMPRAS *ALEJANDRO*
