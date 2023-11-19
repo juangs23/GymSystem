@@ -38,13 +38,13 @@
                         </div>
                         </div>
                         <div class="card-body">
-                            <!-- fieldsets -->
+                            
 
                                     <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-label">Fecha compra</label>
-                                            <input type="text" class="form-control" name="Nombre Proveedor" placeholder="Nombre Proveedor" />
+                                            <label class="form-label">Fecha compra*</label>
+                                            <input type="date" class="form-control" name="Nombre Proveedor" placeholder="Fecha compra" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -61,45 +61,48 @@
                                             </select>
                                         </div>
                                     </div>
+                                        
+                                    <!-- inicio -->
+                                    <form id="formCompra">
+                                        
+                                        <label for="selectProducto">Selecciona un producto:</label>
+                                        <div class="productoContainer">
+                                        <select id="selectProducto" name="productos[]" style="width:300px">
+                                            <option selected="" disabled="">Agregar producto a la compra</option>
+                                            <option value="producto1">Creatina</option>
+                                            <option value="producto2">Aminoacidos</option>
+                                            <option value="producto3">Elite</option>
+                                            <option value="producto3">Agua</option>
+                                            <!-- Agrega más opciones según tus necesidades -->
+                                        </select>
+
+                                        <label  for="cantidad" style="margin-left:200px" >Cantidad:</label>
+                                        <input style="width:90px" type="number" name="cantidades[]" value="1" min="1">
+
+
+                                        <label  for="Valor" style="margin-left:200px" >Valor:</label>
+                                        <label  for="Valor" > $ 25.000</label>
+                                        </div>
+
+                                        <button type="button" class="btn btn-soft-info mt-2" onclick="agregarProducto()"><i class="fa-solid fa-plus fa-lg"></i></button>
+                                        <div id="productosAgregados">
+                                            <br>
+                                            <!-- Aquí se agregarán dinámicamente los nuevos campos de selección -->
+                                            
+                                        </div>
+
+                                    <!-- fin -->
+                                    
+
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label">Valor de la compra</label>
-                                            <input type="text" class="form-control" name="Telefono" placeholder="Telefono" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label">Fecha Registro</label>
-                                            <input type="text" class="form-control" name="Direccion" placeholder="Direccion" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label">NIT</label>
-                                            <input type="text" class="form-control" name="contacto proveedor" placeholder="Contacto proveedor" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label">Direccion</label>
-                                            <input type="text" class="form-control" name="Direccion" placeholder="Direccion" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label">Contacto proveedor</label>
-                                            <input type="text" class="form-control" name="contacto proveedor" placeholder="Contacto proveedor" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label">Direccion</label>
-                                            <input type="text" class="form-control" name="Direccion" placeholder="Direccion" />
+                                            <label class="form-label">$ 58.000</label>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" name="next" class="btn btn-primary next action-button float-end" value="Next" >Next</button>
-                                <button type="button" name="previous" class="btn btn-dark previous action-button-previous float-end me-1" value="Previous" >Previous</button>
+                                <button type="button" name="next" class="btn btn-primary next action-button float-end" value="Next" >Guardar</button>
+                                <button type="button" name="previous" class="btn btn-dark previous action-button-previous float-end me-1" value="Previous" >Cancelar</button>
                         </form>
                         </div>
                     </div>
@@ -115,6 +118,74 @@
     </footer>
     <!-- Footer Section End -->
     <script src="../assets/js/form.js"></script>
+<script>
+    function agregarProducto() {
+        var nuevoProductoContainer = document.createElement("div");
+        nuevoProductoContainer.className ="productoContainer"
+
+        var nuevoSelect = document.createElement("select");
+        nuevoSelect.name = "productos[]";
+
+        var opciones = document.getElementById("selectProducto").innerHTML;
+        nuevoSelect.innerHTML = opciones;
+        nuevoSelect.style.width = "300px"   
+
+        var labelCantidad = document.createElement("label");
+        labelCantidad.innerHTML = "Cantidad: ";
+        labelCantidad.style.marginLeft = "200px"
+
+        var labelValor = document.createElement("label");
+        labelValor.innerHTML = "Valor: ";
+        labelValor.style.marginLeft = "200px"
+
+        var labelValorP = document.createElement("label");
+        labelValorP.innerHTML = "$ 23.000 ";
+
+    
+
+        var nuevaCantidad = document.createElement("input");
+        nuevaCantidad.type = "number";
+        nuevaCantidad.style.width = "90px "
+        nuevaCantidad.value = "1";  
+        nuevaCantidad.min = "1";
+        
+
+        var btnEliminar = document.createElement("button");
+        btnEliminar.type = "button";
+        btnEliminar.className = "btn btn-soft-danger mt-2"; // Agrega la clase deseada
+        btnEliminar.innerHTML = '<i class="fa-solid fa-minus fa-lg"></i>';
+        btnEliminar.onclick = function () {
+            document.getElementById("productosAgregados").removeChild(nuevoProductoContainer);
+            document.getElementById("productosAgregados").removeChild(btnEliminar);
+            document.getElementById("productosAgregados").removeChild(brElement);
+
+            
+        };
+
+        var brElement = document.createElement("div");
+        brElement.innerHTML = '&nbsp;'; // Espacio en blanco
+
+        
+
+        nuevoProductoContainer.appendChild(nuevoSelect);
+        nuevoProductoContainer.appendChild(labelCantidad);
+        nuevoProductoContainer.appendChild(nuevaCantidad);
+        nuevoProductoContainer.appendChild(labelValor);
+        nuevoProductoContainer.appendChild(labelValorP);
+        
+        
+
+        document.getElementById("productosAgregados").appendChild(nuevoProductoContainer);
+        document.getElementById("productosAgregados").appendChild(btnEliminar);
+        document.getElementById("productosAgregados").appendChild(brElement);
+        
+        
+
+
+    }
+    
+</script>
+
     {{> footer}}
 </body>
 </html>
