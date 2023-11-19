@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla</title>
+    <title>Nuevo proveedor</title>
     {{> header}}
 </head>
 <body class="  ">
@@ -28,40 +28,59 @@
 
               
     <!-- Inicio contenido -->      
-    <div class="container-fluid content-inner">
-               <div class="card">
-                  <div class="card-header justify-content-between">
-<form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Nombre Proveedores</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Nombre Contacto Proveedore</label>
-    <input type="text" class="form-control" id="exampleInputPassword1">
-  </div>
-    <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Telefono</label>
-    <input type="text" class="form-control" id="exampleInputPassword1">
-  </div>
-    <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Direccion</label>
-    <input type="text" class="form-control" id="exampleInputPassword1">
-  </div>
-    <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">NIT</label>
-    <input type="text" class="form-control" id="exampleInputPassword1">
-  </div>
-  <button type="submit" class="btn btn-primary float-end" >Submit</button>
-  <button type="submit" class="btn btn-primary position-absolute">Cancelar</button>
-  <br>
-  <br>
-</form>
+<div class="container-fluid content-inner">
+            <div class="row">                
+                <div class="col-sm-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Agregar proveedor</h4>
+                        </div>
+                        </div>
+                        <div class="card-body">
+                            <!-- fieldsets -->
 
-    </div>
-    </div>
-    </div>
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Nombre Proveedor</label>
+                                            <input type="text" class="form-control" name="Nombre Proveedor" placeholder="Nombre Proveedor" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Contacto proveedor</label>
+                                            <input type="text" class="form-control" name="contacto proveedor" placeholder="Contacto proveedor" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Telefono</label>
+                                            <input type="text" class="form-control" name="Telefono" placeholder="Telefono" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Direccion</label>
+                                            <input type="text" class="form-control" name="Direccion" placeholder="Direccion" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">NIT</label>
+                                            <input type="text" class="form-control" name="contacto proveedor" placeholder="Contacto proveedor" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" name="Guardar" class="btn btn-primary next action-button float-end" value="Next" >Guardar</button>
+                                <button type="button" name="Cancelar" class="btn btn-dark previous action-button-previous float-end me-1" value="Previous" >Cancelar</button>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
     <!-- Fin contenido --> 
 
     <!-- Footer Section Start -->
@@ -69,7 +88,7 @@
         {{> copyright}}
     </footer>
     <!-- Footer Section End -->
-
+    <script src="../assets/js/form.js"></script>
     {{> footer}}
 </body>
 </html>
