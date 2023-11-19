@@ -39,7 +39,7 @@
                         </div>
                         <div class="card-body">
                             
-
+                                    <form id="formDevolucionesCompra">
                                     <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -63,7 +63,7 @@
                                     </div>
                                         
                                     <!-- inicio -->
-                                    <form id="formCompra">
+                                    
                                         
                                         <label for="selectProducto">Selecciona un producto:</label>
                                         <div class="productoContainer">
@@ -83,8 +83,9 @@
                                         <label  for="Valor" style="margin-left:200px" >Valor:</label>
                                         <label  for="Valor" > $ 25.000</label>
                                         </div>
-
-                                        <button type="button" class="btn btn-soft-info mt-2" onclick="agregarProducto()"><i class="fa-solid fa-plus fa-lg"></i></button>
+                                        <div class="productoContainer">
+                                        <button type="button" class="btn btn-soft-info mt-2"  onclick="agregarProducto()"><i class="fa-solid fa-plus fa-lg"></i></button>
+                                        </div>
                                         <div id="productosAgregados">
                                             <br>
                                             <!-- Aquí se agregarán dinámicamente los nuevos campos de selección -->
@@ -93,19 +94,21 @@
 
                                     <!-- fin -->
                                     <div class="col-md-6">
+                                        <div class="row">
                                         <div class="form-group">
                                             <label class="form-label">Motivo de la Devolucion</label>
                                             <input type="text" class="form-control" name="Nombre Proveedor" placeholder="Motivo de la Devolucion" />
                                         </div>
                                     </div>
-
                                     <div class="col-md-6">
+                                        <div class="row">
                                         <div class="form-group">
                                             <label class="form-label">Valor de la Devolucion</label>
                                             <label class="form-label">$ 58.000</label>
                                         </div>
                                     </div>
-
+                                    </div>
+                                </div>
                                 </div>
                                 <button type="button" name="next" class="btn btn-primary next action-button float-end" value="Next" >Guardar</button>
                                 <button type="button" name="previous" class="btn btn-dark previous action-button-previous float-end me-1" value="Previous" >Cancelar</button>

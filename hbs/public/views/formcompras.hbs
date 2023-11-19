@@ -39,12 +39,12 @@
                         </div>
                         <div class="card-body">
                             
-
+                                    <form id="formCompra">
                                     <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label">Fecha compra*</label>
-                                            <input type="date" class="form-control" name="Nombre Proveedor" placeholder="Fecha compra" />
+                                            <input type="text" class="form-control" name="Nombre Proveedor" placeholder="Fecha compra" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -63,7 +63,7 @@
                                     </div>
                                         
                                     <!-- inicio -->
-                                    <form id="formCompra">
+                                    
                                         
                                         <label for="selectProducto">Selecciona un producto:</label>
                                         <div class="productoContainer">
@@ -83,8 +83,9 @@
                                         <label  for="Valor" style="margin-left:200px" >Valor:</label>
                                         <label  for="Valor" > $ 25.000</label>
                                         </div>
-
+                                        <div class="productoContainer">
                                         <button type="button" class="btn btn-soft-info mt-2" onclick="agregarProducto()"><i class="fa-solid fa-plus fa-lg"></i></button>
+                                        </div>
                                         <div id="productosAgregados">
                                             <br>
                                             <!-- Aquí se agregarán dinámicamente los nuevos campos de selección -->
