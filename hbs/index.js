@@ -4,7 +4,7 @@ const hbs = require('hbs') //Incorporar motor de plantillas
 
 const formArray = [];
 const app = express()
-const port = 8181
+const port = 8086
 
 // Configuración del middleware para analizar datos POST
 app.use(express.urlencoded({ extended: true }));
@@ -173,6 +173,9 @@ app.get('/beneficiarios', (req, res)=>{
 })
 app.get('/formularioCliente', (req, res)=>{
     res.render('formularioCliente')
+})
+app.get('/editarCliente', (req, res)=>{
+    res.render('editarCliente')
 })
 app.get('/formularioBeneficiario', (req, res)=>{
     res.render('formularioBeneficiario')
