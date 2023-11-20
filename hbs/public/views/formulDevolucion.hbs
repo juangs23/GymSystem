@@ -1,85 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nueva Devolución</title>
+    <title>Agregar cliente</title>
     {{> header}}
 </head>
+<body class="  ">
+        <!-- Inicio del cargar -->
+    <div id="loading">
+      <div class="loader simple-loader">
+          <div class="loader-body">
+          </div>
+      </div>    </div>
+    <!-- Fin cargar -->
 
-<body class="">
+    <!-- Inicio Barra lateral -->
 
-    {{> sidebar}}
+        {{> sidebar}}    
+ 
+    <!-- Fin Barra lateral -->
 
-    {{> topbar}}
 
+    <!-- Inicio Barra superior -->
+        {{> topbar}}
+    <!-- Fin Barra superior -->
+
+              
+    <!-- Inicio contenido -->      
     <div class="container-fluid content-inner">
-        <div class="row">
+         <div class="row">                
             <div class="col-sm-12 col-lg-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Nueva devolución</h4>
+                            <h4 class="card-title">Agregar cliente</h4>
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="/guardar-devolucion" id="form-devolucion" class="mt-3 text-start">
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="form-label">Nombre *</label>
-                                                <input type="text" class="form-control" name="nombre" placeholder="Nombre" required />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="form-label">Id venta * </label>
-                                                <input type="text" class="form-control" name="idVenta" placeholder="Id Venta" required />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="form-label">Productos *</label>
-                                                <select class="form-select" name="productos" required>
-                                                    <option selected disabled>Selecciona el producto</option>
-                                                    <option>Vitaminas</option>
-                                                    <option>Cuerdas</option>
-                                                    <option>Proteínas</option>
-                                                    <option>Mancuernas</option>
-                                                    <option>Gatorade</option>
-                                                </select>
-                                                <button type="button" class="btn btn-primary add-producto-btn">+</button>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="motivo">Motivo</label>
-                                                <textarea class="form-control" id="motivo" name="motivo" rows="3"></textarea>
-                                            </div>
-                                        </div>
+                        <form id="FormularioCliente">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Nombre completo:</label>
+                                        <input type="text" class="form-control" name="NombreCliente" placeholder="Nombre completo" oninput="validateNombre(this)" />
+                                        <span class="error-message" id="nombre-error"></span>
                                     </div>
                                 </div>
-                                <div class="mt-3 d-flex justify-content-end">
-                                    <a href="GestionDevoluciones" class="btn btn-secondary mr-2">Cancelar</a>
-                                    <button type="submit" name="guardar" class="btn btn-primary">Guardar</button>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="tipoDocumento">Tipo de documento</label>
+                                        <select id="tipoDocumento" name="tipoDocumento">
+                                            <option value="CedulaCiudadania">Cédula de Ciudadanía</option>
+                                            <option value="CedulaExtranjeria">Cédula de Extranjería</option>
+                                            <option value="TarjetaIdentidad">Tarjeta de Identidad</option>
+                                        </select>
+                                        <span class="error-message" id="tipoDocumento-error"></span>
+                                    </div>
                                 </div>
-                            </fieldset>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Número de documento:</label>
+                                        <input type="text" class="form-control" name="DocumentoCliente" placeholder="Número de documento" oninput="validateDocumento(this)" />
+                                        <span class="error-message" id="DocumentoCliente-error"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Correo electrónico:</label>
+                                        <input type="text" class="form-control" name="correoCliente" placeholder="Correo electrónico" oninput="validateCorreo(this)" />
+                                        <span class="error-message" id="correo-error"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Dirección:</label>
+                                        <input type="text" class="form-control" name="direccionCliente" placeholder="Dirección" oninput="validateDireccion(this)" />
+                                        <span class="" id="direccion-error"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Contacto:</label>
+                                        <input type="text" class="form-control" name="contactoCliente" placeholder="Contacto" oninput="validateContacto(this)" />
+                                        <span class="error-message" id="contacto-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" name="Guardar" class="btn btn-primary next action-button float-end" value="Next">Guardar</button>
+                            <button type="button" name="Cancelar" class="btn btn-dark previous action-button-previous float-end me-1" value="Previous">Cancelar</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    <!-- Fin contenido --> 
 
+    <!-- Footer Section Start -->
     <footer class="footer">
         {{> copyright}}
     </footer>
+    <!-- Footer Section End -->
 
     {{> footer}}
 </body>
-
 </html>
