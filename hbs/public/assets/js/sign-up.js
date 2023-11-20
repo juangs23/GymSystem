@@ -47,7 +47,7 @@ numDocumentoInput.addEventListener('input', () => {
     }
 });
 
-// Validar correo de documento en tiempo real
+// Validar correo en tiempo real
 const emailInput = document.getElementById('email');
 emailInput.addEventListener('input', () => {
     const email = emailInput.value.trim();
