@@ -61,12 +61,9 @@
                                 <thead>
                                     <tr>
                                         <th>Nombre</th>
-                                        <th>Celular</th>
-                                        <th>Direccion</th>
                                         <th>Id venta</th>
                                         <th>Fecha</th>
-                                        <th>Pago neto</th>
-                                        <th>IVA</th>
+                                        <th>Pago total</th>
                                         <th>Estado</th>
                                         <th>Comprobante</th>
                                     </tr>
@@ -74,13 +71,15 @@
                                 <tbody>
                                     <tr>
                                         <td>Sofia Osorio</td>
-                                        <td>31067652</td>
-                                        <td>calle 43 #21-21</td>
                                         <td>2222</td>
                                         <td>24/04/2022</td>
                                         <td>90.000</td>
-                                        <td>19%</td>
-                                        <td>Activo</td>
+                                        <td>
+                                            <div class="wrap-toggle">
+                                                <input type="checkbox" id="toggle" class="offscreen" />
+                                                <label for="toggle" class="switch"></label>
+                                            </div>
+                                        </td>
                                         <td>
                                             <a href="/hbs/public/assets/images/comprobante.png" target="_blank">
                                                 <img src="/hbs/public/assets/images/comprobante.png"
@@ -91,35 +90,45 @@
                                     </tr>
                                     <tr>
                                         <td>Guillermo</td>
-                                        <td>31365652</td>
-                                        <td>calle 21e #87-23</td>
                                         <td>3333</td>
                                         <td>12/05/2021</td>
                                         <td>190.000</td>
-                                        <td>12%</td>
-                                        <td>Desactivado</td>
+                                        <td>
+                                            <div class="wrap-toggle">
+                                                <input type="checkbox" id="toggle" class="offscreen" />
+                                                <label for="toggle" class="switch"></label>
+                                            </div>
+                                        </td>
+
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <td>Leandro Ospina</td>
-                                        <td>31134652</td>
-                                        <td>calle 41a #31-21</td>
                                         <td>4444</td>
                                         <td>22/06/2022</td>
                                         <td>50.000</td>
-                                        <td>19%</td>
-                                        <td>Activo</td>
+                                        <td>
+                                            <div class="wrap-toggle">
+                                                <input type="checkbox" id="toggle" class="offscreen" />
+                                                <label for="toggle" class="switch"></label>
+                                            </div>
+                                        </td>
+
                                         <td> </td>
                                     </tr>
                                     <tr>
                                         <td>Lorena Soto</td>
-                                        <td>31365652</td>
-                                        <td>calle 33b #1-234</td>
                                         <td>5555</td>
                                         <td>24/04/2022</td>
                                         <td>85.000</td>
-                                        <td>20%</td>
-                                        <td>Activo</td>
+                                        <td>
+                                            <div class="wrap-toggle">
+                                                <input type="checkbox" id="toggle" class="offscreen" />
+                                                <label for="toggle" class="switch"></label>
+                                            </div>
+                                        </td>
+
+
                                         <td> </td>
                                     </tr>
                                 </tbody>

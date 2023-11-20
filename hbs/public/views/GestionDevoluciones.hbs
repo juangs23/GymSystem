@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion de ventas</title>
+    <title>Gestion de Devoluciones</title>
     {{> header}}
+
+    <link rel="stylesheet" href="../assets/css/gestionDevolu.css">
 </head>
 
 <body class="  ">
@@ -44,7 +46,6 @@
                             <h4 class="card-title">Gestión Devoluciones</h4>
                         </div>
                         <div class="d-flex">
-                            <button type="submit" class="btn btn-danger me-3">Registrar devolución</button>
                             <div class="input-group rounded">
                                 <input type="search" class="form-control rounded" placeholder="Search"
                                     aria-label="Search" aria-describedby="search-addon" />
@@ -74,37 +75,88 @@
                                         <td>2222</td>
                                         <td>21/01/2021</td>
                                         <td>vitaminas</td>
-                                        <td>Activo</td>
-                                        <td></td>
+                                        <td>
+                                            <div class="wrap-toggle">
+                                                <input type="checkbox" id="toggle" class="offscreen" />
+                                                <label for="toggle" class="switch"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center mb-4">
+                                                <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
+                                                <i class="fa-solid fa-trash fa-xl me-2"></i>
+                                                <i class="fa-regular fa-eye fa-xl me-2"></i>
+                                            </div>
+                                        </td>
+
                                     </tr>
                                     <tr>
                                         <td>Lucas Osorio</td>
                                         <td>6666</td>
                                         <td>15/04/2022</td>
                                         <td>Proteina</td>
-                                        <td>Desactivado</td>
-                                        <td></td>
+                                        <td>
+                                            <div class="wrap-toggle">
+                                                <input type="checkbox" id="toggle" class="offscreen" />
+                                                <label for="toggle" class="switch"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center mb-4">
+                                                <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
+                                                <i class="fa-solid fa-trash fa-xl me-2"></i>
+                                                <i class="fa-regular fa-eye fa-xl me-2"></i>
+                                            </div>
+                                        </td>
+
                                     </tr>
                                     <tr>
                                         <td>Duvan lopez</td>
                                         <td>3333</td>
                                         <td>11/12/2022</td>
                                         <td>Cuerdas</td>
-                                        <td>Activa</td>
-                                        <td></td>
+                                        <td>
+                                            <div class="wrap-toggle">
+                                                <input type="checkbox" id="toggle" class="offscreen" />
+                                                <label for="toggle" class="switch"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center mb-4">
+                                                <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
+                                                <i class="fa-solid fa-trash fa-xl me-2"></i>
+                                                <i class="fa-regular fa-eye fa-xl me-2"></i>
+                                            </div>
+                                        </td>
+
                                     </tr>
                                     <tr>
                                         <td>Yonier Rendon</td>
                                         <td>9999</td>
                                         <td>22/02/2020</td>
                                         <td>vitaminas</td>
-                                        <td>Activo</td>
-                                        <td></td>
+                                        <td>
+                                            <div class="wrap-toggle">
+                                                <input type="checkbox" id="toggle" class="offscreen" />
+                                                <label for="toggle" class="switch"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center mb-4">
+                                                <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
+                                                <i class="fa-solid fa-trash fa-xl me-2"></i>
+                                                <i class="fa-regular fa-eye fa-xl me-2"></i>
+                                            </div>
+                                        </td>
+
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+                         <div class="footer-buttons">
+                            <a href="formulDevolucion" class="btn btn-secondary mr-2">Registrar devolucion</a>
+                            <button type="submit" class="btn btn-info">Informes</button>
+                        </div>
                 </div>
             </div>
         </div>
