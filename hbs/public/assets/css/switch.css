@@ -66,3 +66,20 @@
   margin-right:0;
 }
 
+.productoContainer{
+  display:flex;
+  align-items: center;
+  
+
+}
+
+.form-group {
+  margin-right: 000px; /* Ajusta el margen según sea necesario */
+}
+
+
+
+.btn-soft-info,
+.btn-soft-danger {
+  margin-top: 10px;
+}

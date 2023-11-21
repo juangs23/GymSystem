@@ -18,10 +18,8 @@ form.addEventListener('submit', (event) => {
     } else {
         if (email === correoValido) {
             errorElement.textContent = '';
-            // Redirige a otra página después de 2 segundos (2000 milisegundos)
-            setTimeout(() => {
-                window.location.href = 'confirmacion'; // Reemplaza con la URL correcta
-            }, 2000);
+            // Redirige a otra página directamente
+            window.location.href = '/confirmacion'; // Reemplaza con la URL correcta
         } else {
             errorElement.textContent = 'Correo no válido. Intente nuevamente ';
             event.preventDefault(); // Evita enviar el formulario si hay errores

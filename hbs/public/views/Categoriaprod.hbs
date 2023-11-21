@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categoria Productos</title>
     {{> header}}
+    <script src="../assets/js/compras.js"></script>
 </head>
 <body class="  ">
         <!-- Inicio del cargar -->
@@ -28,7 +29,7 @@
 
               
     <!-- Inicio contenido -->
-   <br>
+    <br>
     <div class="position-relative">
         <button type="button" class="btn btn-primary position-absolute top-0 end-0 me-5" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Agregar +</button>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -44,17 +45,18 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="formularioCategoria">
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Nombre categoria:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <input type="text" class="form-control" id="nombrecategoria">
           </div>
-        </form>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Agregar categoria</button>
+        <button type="button" value="submith" id="btn-enviar1" class="btn btn-primary">Agregar categoria</button>
       </div>
+      </form>
     </div>
   </div>
 </div>

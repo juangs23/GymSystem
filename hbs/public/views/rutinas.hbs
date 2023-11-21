@@ -53,11 +53,11 @@
                                                                <a href="nueva-rutina" class="btn btn-danger">Crear Rutina</a>
                                                          </div>
                                                    </div>
-                                                      {{!-- <div class="col-sm-12 col-md-6">
+                                                      <div class="col-sm-12 col-md-6">
                                                          <div id="dataTable_filter" class="dataTables_filter">
                                                                <label>Buscar:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
                                                          </div>
-                                                      </div> --}}
+                                                      </div>
                                                    </div>
                                                         <div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                                     <thead>
@@ -87,7 +87,7 @@
                                                 <div class="centered-container">
                                                       <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
                                                       <i class="fa-regular fa-eye fa-xl me-2"></i>
-                                                      <i class="fa-solid fa-trash fa-xl me-2"></i>
+                                                      <i class="fa-solid fa-trash fa-xl me-2 trash-icon" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"></i>
                                                 <div class="wrap-toggle" style="margin-top:10px;">
                                                       <input type="checkbox" id="toggle5" class="offscreen" />
                                                       <label for="toggle5" class="switch"></label>
@@ -180,7 +180,8 @@
             </div>
       
 
-    <!-- Modal eliminar -->
+
+<!-- Modal eliminar -->
 <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -193,12 +194,11 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger">Eliminar</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteButton">Eliminar</button>
             </div>
         </div>
     </div>
 </div>
-
 
     <!-- Fin contenido --> 
 
@@ -206,10 +206,7 @@
     <footer class="footer">
         {{> copyright}}
     </footer>
-   <!-- Footer Section End -->
-   
-   <!-- Validaciones login -->
-    <script src="../assets/js/modal-delete.js"></script>
+  
     {{> footer}}
 </body>
 </html>
