@@ -12,6 +12,10 @@
   outline: none;
 }
 
+.trash-icon {
+  cursor: pointer;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -632,7 +636,7 @@ progress {
 }
 
 .img-fluid {
-  max-width: 100%;
+  max-width: auto;
   height: auto;
 }
 
