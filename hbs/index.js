@@ -180,6 +180,9 @@ app.get('/editarCliente', (req, res)=>{
 app.get('/formularioBeneficiario', (req, res)=>{
     res.render('formularioBeneficiario')
 })
+app.get('/detallePedido', (req, res)=>{
+    res.render('detallePedido')
+})
 app.get('/formularioPedido', (req, res)=>{
     res.render('formularioPedido')
 })
