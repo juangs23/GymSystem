@@ -89,6 +89,20 @@ app.get('/formcompras', (req, res)=>{
 app.get('/formproductos', (req, res)=>{
     res.render('formproductos')
 })
+
+app.get('/DevolucionEditar', (req, res)=>{
+    res.render('DevolucionEditar')
+})
+
+app.get('/ProductosEditar', (req, res)=>{
+    res.render('ProductosEditar')
+})
+
+app.get('/ProveedoresEditar', (req, res)=>{
+    res.render('ProveedoresEditar')
+})
+
+
 // FIN COMPRAS
 
 
