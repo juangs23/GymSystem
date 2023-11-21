@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar devolucion</title>
+    <title>Agregar venta</title>
     {{> header}}
 </head>
 <body class="  ">
@@ -34,7 +34,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Agregar Devolucion</h4>
+                            <h4 class="card-title">Agregar Venta </h4>
                         </div>
                     </div>
                     <div class="card-body">
@@ -43,38 +43,38 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Nombre completo:</label>
-                                        <input type="text" class="form-control" name="NombreVenta" placeholder="Nombre completo" oninput="validateNombreVenta(this)" />
+                                        <input type="text" class="form-control" name="NombreCVenta" placeholder="Nombre completo" oninput="validateNombreCVenta(this)" />
                                         <span class="error-message" id="nombre-error"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="productos">Productos</label>
-                                        <select id="producto" name="productos">
+                                        <label for="productos2">Productos</label>
+                                        <select id="productos2" name="productos2">
                                             <option value="Vitaminas">Vitaminas</option>
                                             <option value="Proteinas">Proteínas</option>
                                             <option value="Gatorade">Gatorade</option>
+                                            <option value="Agua">Agua</option>
+                                            <option value="Banano">Banano</option>
                                         </select>
-                                        <span class="error-message" id="producto-error"></span>
+                                        <span class="error-message" id="producto2-error"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label">Id venta:</label>
-                                        <input type="text" class="form-control" name="IdVenta" placeholder="Id Venta" oninput="validateIdVenta(this)" />
-                                        <span class="error-message" id="IdVenta-error"></span>
+                                        <label class="form-label">Cedula:</label>
+                                        <input type="text" class="form-control" name="Cedula" placeholder="Cedula" oninput="validateCedula(this)" />
+                                        <span class="error-message" id="Cedula-error"></span>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label">Motivo:</label>
-                                        <textarea type="text" class="form-control" name="Motivo" placeholder="Escribe tu motivo aqui..." oninput="validateMotivo(this)" ></textarea>
-                                        <span class="error-message" id="Motivo-error"></span>
+                                        <label class="form-label">Celular:</label>
+                                        <input type="text" class="form-control" name="Celular" placeholder="Celular" oninput="validateCelular(this)" />
+                                        <span class="error-message" id="Celular-error"></span>
                                     </div>
                                 </div>
                             </div>
                             <button  type="submit" name="Guardar" class="btn btn-primary next action-button float-end" value="Next">Guardar</button>
-                            <a  href="GestionDevoluciones" type="button" name="Cancelar" class="btn btn-dark previous action-button-previous float-end me-1" value="Previous">Cancelar</a>
+                            <a  href="GestionVentas" type="button" name="Cancelar" class="btn btn-dark previous action-button-previous float-end me-1" value="Previous">Cancelar</a>
                         </form>
                     </div>
                 </div>
