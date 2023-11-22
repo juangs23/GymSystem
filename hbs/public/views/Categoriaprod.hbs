@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categoria Productos</title>
     {{> header}}
+    <script src="../assets/js/compras.js"></script>
 </head>
 <body class="  ">
         <!-- Inicio del cargar -->
@@ -28,20 +29,77 @@
 
               
     <!-- Inicio contenido -->
-<div style="margin:2%" >
-<form>
-  <div class="mb-3">
-    <h1>Agregar categoria productos</h1>
     <br>
-    <input type="text" class="form-control" id="exampleInputEmail1">
+    <div class="position-relative">
+        <button type="button" class="btn btn-primary position-absolute top-0 end-0 me-5" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Agregar +</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nueva Categoria</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formularioCategoria">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Nombre categoria:</label>
+            <input type="text" class="form-control" id="nombrecategoria">
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" value="submith" id="btn-enviar1" class="btn btn-primary">Agregar categoria</button>
+      </div>
+      </form>
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary float-end" >Agregar</button>
-</form>
 </div>
+    </div>
+    <br>
+      <!-- modal editar -->
+
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Categoria</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formularioCategoria">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Nombre categoria:</label>
+            <input type="text" class="form-control" id="nombrecategoria">
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" value="submith" id="btn-enviar1" class="btn btn-primary">Modificar categoria</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+    </div>
+    <br>
 
 
 
-<br>
+
+
+      <!-- modal editar fin -->
 
     <div class="container-fluid content-inner">
         <div class="row">
@@ -67,54 +125,17 @@
                            <td>
                                  <h6>Proteina</h6>
                            </td>
-                           <td>
-                                 <img width="30px" height="30px" src="https://cdn-icons-png.flaticon.com/512/32/32355.png"/>
+                           <td >
+                              <div class="centered-container-catprod">
+                                 <a data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo"><i class="fa-regular fa-pen-to-square fa-xl me-2" style="margin-bottom: 8px;" ></i></a>
+                                 <div class="wrap-toggle">
+                                       <input type="checkbox" id="toggle" class="offscreen" />
+                                       <label for="toggle" class="switch"></label>
+                                 </div>
+                              </div>
                            </td>
                            <td>
-                                    <div class="wrap-toggle">
-                                     <input type="checkbox" id="toggle" class="offscreen" />
-                                      <label for="toggle" class="switch"></label>
-                                     </div>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                                 <h6>Gluta stack</h6>
-                           </td>
-                           <td>
-                                 <img width="30px" height="30px" src="https://cdn-icons-png.flaticon.com/512/32/32355.png"/>
-                           </td>
-                           <td>
-                                    <div class="wrap-toggle">
-                                     <input type="checkbox" id="toggle1" class="offscreen" />
-                                      <label for="toggle1" class="switch"></label>
-                                     </div>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                                 <h6>Gluta stack</h6>
-                           <td>
-                                 <img width="30px" height="30px" src="https://cdn-icons-png.flaticon.com/512/32/32355.png"/>
-                           </td>
-                           <td>
-                                    <div class="wrap-toggle">
-                                     <input type="checkbox" id="toggle2" class="offscreen" />
-                                      <label for="toggle2" class="switch"></label>
-                                     </div>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                                 <h6>Gluta stack</h6>
-                           <td>
-                                 <img width="30px" height="30px" src="https://cdn-icons-png.flaticon.com/512/32/32355.png"/>
-                           </td>
-                           <td>
-                                    <div class="wrap-toggle">
-                                     <input type="checkbox" id="toggle3" class="offscreen" />
-                                      <label for="toggle3" class="switch"></label>
-                                     </div>
+                              Activo
                            </td>
                         </tr>
                         <tr>
@@ -122,13 +143,16 @@
                                  <h6>Gluta stack</h6>
                            </td>
                            <td>
-                                 <img width="30px" height="30px" src="https://cdn-icons-png.flaticon.com/512/32/32355.png"/>
+                              <div class="centered-container-catprod">
+                                 <i class="fa-regular fa-pen-to-square fa-xl me-2" style="margin-bottom: 8px;"></i>
+                                 <div class="wrap-toggle">
+                                       <input type="checkbox" id="toggle1" class="offscreen" />
+                                       <label for="toggle1" class="switch"></label>
+                                 </div>
+                              </div>
                            </td>
                            <td>
-                                    <div class="wrap-toggle">
-                                     <input type="checkbox" id="toggle4" class="offscreen" />
-                                      <label for="toggle4" class="switch"></label>
-                                     </div>
+                              Activo
                            </td>
                         </tr>
                         <tr>
@@ -136,13 +160,67 @@
                                  <h6>Gluta stack</h6>
                            </td>
                            <td>
-                                 <img width="30px" height="30px" src="https://cdn-icons-png.flaticon.com/512/32/32355.png"/>
+                              <div class="centered-container-catprod">
+                                 <i class="fa-regular fa-pen-to-square fa-xl me-2" style="margin-bottom: 8px;"></i>
+                                 <div class="wrap-toggle">
+                                       <input type="checkbox" id="toggle2" class="offscreen" />
+                                       <label for="toggle2" class="switch"></label>
+                                 </div>
+                              </div>
                            </td>
                            <td>
-                                    <div class="wrap-toggle">
-                                     <input type="checkbox" id="toggle5" class="offscreen" />
-                                      <label for="toggle5" class="switch"></label>
-                                     </div>
+                              Activo
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
+                                 <h6>Gluta stack</h6>
+                           </td>
+                           <td>
+                              <div class="centered-container-catprod">
+                                 <i class="fa-regular fa-pen-to-square fa-xl me-2" style="margin-bottom: 8px;"></i>
+                                 <div class="wrap-toggle">
+                                       <input type="checkbox" id="toggle3" class="offscreen" />
+                                       <label for="toggle3" class="switch"></label>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>
+                              Activo
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
+                                 <h6>Gluta stack</h6>
+                           </td>
+                           <td>
+                              <div class="centered-container-catprod">
+                                 <i class="fa-regular fa-pen-to-square fa-xl me-2" style="margin-bottom: 8px;"></i>
+                                 <div class="wrap-toggle">
+                                       <input type="checkbox" id="toggle4" class="offscreen" />
+                                       <label for="toggle4" class="switch"></label>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>
+                              Activo      
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
+                                 <h6>Gluta stack</h6>
+                           </td>
+                           <td>
+                              <div class="centered-container-catprod">
+                                 <i class="fa-regular fa-pen-to-square fa-xl me-2" style="margin-bottom: 8px;"></i>
+                                 <div class="wrap-toggle">
+                                       <input type="checkbox" id="toggle5" class="offscreen" />
+                                       <label for="toggle5" class="switch"></label>
+                                 </div>
+                                 </div>
+                           </td>
+                           <td>
+                              Activo
                            </td>
                         </tr>
                      </tbody>
