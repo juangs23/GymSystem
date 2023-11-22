@@ -1,140 +1,126 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("registroForm");
-    const errorNombres = document.getElementById("errorNombres");
-    const errorApellidos = document.getElementById("errorApellidos");
-    const errorNumDocumento = document.getElementById("errorNumDocumento");
-    const errorEmail = document.getElementById("errorEmail");
-    const errorTelefono = document.getElementById("errorTelefono");
-    const errorEdad = document.getElementById("errorEdad");
-    const errorDireccion = document.getElementById("errorDireccion");
-    const errorPassword = document.getElementById("errorPassword");
-    const errorConfirmPassword = document.getElementById("errorConfirmPassword");
-    const errorCondiciones = document.getElementById("errorCondiciones");
+const formularioRegistro = document.getElementById('formularioRegistro')
+const inputs = document.querySelectorAll('#formularioRegistro input')
 
-    form.addEventListener("submit", function (event) {
-        let hasError = false;
-
-        const nombres = document.getElementById("nombres").value.trim();
-        const apellidos = document.getElementById("apellidos").value.trim();
-        const numDocumento = document.getElementById("num-documento").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const telefono = document.getElementById("telefono").value.trim();
-        const edad = document.getElementById("edad").value.trim();
-        const direccion = document.getElementById("direccion").value.trim();
-        const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirm-password").value;
-        const condicionesChecked = document.getElementById("customCheck1").checked;
-
-        // Validar campos vacíos
-        if (nombres === "") {
-            errorNombres.textContent = "Por favor, ingresa tu nombre";
-            hasError = true;
-        } else {
-            errorNombres.textContent = "";
-        }
-
-        if (apellidos === "") {
-            errorApellidos.textContent = "Por favor, ingresa tus apellidos";
-            hasError = true;
-        } else {
-            errorApellidos.textContent = "";
-        }
-
-        if (numDocumento === "") {
-            errorNumDocumento.textContent = "Por favor, ingresa tu número de documento";
-            hasError = true;
-        } else if (!/^\d{10}$/.test(numDocumento)) {
-            errorNumDocumento.textContent = "El documento debe tener 10 dígitos numéricos";
-            hasError = true;
-        } else {
-            errorNumDocumento.textContent = "";
-        }
-
-        if (email === "") {
-            errorEmail.textContent = "Por favor, ingresa tu correo electrónico";
-            hasError = true;
-        } else if (!isValidEmail(email)) {
-            errorEmail.textContent = "Ingresa un correo electrónico válido";
-            hasError = true;
-        } else {
-            errorEmail.textContent = "";
-        }
-
-       
-
-        if (telefono === "") {
-            errorTelefono.textContent = "Por favor, ingresa tu número de teléfono";
-            hasError = true;
-        } else if (!isValidColombianPhoneNumber(telefono)) {
-            errorTelefono.textContent = "Ingresa un número de teléfono válido en Colombia";
-            hasError = true;
-        } else {
-            errorTelefono.textContent = "";
-        }
-
-        if (edad === "") {
-            errorEdad.textContent = "Por favor, ingresa tu edad";
-            hasError = true;
-        } else if (!isValidAge(edad)) {
-            errorEdad.textContent = "Ingresa una edad válida entre 18 y 70 años";
-            hasError = true;
-        } else {
-            errorEdad.textContent = "";
-        }
-
-        if (direccion === "") {
-            errorDireccion.textContent = "Por favor, ingresa tu dirección";
-            hasError = true;
-        } else {
-            errorDireccion.textContent = "";
-        }
-
-         // Validar contraseña
-         if (password === "") {
-            errorPassword.textContent = "Por favor, ingresa una contraseña";
-            hasError = true;
-        } else if (!isValidPassword(password)) {
-            errorPassword.textContent = "La contraseña debe tener al menos una letra mayúscula y un número";
-            hasError = true;
-        } else {
-            errorPassword.textContent = "";
-        }
-
-        // Validar confirmación de contraseña
-        if (confirmPassword === "") {
-            errorConfirmPassword.textContent = "Por favor, confirma tu contraseña";
-            hasError = true;
-        } else if (password !== confirmPassword) {
-            errorConfirmPassword.textContent = "Las contraseñas no coinciden";
-            hasError = true;
-        } else {
-            errorConfirmPassword.textContent = "";
-        }
-
-        // Validar checkbox de condiciones de uso
-        if (hasError) {
-            event.preventDefault();
-        } else {
-            // Si no hay errores, redireccionar y mostrar la alerta
-            event.preventDefault(); // Previene el envío automático del formulario
-    
-            // Aquí puedes cambiar 'tu-login.html' por la ruta de tu página de inicio de sesión
-            window.location.href = 'tu-login.html';
-    
-            // Mostrar la alerta
-            alert("Datos registrados con éxito");
-        }
-    });
-});
-
-function isValidColombianPhoneNumber(phoneNumber) {
-    // Expresión regular para validar el número de teléfono en Colombia
-    const phoneRegex = /^\d{7,10}$/; // Se asume que los números en Colombia tienen entre 7 y 10 dígitos
-    return phoneRegex.test(phoneNumber);
+const expresiones = {
+	nombres: /^[a-zA-ZÀ-ÿ\s]{1,20}$/, // Letras y espacios, pueden llevar acentos.
+    apellidos: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+    documento: /^[A-Za-z0-9\s-]{10}$/,
+	password:  /^(?=.*[A-Z])(?=.*\d).+$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    edad: /^(1[8-9]|[2-5][0-9]|6[0-5])$/,
+    direccion: /^[A-Za-z0-9\s#áéíóúÁÉÍÓÚüÜ.,-]+$/,
+	telefono: /^(\(\+?\d{2,3}\)[\*|\s|\-|\.]?(([\d][\*|\s|\-|\.]?){6})(([\d][\s|\-|\.]?){2})?|(\+?[\d][\s|\-|\.]?){8}(([\d][\s|\-|\.]?){2}(([\d][\s|\-|\.]?){2})?)?)$/
 }
 
-function isValidPassword(password) {
-    // Expresión regular para validar la contraseña (al menos una letra mayúscula y un número)
-    const passwordRegex = /^(?=.*[A-Z])(?=.*\d).+$/;
-    return passwordRegex.test(password);
+const campos = {
+    nombres: false, 
+    apellidos: false, 
+    documento: false, 
+    correo: false, 
+    telefono: false, 
+    edad: false,
+    direccion: false,
+    password: false
 }
+
+const validarFormulario = (e) => {
+    switch (e.target.name) {
+        case "nombres":
+            validarCampo(expresiones.nombres, e.target, 'nombres')
+        break
+        case "apellidos":
+            validarCampo(expresiones.apellidos, e.target, 'apellidos')
+        break
+        case "documento":
+            validarCampo(expresiones.documento, e.target, 'documento')
+        break
+        case "correo":
+            validarCampo(expresiones.correo, e.target, 'correo')
+        break
+        case "telefono":
+            validarCampo(expresiones.telefono, e.target, 'telefono')
+        break
+        case "edad":
+            validarCampo(expresiones.edad, e.target, 'edad')
+        break
+        case "direccion":
+            validarCampo(expresiones.direccion, e.target, 'direccion')
+        break
+        case "password":
+            validarCampo(expresiones.password, e.target, 'password')
+            validarPassword2()
+        break
+        case "confirmarPassword":
+            validarPassword2()
+        break
+    }
+}
+
+const validarCampo = (expresion, input, campo) => {
+    if (expresion.test(input.value)) {
+        document.getElementById(`grupo__${campo}`).classList.remove('formularioRegistro__grupo-incorrecto')
+        document.getElementById(`grupo__${campo}`).classList.add('formularioRegistro__grupo-correcto')
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle')
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle')
+        document.querySelector(`#grupo__${campo} .formularioRegistro__input-error`).classList.remove('formularioRegistro__input-error-activo')
+        campos[campo] = true
+    }else {
+        document.getElementById(`grupo__${campo}`).classList.add('formularioRegistro__grupo-incorrecto')
+        document.getElementById(`grupo__${campo}`).classList.remove('formularioRegistro__grupo-correcto')
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle')
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle')
+        document.querySelector(`#grupo__${campo} .formularioRegistro__input-error`).classList.add('formularioRegistro__input-error-activo')
+        campo[false]
+    }
+}
+
+const validarPassword2 = () =>{
+    const inputPassword1 = document.getElementById('password')
+    const inputPassword2 = document.getElementById('confirmarPassword')
+
+    if (inputPassword1.value !== inputPassword2.value) {
+        document.getElementById(`grupo__confirmarPassword`).classList.add('formularioRegistro__grupo-incorrecto')
+        document.getElementById(`grupo__confirmarPassword`).classList.remove('formularioRegistro__grupo-correcto')
+        document.querySelector(`#grupo__confirmarPassword i`).classList.remove('fa-check-circle')
+        document.querySelector(`#grupo__confirmarPassword i`).classList.add('fa-times-circle')
+        document.querySelector(`#grupo__confirmarPassword .formularioRegistro__input-error`).classList.add('formularioRegistro__input-error-activo')
+        campos['password'] = false
+    } else {
+        document.getElementById(`grupo__confirmarPassword`).classList.remove('formularioRegistro__grupo-incorrecto')
+        document.getElementById(`grupo__confirmarPassword`).classList.add('formularioRegistro__grupo-correcto')
+        document.querySelector(`#grupo__confirmarPassword i`).classList.add('fa-check-circle')
+        document.querySelector(`#grupo__confirmarPassword i`).classList.remove('fa-times-circle')
+        document.querySelector(`#grupo__confirmarPassword .formularioRegistro__input-error`).classList.remove('formularioRegistro__input-error-activo')
+        campos['password'] = true
+    }
+}
+
+inputs.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario)
+    input.addEventListener('blur', validarFormulario)
+})
+
+formularioRegistro.addEventListener('submit', (e) =>{
+    e.preventDefault();
+
+    const terminos = document.getElementById('terminos')
+    if (campos.nombres && campos.apellidos && campos.documento && campos.correo && campos.edad && campos.telefono && 
+        campos.direccion && campos.password && terminos.checked) {
+        formularioRegistro.reset()
+
+        document.getElementById('formularioRegistro__mensaje-exito').classList.add('formularioRegistro__mensaje-exito-activo');
+        setTimeout(() =>{
+            document.getElementById('formularioRegistro__mensaje-exito').classList.remove('formularioRegistro__mensaje-exito-activo');
+        }, 3000)
+        document.querySelectorAll('.formularioRegistro__grupo-correcto').forEach((icono) => {
+            icono.classList.remove('formularioRegistro__grupo-correcto')
+        })
+
+    } else {
+        document.getElementById('formularioRegistro__mensaje').classList.add('formularioRegistro__mensaje-activo')
+        setTimeout(() =>{
+            document.getElementById('formularioRegistro__mensaje').classList.remove('formularioRegistro__mensaje-activo')
+        }, 3000)
+    }
+
+})

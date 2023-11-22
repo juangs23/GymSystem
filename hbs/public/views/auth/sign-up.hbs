@@ -9,7 +9,7 @@
       <title>Gym System | Registrate </title>
       
     {{> header}}
-      
+   <link rel="stylesheet" href="../assets/css/validacionesForms.css" />
       
   </head>
   <body class=" " data-bs-spy="scroll" data-bs-target="#elements-section" data-bs-offset="0" tabindex="0">
@@ -62,111 +62,136 @@
                            </a>
                            <h2 class="mb-2 text-center">Regístrate</h2>
                            <p class="text-center">Crea tu cuenta en GS.</p>
-                              <form id="registroForm">
+                              <form class="formularioRegistro" id="formularioRegistro">
                                  <div class="row">
-                                    <div class="col-lg-6">
-                                          <div class="form-group">
-                                             <label for="nombres" class="form-label">Nombres *</label>
-                                             <input type="text" class="form-control" id="nombres" placeholder=" ">
-                                             <div id="errorNombres" class="error-message"></div>
+                                    
+                                    {{!-- Campo Nombres --}}
+                                    <div class="col-lg-6 formularioRegistro__grupo" id="grupo__nombres">
+                                       <label for="nombres" class="formularioRegistro__label">Nombres *</label>
+                                          <div class="formularioRegistro__grupo-input" >
+                                             <input type="text" class="form-control" name="nombres" id="nombres">                             
+                                             <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
                                           </div>
+                                          <p class="formularioRegistro__input-error">Los nombres no puede contener numeros o caracteres especiales</p>
                                     </div>
-                                    <div class="col-lg-6">
-                                          <div class="form-group">
-                                             <label for="apellidos" class="form-label">Apellidos *</label>
-                                             <input type="text" class="form-control" id="apellidos" placeholder=" ">
-                                             <div id="errorApellidos" class="error-message"></div>
+
+                                    {{!-- Campo Apellidos --}}
+                                    <div class="col-lg-6 formularioRegistro__grupo" id="grupo__apellidos">
+                                       <label for="apellidos" class="formularioRegistro__label">Apellidos *</label>
+                                          <div class="formularioRegistro__grupo-input" >
+                                             <input type="text" class="form-control" name="apellidos" id="apellidos">                             
+                                             <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
                                           </div>
+                                          <p class="formularioRegistro__input-error">Los apellidos no puede contener numeros o caracteres especiales</p>
                                     </div>
-                                    <div class="col-lg-6">
-                                          <div class="form-group">
-                                             <label for="num-documento" class="form-label"># Documento *</label>
-                                             <input type="number" class="form-control" id="num-documento" placeholder=" ">
-                                             <div id="errorNumDocumento" class="error-message"></div>
+
+                                    {{!-- <div class="col-lg-6 formularioRegistro__grupo" id="grupo__tipoDocumento">
+                                       <label for="tipoDocumento">Tipo de documento:</label>
+                                       <select id="tipoDocumento" name="tipoDocumento">
+                                       <option value="CedulaCiudadania">Seleccione...</option>
+                                       <option value="CedulaCiudadania">Cédula de Ciudadanía</option>
+                                       <option value="CedulaExtranjeria">Cédula de Extranjería</option>
+                                       <option value="TarjetaIdentidad">Tarjeta de Identidad</option>
+                                       </select>
+                                       <p class="formularioRegistro__input-error">Seleccione el tipo de documento</p>
+                                    </div> --}}
+
+                                    {{!-- Campo #Doc --}}
+                                    <div class="col-lg-6 formularioRegistro__grupo" id="grupo__documento">
+                                       <label for="documento" class="formularioRegistro__label"># Documento *</label>
+                                          <div class="formularioRegistro__grupo-input" >
+                                             <input type="text" class="form-control" name="documento" id="documento">                             
+                                             <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
                                           </div>
+                                          <p class="formularioRegistro__input-error">Ingresa un documento valido</p>
                                     </div>
-                                    <div class="col-lg-6">
-                                          <div class="form-group">
-                                             <label for="email" class="form-label">Correo Electrónico *</label>
-                                             <input type="email" class="form-control" id="email" placeholder=" ">
-                                             <div id="errorEmail" class="error-message"></div>
+
+                                    {{!-- Campo Correo --}}
+                                    <div class="col-lg-6 formularioRegistro__grupo" id="grupo__correo">
+                                       <label for="correo" class="formularioRegistro__label">Correo Electronico *</label>
+                                          <div class="formularioRegistro__grupo-input" >
+                                             <input type="email" class="form-control" name="correo" id="correo">                             
+                                             <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
                                           </div>
+                                          <p class="formularioRegistro__input-error">El correo no es valido</p>
                                     </div>
-                                    <div class="col-lg-6">
-                                          <div class="form-group">
-                                             <label for="telefono" class="form-label">Número de Teléfono *</label>
-                                             <input type="text" class="form-control" id="telefono" placeholder=" ">
-                                             <div id="errorTelefono" class="error-message"></div>
+                                    
+                                    {{!-- Campo Numero Cel --}}
+                                    <div class="col-lg-6 formularioRegistro__grupo" id="grupo__telefono">
+                                       <label for="telefono" class="formularioRegistro__label">Telefono *</label>
+                                          <div class="formularioRegistro__grupo-input" >
+                                             <input type="text" class="form-control" name="telefono" id="telefono">                             
+                                             <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
                                           </div>
+                                          <p class="formularioRegistro__input-error">El numero no es valido.</p>
                                     </div>
-                                    <div class="col-lg-6">
-                                          <div class="form-group">
-                                             <label for="edad" class="form-label">Edad *</label>
-                                             <input type="number" class="form-control" id="edad" placeholder=" ">
-                                             <div id="errorEdad" class="error-message"></div>
+
+                                    {{!-- Campo edad --}}
+                                    <div class="col-lg-6 formularioRegistro__grupo" id="grupo__edad">
+                                       <label for="edad" class="formularioRegistro__label">Edad *</label>
+                                          <div class="formularioRegistro__grupo-input" >
+                                             <input type="text" class="form-control" name="edad" id="edad">                             
+                                             <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
                                           </div>
+                                          <p class="formularioRegistro__input-error">Ingrese una edad valida, entre 18 y 65 anios</p>
                                     </div>
-                                    <div class="col-lg-6">
-                                          <div class="form-group">
-                                             <label for="direccion" class="form-label">Dirección *</label>
-                                             <input type="text" class="form-control" id="direccion" placeholder="ej: Calle 11s # 50-29">
-                                             <div id="errorDireccion" class="error-message"></div>
+
+                                    {{!-- Campo direccion --}}
+                                    <div class="col-lg-6 formularioRegistro__grupo" id="grupo__direccion">
+                                       <label for="direccion" class="formularioRegistro__label">Direccion *</label>
+                                          <div class="formularioRegistro__grupo-input" >
+                                             <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Ej: Cra 19 # 52-102">                             
+                                             <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
                                           </div>
+                                          <p class="formularioRegistro__input-error">Ingrese una direccion valida.</p>
                                     </div>
-                                    <div class="col-lg-6">
-                                          <div class="form-group">
-                                             <label for="password" class="form-label">Contraseña *</label>
-                                             <input type="password" class="form-control" id="password" placeholder=" ">
-                                             <div id="errorPassword" class="error-message"></div>
+
+                                    {{!-- Campo contrasenia --}}
+                                    <div class="col-lg-6 formularioRegistro__grupo" id="grupo__password">
+                                       <label for="password" class="formularioRegistro__label">Contraseña *</label>
+                                          <div class="formularioRegistro__grupo-input" >
+                                             <input type="password" class="form-control" name="password" id="password">                             
+                                             <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
                                           </div>
+                                          <p class="formularioRegistro__input-error">
+                                             La contraseña debe contener:
+                                             <br>- Mínimo un número,
+                                             <br>- Una letra mayúscula,
+                                             <br>- Máximo 12 caracteres.
+                                          </p>
+
                                     </div>
-                                    <div class="col-lg-6">
-                                          <div class="form-group">
-                                             <label for="confirm-password" class="form-label">Confirmar Contraseña *</label>
-                                             <input type="password" class="form-control" id="confirm-password" placeholder=" ">
-                                             <div id="errorConfirmPassword" class="error-message"></div>
+
+                                    <div class="col-lg-6 formularioRegistro__grupo" id="grupo__confirmarPassword">
+                                       <label for="confirmarPassword" class="formularioRegistro__label">Confirmar Contraseña *</label>
+                                          <div class="formularioRegistro__grupo-input" >
+                                             <input type="password" class="form-control" name="confirmarPassword" id="confirmarPassword">                             
+                                             <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
                                           </div>
+                                          <p class="formularioRegistro__input-error">La contraseña no coincide.</p>
+
                                     </div>
-                                       <div class="col-lg-12 d-flex justify-content-center">
-                                          <div class="form-check mb-3">
-                                             <input type="checkbox" class="form-check-input" id="customCheck1">
-                                             <label class="form-check-label" for="customCheck1">Acepto las condiciones de uso</label>
+
+                                       <div class="col-lg-12 d-flex justify-content-center formulario__grupo grupo__terminos">
+                                          <div class="form-check mb-3 formulario__label">
+                                             <input type="checkbox" class="form-check-input" name="terminos" id="terminos">
+                                             Acepto las condiciones de uso
                                           </div>
                                        </div>
-                                       <div  id="errorCondiciones" class="error-message col-lg-12 d-flex justify-content-center"></div>
-
-
-                                       {{!-- <!--Modal terminos y condiciones-->
-                                          <!-- Button trigger modal -->
-                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                             Launch static backdrop modal
-                                             </button>
-
-                                             <!-- Modal -->
-                                             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                             <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                   <div class="modal-header">
-                                                   <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                   </div>
-                                                   <div class="modal-body">
-                                                   ...
-                                                   </div>
-                                                   <div class="modal-footer">
-                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                   <button type="button" class="btn btn-primary">Understood</button>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             </div> --}}
-
                                  </div>
                               </div>
-                              <div class="d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-primary me-2">Registrarse</button>
-                                    <a href="ingresar" class="btn btn-dark me-2">Cancelar</a>
+
+
+                              <div class="formularioRegistro__grupo formularioRegistro__grupo-btn-enviar d-flex justify-content-center">
+                                 <button type="submit" class="btn btn-danger" >Registrar</button>
+                                 
+                                 <p class="formularioRegistro__mensaje-exito alert alert-succes" id="formularioRegistro__mensaje-exito">Registro exitoso!</p>
+                                 <div class="formularioRegistro__mensaje"  id="formularioRegistro__mensaje">
+                                 <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
                               </div>
+                              </div>
+
+                              
                             </form>
                               <p class="mt-3 text-center">
                                  Ya tiene una cuenta? <a href="ingresar" class="text-underline">Inicie sesión</a>
@@ -192,7 +217,7 @@
       </div>
 
          <!-- Validaciones form registro -->
-    <script src="../assets/js/sign-up.js"></script>
+    
     {{> footer}}
   </body>
 </html>
