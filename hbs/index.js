@@ -179,6 +179,11 @@ app.get('/CrearRol', (req, res)=>{
     res.render('CrearRol')
 })
 
+//PRUEBAS TABLAS
+
+
+//FIN PRUEBA
+
 // FIN ROLES
 
 // Inicio Ventas *YONIER*
