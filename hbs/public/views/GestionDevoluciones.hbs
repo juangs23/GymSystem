@@ -34,10 +34,10 @@
     <div class="container-fluid content-inner">
         <div class="container-fluid">
             <div class="card shadow mb-4">
-                <div class="card-header py-3 d-flex justify-content-between">
-                    <div class="header-title">
+                <div class="header-title">
                         <h3 class="m-0 font-weight-bold text-primary">Gestión Devoluciones</h3>
                     </div>
+                <div class="card-header py-3 d-flex justify-content-between">
                     <div class="d-flex">
                         <div class="search-container">
                             <label for="searchInput" class="visually-hidden">Buscar:</label>
@@ -45,6 +45,18 @@
                                 placeholder="Buscar" aria-controls="dataTable">
                         </div>
                     </div>
+                    <div class="footer-buttons mt-1">
+                                <!-- Agregado margen top (mt-3) para separar los botones de la tabla -->
+                                <a href="formulDevolucion" type="button" name="Cancelar"
+                                    class="btn btn-dark previous action-button-previous float-end me-2"
+                                    value="Previous">
+                                    Crear Devolucion
+                                </a>
+                                <button type="submit" name="Guardar"
+                                    class="btn btn-primary next action-button float-end" value="Next">
+                                    Informes
+                                </button>
+                            </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
@@ -65,6 +77,11 @@
                                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
                                         aria-label="Start date: activate to sort column ascending"
                                         style="width: 104.297px;">Producto</th>
+
+                                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                                        aria-label="Start date: activate to sort column ascending"
+                                        style="width: 104.297px;">Motivo</th>
+
                                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
                                         aria-label="Salary: activate to sort column ascending"
                                         style="width: 93.0156px;">Acciones</th>
@@ -79,13 +96,16 @@
                                     <td>Roberto Miramar</td>
                                     <td>21/01/2021</td>
                                     <td>vitaminas</td>
+                                    <td>mal estado</td>
                                     <td style="text-align: center;">
                                         <div class="centered-container">
-                                            <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
+                                             <i class="fa-regular fa-pen-to-square fa-xl me-2" data-bs-toggle="modal"
+                                                    data-bs-target="#editarRolModal"></i>
                                             <i class="fa-regular fa-eye fa-xl me-2"></i>
+                                             <i class="fa-solid fa-trash fa-xl me-2 trash-icon" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"></i>
                                             <div class="wrap-toggle" style="margin-top:10px;">
-                                                <input type="checkbox" id="toggle3" class="offscreen" />
-                                                <label for="toggle3" class="switch"></label>
+                                                <input type="checkbox" id="toggle1" class="offscreen" />
+                                                <label for="toggle1" class="switch"></label>
                                             </div>
                                     </td>
                                     <td>ACTIVO</td>
@@ -95,13 +115,16 @@
                                     <td>Lucas Osorio</td>
                                     <td>15/04/2022</td>
                                     <td>Proteina</td>
+                                    <td>Equivocado</td>
                                     <td style="text-align: center;">
                                         <div class="centered-container">
-                                            <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
+                                             <i class="fa-regular fa-pen-to-square fa-xl me-2" data-bs-toggle="modal"
+                                                    data-bs-target="#editarRolModal"></i>
                                             <i class="fa-regular fa-eye fa-xl me-2"></i>
+                                             <i class="fa-solid fa-trash fa-xl me-2 trash-icon" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"></i>
                                             <div class="wrap-toggle" style="margin-top:10px;">
-                                                <input type="checkbox" id="toggle3" class="offscreen" />
-                                                <label for="toggle3" class="switch"></label>
+                                                <input type="checkbox" id="toggle2" class="offscreen" />
+                                                <label for="toggle2" class="switch"></label>
                                             </div>
                                     </td>
                                     <td>ACTIVO</td>
@@ -111,10 +134,13 @@
                                     <td>Duvan lopez</td>
                                     <td>11/12/2022</td>
                                     <td>Cuerdas</td>
+                                    <td>malo</td>
                                     <td style="text-align: center;">
                                         <div class="centered-container">
-                                            <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
+                                             <i class="fa-regular fa-pen-to-square fa-xl me-2" data-bs-toggle="modal"
+                                                    data-bs-target="#editarRolModal"></i>
                                             <i class="fa-regular fa-eye fa-xl me-2"></i>
+                                             <i class="fa-solid fa-trash fa-xl me-2 trash-icon" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"></i>
                                             <div class="wrap-toggle" style="margin-top:10px;">
                                                 <input type="checkbox" id="toggle3" class="offscreen" />
                                                 <label for="toggle3" class="switch"></label>
@@ -127,13 +153,16 @@
                                     <td>Yonier Rendon</td>
                                     <td>22/02/2020</td>
                                     <td>vitaminas</td>
+                                    <td>Vencido</td>
                                     <td style="text-align: center;">
                                         <div class="centered-container">
-                                            <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
+                                             <i class="fa-regular fa-pen-to-square fa-xl me-2" data-bs-toggle="modal"
+                                                    data-bs-target="#editarRolModal"></i>
                                             <i class="fa-regular fa-eye fa-xl me-2"></i>
+                                             <i class="fa-solid fa-trash fa-xl me-2 trash-icon" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"></i>
                                             <div class="wrap-toggle" style="margin-top:10px;">
-                                                <input type="checkbox" id="toggle3" class="offscreen" />
-                                                <label for="toggle3" class="switch"></label>
+                                                <input type="checkbox" id="toggle4" class="offscreen" />
+                                                <label for="toggle4" class="switch"></label>
                                             </div>
                                     </td>
                                     <td>ACTIVO</td>
@@ -169,29 +198,88 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="footer-buttons mt-1">
-                                <!-- Agregado margen top (mt-3) para separar los botones de la tabla -->
-                                <a href="formulDevolucion" type="button" name="Cancelar"
-                                    class="btn btn-dark previous action-button-previous float-end me-2"
-                                    value="Previous">
-                                    Crear Devolucion
-                                </a>
-                                <button type="submit" name="Guardar"
-                                    class="btn btn-primary next action-button float-end" value="Next">
-                                    Informes
-                                </button>
-                            </div>
                 </div>
             </div>
         </div>
 
     </div>
     </div>
-
+    </div>
+    </div>
     </div>
 
+<!-- Modal editar -->
+<div class="modal fade" id="editarRolModal" tabindex="-1" aria-labelledby="editarRolModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="m-0 font-weight-bold text-primary">Editar Devolucion</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row">
+                    <!-- Campos del formulario -->
+                    <div class="col-md-6">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="estado">Estado</label>
+                        <select id="estado" name="estado" class="form-control">
+                            <option value="activo">Activo</option>
+                            <option value="desactivado">Desactivado</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="producto">Productos</label>
+                            <select id="producto" name="productos" class="form-control">
+                                <option value="Vitaminas">Vitaminas</option>
+                                <option value="Proteinas">Proteínas</option>
+                                <option value="Gatorade">Gatorade</option>
+                            </select>
+                            <span class="error-message" id="producto-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">Motivo:</label>
+                            <textarea type="text" class="form-control" name="Motivo"
+                                placeholder="Escribe tu motivo aquí..." oninput="validateMotivo(this)"></textarea>
+                            <span class="error-message" id="Motivo-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" name="Guardar" class="btn btn-primary float-end" value="Next">Guardar</button>
+                        <a href="GestionDevoluciones" type="button" name="Cancelar" class="btn btn-dark float-end me-1" value="Previous">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+</div>
+
+              <!-- FIN MODAL EDITAR -->
+
+    <!-- Modal eliminar -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar este elemento?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteButton">Eliminar</button>
+            </div>
+        </div>
     </div>
+</div>
+
     <!-- FIN DEL CONTENIDO -->
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
