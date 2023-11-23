@@ -109,15 +109,18 @@ app.get('/ProveedoresEditar', (req, res)=>{
 // INICIO SERVICIOS
 
 //WEIMAR
-
 app.get('/usuariosAdmin', (req, res)=>{
     res.render('usuariosAdmin')
 })
 
+app.get('/formUsuarios', (req, res)=>{
+    res.render('formUsuarios')
+})
 
 app.get('/usuariosEntrenador', (req, res)=>{
     res.render('usuariosEntrenador')
 })
+
 
 app.get('/serviciosAdmin', (req, res)=>{
     res.render('serviciosAdmin')
@@ -145,6 +148,7 @@ app.get('/formularioMembresias', (req, res)=>{
 app.get('/formularioServicios', (req, res)=>{
     res.render('formularioServicios')
 })
+
 
 // INICIO RUTINA *JUANES*
 
