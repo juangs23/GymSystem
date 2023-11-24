@@ -28,12 +28,13 @@
 
               
     <!-- Inicio contenido -->      
-   <div class="container-fluid content-inner">
+    <div class="container-fluid content-inner">
+
         <div class="container-fluid">
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h3 class="m-0 font-weight-bold text-primary">Gestión Pedidos</h3>
+                            <h3 class="m-0 font-weight-bold text-primary">Gestión pedidos</h3>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -41,80 +42,80 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6">
                                             <div class="dataTables_length" id="dataTable_length">
-                                                <label>Filtrar tabla<select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm">
-                                                    <option value="10">10</option>
-                                                    <option value="25">25</option>
-                                                    <option value="50">50</option>
-                                                    <option value="100">100</option>
-                                                    </select></label>
                                                     </div>
                                                       <div>
-                                                        <br>
-                                                        <a href="formularioPedido"><button type="submit" class="btn btn-danger position-absolute top-0 end-0 me-5">Agregar pedido</button></a>
+                                                        <a href="formulariopedido"><button type="submit" class="btn btn-danger position-absolute top-0 end-0 me-5">Agregar pedido +</button></a>
                                                     </div>
                                                     </div>
-                                                    <div class="col-sm-12 col-md-6"><div id="dataTable_filter" class="dataTables_filter">
+                                                    <div class="col-sm-16 col-md-8"><div id="dataTable_filter" class="dataTables_filter">
                                                         <label>Buscar:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
                                                         </div>
                                                         </div>
                                                         </div>
                                                         <div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
-                                    <thead>
+                                        <thead>
                                         <tr role="row"><th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 156.25px;">IDPedido</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 257.578px;">IDCliente</th>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 257.578px;">Nombre</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 110.688px;">Fecha Pedido</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 48.1719px;">Total</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 104.297px;">Estado Pedido</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 93.0156px;">Acciones</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr><th rowspan="1" colspan="1">IDPedido</th>
-                                        <th rowspan="1" colspan="1">IDCliente</th>
-                                        <th rowspan="1" colspan="1">Fecha Pedido</th>
-                                        <th rowspan="1" colspan="1">Total</th>
-                                        <th rowspan="1" colspan="1">Estado Pedido</th>
-                                        <th rowspan="1" colspan="1">Acciones</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                     <tr class="odd">
                                             <td class="sorting_1">001</td>
-                                            <td>001</td>
+                                            <td>Alexander Ospina</td>
                                             <td>13/11/2023</td>
                                             <td>400.000</td>
                                             <td>PENDIENTE DE PAGO</td>
-                                            <td></td>
+                                            <td style="text-align: center;">
+                                            <div class="centered-container">
+                                            <a href="detallePedido"><i class="fa-regular fa-eye fa-xl me-2"></i></a>    
+                                            <i class="fa-solid fa-trash fa-xl me-2" data-bs-toggle="modal" data-bs-target="#editarpedidoModal"></i>
+                                           </td>
+                                           
                                         </tr><tr class="even">
-                                             <td class="sorting_1">002</td>
-                                            <td>002</td>
+                                            <td class="sorting_1">002</td>
+                                            <td>Johany Ocampo</td>
                                             <td>05/08/2023</td>
                                             <td>800.000</td>
                                             <td>PENDIENTE DE PAGO</td>
-                                            <td></td>
+                                            <td style="text-align: center;">
+                                            <div class="centered-container">
+                                            <a href="detallePedido"><i class="fa-regular fa-eye fa-xl me-2"></i></a>  
+                                            <i class="fa-solid fa-trash fa-xl me-2" data-bs-toggle="modal" data-bs-target="#editarpedidoModal"></i>
+                                           </td>
+                                           
                                         </tr><tr class="odd">
                                             <td class="sorting_1">003</td>
-                                            <td>003</td>
+                                            <td>Manolo Murillo</td>
                                             <td>10/07/2023</td>
                                             <td>100.000</td>
                                             <td>PENDIENTE DE PAGO</td>
-                                            <td></td>
+                                            <td style="text-align: center;">
+                                            <div class="centered-container">
+                                            <a href="detallePedido"><i class="fa-regular fa-eye fa-xl me-2"></i></a>   
+                                            <i class="fa-solid fa-trash fa-xl me-2" data-bs-toggle="modal" data-bs-target="#editarpedidoModal"></i>
+                                           </td>
+                                           
                                         </tr><tr class="even">
                                             <td class="sorting_1">004</td>
-                                            <td>004</td>
+                                            <td>Hector el father</td>
                                             <td>24/06/2023</td>
                                             <td>600.000</td>
                                             <td>PENDIENTE DE PAGO</td>
-                                            <td></td>
+                                           <td style="text-align: center;">
+                                            <div class="centered-container">
+                                               <a href="detallePedido"><i class="fa-regular fa-eye fa-xl me-2"></i></a>  
+                                            <i class="fa-solid fa-trash fa-xl me-2" data-bs-toggle="modal" data-bs-target="#editarpedidoModal"></i>
+                                           </td>
                                         </tr>
                                         </tbody>
                                 </table>
                                 </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-14 col-md-10">
-                                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Monstrando 1 de 25</div>
-                                        </div>
                                         <div class="col-sm-30 col-md-40">
                                             <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
                                                 <ul class="pagination">
@@ -144,6 +145,35 @@
 
                 </div>
             </div>
+
+            <div class="modal fade" id="editarpedidoModal" tabindex="-1" aria-labelledby="editarpedidoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="m-0 font-weight-bold text-primary">Eliminar pedido</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               
+            <form action="">
+                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24">
+                <use xlink:href="#exclamation-triangle-fill" />
+                </svg>
+                <div>
+                ¿Seguro deseas eliminar el pedido?
+                </div>
+                    </div>
+                    <button id="miBoton" type="submit" name="Guardar" class="btn btn-primary next action-button float-end" value="Next">Eliminar</button>
+                    <a href="pedidos"><button type="button" name="Cancelar" class="btn btn-dark previous action-button-previous float-end me-1" value="Previous">Cancelar</button></a>
+            </form>     
+        </div>
+            </div>
+        </div>
+    </div>
+       </div>
+        </div> 
+</div>
             <!-- End of Main Content -->
             <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

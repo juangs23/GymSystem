@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla</title>
+    {{> header}}
+</head>
+<body class="  ">
+        <!-- Inicio del cargar -->
+    <div id="loading">
+      <div class="loader simple-loader">
+          <div class="loader-body">
+          </div>
+      </div>    </div>
+    <!-- Fin cargar -->
+
+    <!-- Inicio Barra lateral -->
+
+        {{> sidebar}}    
+ 
+    <!-- Fin Barra lateral -->
+
+
+    <!-- Inicio Barra superior -->
+        {{> topbar}}
+    <!-- Fin Barra superior -->
+    <form id="form-wizard1" class="mt-3 text-center">
+    <!-- fieldsets -->
+    <div class="card-body">
+        <div class="form-card text-start">
+            <div class="row">
+                <div class="col-7">
+                    <h3 class="mb-4">Informacion</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">Nombre del servicio</label>
+                        <input type="email" class="form-control" name="email" placeholder="" />
+                    </div>
+                </div>
+                jbj
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">Frecuencia</label>
+                        <input type="text" class="form-control" name="uname" placeholder="0" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">Dias</label>
+                        <input type="password" class="form-control" name="pwd" placeholder="0" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">Fecha inicio</label>
+                        <input type="password" class="form-control" name="cpwd" placeholder="00/00/0000" />
+                    </div>
+                </div>
+                
+               
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">Precio</label>
+                        <input type="password" class="form-control" name="cpwd" placeholder="0,00" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">Fecha fin</label>
+                        <input type="password" class="form-control" name="cpwd" placeholder="00/00/0000" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</form>
+
+    <!-- Fin contenido --> 
+
+    <!-- Footer Section Start -->
+    <footer class="footer">
+        {{> copyright}}
+    </footer>
+    <!-- Footer Section End -->
+
+    {{> footer}}
+</body>
+</html>
