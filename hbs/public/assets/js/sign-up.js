@@ -160,7 +160,7 @@ checkbox.addEventListener('change', () => {
 
 const form = document.getElementById('registroForm');
 
-form.addEventListener('submit', (event) => {
+form.addEventListener('button', (event) => {
     event.preventDefault();
 
     // Resto del código de validación...
