@@ -28,38 +28,47 @@
 
               
 <!-- Inicio contenido -->
+
 <div class="container-fluid content-inner">
-    <br>
-    <div class="position-relative">
-        <button type="submit" class="btn btn-danger position-absolute top-0 end-0 me-5">Agregar +</button>
-    </div>
-    <br>
-    <div class="container-fluid content-inner">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between">
-                        <div class="header-title">
-                            <h4 class="card-title">Usuarios</h4>
-                        </div>
+    <div class="container-fluid">
+        <div class="card shadow mb-4">
+            <div class="header-title">
+                <h3 class="m-0 font-weight-bold text-primary">Gestio usuarios</h3>
+            </div>
+            <div class="card-header py-3 d-flex justify-content-between">
+                <!-- Barra de búsqueda -->
+                <div class="d-flex">
+                    <div class="search-container">
+                        <label for="searchInput" class="visually-hidden">Buscar:</label>
+                        <input type="search" id="searchInput" class="form-control form-control-sm" placeholder="Buscar" aria-controls="dataTable">
                     </div>
-                    <div class="card-body p-0">
-                        <div class="table-responsive mt-4">
-                            <table id="basic-table" class="table table-striped mb-0" role="grid">
-                                <thead>
-                                    <tr>
-                                        
-                                        
-                                        <th># Documento</th>
-                                        <th>nombre</th>
-                                        <th>rol</th>
-                                        <th>estado</th>
-                                        
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
+                </div>
+                <!-- Botones en el pie de la tabla -->
+                <div class="footer-buttons mt-1">
+                    <a href="formUsuarios" type="button" name="Cancelar" class="btn btn-dark previous action-button-previous float-end me-2" value="Previous">
+                        Agregar usuario
+                    </a>
+                </div>
+            </div>
+            <!-- Tabla de usuarios -->
+           <div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+            <!-- Encabezado de la tabla -->
+                        <thead>
+                            <tr role="row">
+                                <!-- Columnas de la tabla -->
+                                <th># Documento</th>
+                                <th>Nombre</th>
+                                <th>Rol</th>
+                                <th>Estado</th>                             
+                                <th>Acciones</th>                              
+                            </tr>
+                        </thead>
+                        <!-- Cuerpo de la tabla con datos de devoluciones -->
+                        <tbody>
+                            <!-- Filas de datos -->
+                            <tr>
                                       
                                         
                                         <td>123456789</td>
@@ -180,16 +189,39 @@
                               </div>
                            </td>        
 </tr>
-                                    
-                                </tbody>
-                            </table>
-                        </div>
+                            <!-- ... (código de las filas) ... -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Paginación de la tabla -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                        <!-- Contenido de paginación -->
+                        <ul class="pagination justify-content-end">
+                                <li class="paginate_button page-item previous disabled" id="dataTable_previous">
+                                    <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                                </li>
+                                <li class="paginate_button page-item active">
+                                    <a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                                </li>
+                                <li class="paginate_button page-item ">
+                                    <a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a>
+                                </li>
+                                <li class="paginate_button page-item ">
+                                    <a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a>
+                                </li>
+                                <li class="paginate_button page-item next" id="dataTable_next">
+                                    <a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">Next</a>
+                                </li>
+                            </ul>
+                        <!-- ... (código de paginación) ... -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
     <!-- Fin contenido --> 
