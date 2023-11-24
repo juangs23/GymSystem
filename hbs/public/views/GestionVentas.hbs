@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión Ventas</title>
     {{> header}}
+    <style>
+    .custom-font-size {
+        font-size: 20px; /* Ajusta el tamaño de la fuente según tus necesidades */
+        
+    }
+</style>
+
 </head>
 
 <body class="  ">
@@ -33,20 +40,30 @@
     <!-- Inicio contenido -->
     <div class="container-fluid content-inner">
         <div class="container-fluid">
+                <h3 class="m-0 font-weight-bold text-primary custom-font-size ">Gestión Ventas</h3>
             <div class="card shadow mb-4">
                  <div class="header-title">
-                        <h3 class="m-0 font-weight-bold text-primary">Gestión Ventas</h3>
                     </div>
-                <div class="card-header py-3 d-flex justify-content-between">
-                   
-                    <div class="d-flex">
-                        <div class="search-container">
-                            <label for="searchInput" class="visually-hidden">Buscar:</label>
-                            <input type="search" id="searchInput" class="form-control form-control-sm"
-                                placeholder="Buscar" aria-controls="dataTable">
+                       <div class="card-header py-3 d-flex justify-content-between">
+                        <div class="d-flex">
+                            <div class="search-container">
+                                <label for="searchInput" class="visually-hidden">Buscar:</label>
+                                <input type="search" id="searchInput" class="form-control form-control-sm"
+                                    placeholder="Buscar" aria-controls="dataTable">
+                            </div>
+                        </div>
+                        <div class="footer-buttons mt-1">
+                            <a href="formuVenta" type="button" name="CrearVenta"
+                                class="btn btn-dark btn-sm previous action-button-previous float-end me-2"
+                                value="Previous">
+                                Crear Venta
+                            </a>
+                            <button type="submit" name="informes"
+                                class="btn btn-primary btn-sm next action-button float-end" value="Next">
+                                Informes
+                            </button>
                         </div>
                     </div>
-                </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0"
@@ -86,10 +103,7 @@
                                         <div class="centered-container">
                                             <i class="fa-regular fa-eye fa-xl me-2"></i>
                                             <i class="fa-regular fa-newspaper fa-xl me-2" ></i>
-                                            <div class="wrap-toggle" style="margin-top:10px;">
-                                                <input type="checkbox" id="toggle1" class="offscreen" />
-                                                <label for="toggle1" class="switch"></label>
-                                            </div>
+                                            <i class="fa-solid fa-xmark fa-xl me-2"></i> 
                                             </div>
                                     </td>
                                 </tr>
@@ -103,10 +117,7 @@
                                         <div class="centered-container">
                                             <i class="fa-regular fa-eye fa-xl me-2"></i>
                                             <i class="fa-regular fa-newspaper fa-xl me-2" ></i>
-                                            <div class="wrap-toggle" style="margin-top:10px;">
-                                                <input type="checkbox" id="toggle2" class="offscreen" />
-                                                <label for="toggle2" class="switch"></label>
-                                            </div>
+                                            <i class="fa-solid fa-xmark fa-xl me-2"></i> 
                                             </div>
                                     </td>
                                 </tr>
@@ -120,10 +131,7 @@
                                         <div class="centered-container">
                                             <i class="fa-regular fa-eye fa-xl me-2"></i>
                                             <i class="fa-regular fa-newspaper fa-xl me-2" ></i>
-                                            <div class="wrap-toggle" style="margin-top:10px;">
-                                                <input type="checkbox" id="toggle3" class="offscreen" />
-                                                <label for="toggle3" class="switch"></label>
-                                            </div>
+                                            <i class="fa-solid fa-xmark fa-xl me-2"></i> 
                                             </div>
                                     </td>
                                 </tr>
@@ -137,10 +145,7 @@
                                         <div class="centered-container">
                                             <i class="fa-regular fa-eye fa-xl me-2"></i>
                                             <i class="fa-regular fa-newspaper fa-xl me-2" ></i>
-                                            <div class="wrap-toggle" style="margin-top:10px;">
-                                                <input type="checkbox" id="toggle3" class="offscreen" />
-                                                <label for="toggle3" class="switch"></label>
-                                            </div>
+                                           <i class="fa-solid fa-xmark fa-xl me-2"></i> 
                                             </div>
                                     </td>
                                 </tr>
@@ -175,18 +180,6 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="footer-buttons mt-1">
-                                <!-- Agregado margen top (mt-3) para separar los botones de la tabla -->
-                                <a href="formuVenta" type="button" name="Cancelar"
-                                    class="btn btn-dark previous action-button-previous float-end me-2"
-                                    value="Previous">
-                                    Crear Venta
-                                </a>
-                                <button type="submit" name="Guardar"
-                                    class="btn btn-primary next action-button float-end" value="Next">
-                                    Informes
-                                </button>
-                            </div>
                 </div>
             </div>
         </div>

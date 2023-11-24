@@ -185,10 +185,6 @@ app.get('/roles', (req, res)=>{
     res.render('roles')
 })
 
-app.get('/CrearRol', (req, res)=>{
-    res.render('CrearRol')
-})
-
 //PRUEBAS TABLAS
 
 
