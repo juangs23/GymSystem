@@ -117,10 +117,28 @@ formularioRegistro.addEventListener('submit', (e) =>{
         })
 
     } else {
-        document.getElementById('formularioRegistro__mensaje').classList.add('formularioRegistro__mensaje-activo')
-        setTimeout(() =>{
-            document.getElementById('formularioRegistro__mensaje').classList.remove('formularioRegistro__mensaje-activo')
-        }, 3000)
+        errorCondiciones.textContent = '';
+    }
+});
+
+const form = document.getElementById('registroForm');
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    // Resto del código de validación...
+
+    const errorElements = document.querySelectorAll('.error-message');
+    const hasErrors = Array.from(errorElements).some((errorElement) => errorElement.textContent !== '');
+
+    if (!checkbox.checked || hasErrors) {
+        // Validación del checkbox al momento de enviar el formulario
+        if (!checkbox.checked) {
+            errorCondiciones.textContent = 'Debe aceptar las condiciones para continuar';
+        }
+        return; // No envía el formulario si hay errores
     }
 
-})
+    alert('Formulario válido. Redirigiendo al login...');
+    // Resto del código para redirigir al usuario...
+});
