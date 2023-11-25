@@ -179,6 +179,11 @@ app.get('/CrearRol', (req, res)=>{
     res.render('CrearRol')
 })
 
+//PRUEBAS TABLAS
+
+
+//FIN PRUEBA
+
 // FIN ROLES
 
 // Inicio Ventas *YONIER*
@@ -197,6 +202,9 @@ app.get('/editarCliente', (req, res)=>{
 })
 app.get('/formularioBeneficiario', (req, res)=>{
     res.render('formularioBeneficiario')
+})
+app.get('/detallePedido', (req, res)=>{
+    res.render('detallePedido')
 })
 app.get('/formularioPedido', (req, res)=>{
     res.render('formularioPedido')

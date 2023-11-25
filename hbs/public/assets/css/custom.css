@@ -485,6 +485,7 @@ hr {
   .mobile-offcanvas .container, .mobile-offcanvas .container-fluid {
     display: block;
   }
+
 }
 @media (min-width: 1200px) {
   .bd-aside.card.iq-document-card, .bd-cheatsheet {
