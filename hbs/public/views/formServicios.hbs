@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Pedido</title>
+    {{> header}}
+</head>
+<body class="  ">
+        <!-- Inicio del cargar -->
+    <div id="loading">
+      <div class="loader simple-loader">
+          <div class="loader-body">
+          </div>
+      </div>    </div>
+    <!-- Fin cargar -->
+
+    <!-- Inicio Barra lateral -->
+
+        {{> sidebar}}    
+ 
+    <!-- Fin Barra lateral -->
+
+
+    <!-- Inicio Barra superior -->
+        {{> topbar}}
+    <!-- Fin Barra superior -->
+
+              
+    <!-- Inicio contenido -->      
+        <div class="container-fluid content-inner">
+         <div class="row">                
+            <div class="col-sm-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Agregar servicios</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form id="Formulariopedido">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Nombre servicio:</label>
+                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="Nombre membresia" oninput="validateNombre(this)" />
+                                        <span class="error-message" id="nombre-error"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="tipoDocumento">Instructor</label>
+                                        <select id="tipoDocumento" name="tipoDocumento">
+                                            <option value="CedulaCiudadania">Weimar </option>
+                                            <option value="CedulaExtranjeria">Sara </option>
+                                        </select>
+                                        <span class="error-message" id="tipoDocumento-error"></span>
+                                    </div>
+                                </div>
+                                
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="tipoDocumento">Frecuencia</label>
+                                        <select id="tipoDocumento" name="tipoDocumento">
+                                            <option value="CedulaCiudadania">Mensual</option>
+                                            <option value="CedulaExtranjeria">Anuela</option>
+                                        </select>
+                                        <span class="error-message" id="tipoDocumento-error"></span>
+                                    </div>
+                                </div>
+                                 
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Cantidad</label>
+                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="Dias" oninput="validateNombre(this)" />
+                                        <span class="error-message" id="nombre-error"></span>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Fecha inicio</label>
+                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="00/00/0000" oninput="validateNombre(this)" />
+                                        <span class="error-message" id="nombre-error"></span>
+                                    </div>
+                                    </div>
+                                    
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Fecha fin</label>
+                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="00/00/0000" oninput="validateNombre(this)" />
+                                        <span class="error-message" id="nombre-error"></span>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Precio</label>
+                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="00,0" oninput="validateNombre(this)" />
+                                        <span class="error-message" id="nombre-error"></span>
+                                    </div>
+                                    </div>
+                                 
+                                 
+                                
+                                
+                                
+                            </div>
+                            <a href="membresiasAdmin.hbs"><button type="submit" name="Guardar" class="btn btn-primary next action-button float-end" value="Next" >Guardar</button></a>
+                            <a href="membresiasAdmin.hbs"><button type="button" name="Cancelar" class="btn btn-dark previous action-button-previous float-end me-1" value="Previous" >Cancelar</button></a>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    </div>
+    <!-- Fin contenido --> 
+
+    <!-- Footer Section Start -->
+    <footer class="footer">
+        {{> copyright}}
+    </footer>
+    <!-- Footer Section End -->
+
+    {{> footer}}
+</body>
+</html>

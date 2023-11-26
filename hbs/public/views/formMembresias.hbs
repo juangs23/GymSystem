@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Pedido</title>
+    {{> header}}
+</head>
+<body class="  ">
+        <!-- Inicio del cargar -->
+    <div id="loading">
+      <div class="loader simple-loader">
+          <div class="loader-body">
+          </div>
+      </div>    </div>
+    <!-- Fin cargar -->
+
+    <!-- Inicio Barra lateral -->
+
+        {{> sidebar}}    
+ 
+    <!-- Fin Barra lateral -->
+
+
+    <!-- Inicio Barra superior -->
+        {{> topbar}}
+    <!-- Fin Barra superior -->
+
+              
+    <!-- Inicio contenido -->      
+        <div class="container-fluid content-inner">
+         <div class="row">                
+            <div class="col-sm-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Agregar membresia</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form id="FormularioMembresias">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Nombre membresia:</label>
+                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="Nombre membresia" oninput="validateNombre(this)" />
+                                        <span class="error-message" id="nombre-error"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="tipoDocumento">Servicios</label>
+                                        <select id="tipoDocumento" name="tipoDocumento">
+                                            <option value="CedulaCiudadania">Gym</option>
+                                            <option value="CedulaExtranjeria">Rumba</option>
+                                        </select>
+                                        <span class="error-message" id="tipoDocumento-error"></span>
+                                    </div>
+                                </div>
+                                
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="tipoDocumento">Frecuencia</label>
+                                        <select id="tipoDocumento" name="tipoDocumento">
+                                            <option value="CedulaCiudadania">Mensual</option>
+                                            <option value="CedulaExtranjeria">Anuela</option>
+                                        </select>
+                                        <span class="error-message" id="tipoDocumento-error"></span>
+                                    </div>
+                                </div>
+                                 
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Cantidad</label>
+                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="Dias" oninput="validateNombre(this)" />
+                                        <span class="error-message" id="nombre-error"></span>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Fecha inicio</label>
+                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="00/00/0000" oninput="validateNombre(this)" />
+                                        <span class="error-message" id="nombre-error"></span>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">costo total</label>
+                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="00,0" oninput="validateNombre(this)" />
+                                        <span class="error-message" id="nombre-error"></span>
+                                    </div>
+                                    </div>
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Fecha fin</label>
+                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="00/00/0000" oninput="validateNombre(this)" />
+                                        <span class="error-message" id="nombre-error"></span>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Precio venta</label>
+                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="00,0" oninput="validateNombre(this)" />
+                                        <span class="error-message" id="nombre-error"></span>
+                                    </div>
+                                    </div>
+                                 
+                                 
+                                
+                                
+                                
+                            </div>
+                            <a href="membresiasAdmin.hbs"><button type="submit" name="Guardar" class="btn btn-primary next action-button float-end" value="Next" >Guardar</button></a>
+                            <a href="membresiasAdmin.hbs"><button type="button" name="Cancelar" class="btn btn-dark previous action-button-previous float-end me-1" value="Previous" >Cancelar</button></a>
+                        </form>
+                        <div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                        <thead>
+                                        <tr><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 257.578px;">Nombre servicio</th>
+
+
+                                                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 104.297px;">Instructor</th>
+
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 104.297px;">Precio</th>
+                                                                                                                                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 110.688px;">Estado</th>
+
+
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 93.0156px;">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="odd">
+                                            <td class="sorting_1">Aerobicos</td>
+                                            <td>Alexander</td>
+                                            <td>40.000</td>
+                                                                                        <td>Activo</td>
+
+                                           <td style="text-align: center;">
+        <div class="centered-container">
+            <a href="detalleServicio"><i class="fa-regular fa-eye fa-xl me-2"></i></a>
+            <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
+                                 
+<label for="toggle" class="switch"></label>
+                                             <i class="fa-solid fa-trash fa-xl me-2" data-bs-toggle="modal" data-bs-target="#editarpedidoModal"></i>
+
+        </div>
+    </td>
+                                           
+                                        </tr>
+                                        
+                                           
+                                        <tr class="even">
+    <td class="sorting_1">Yoga</td>
+    <td>Emily</td>
+    <td>35.000</td>
+                                                <td>Activo</td>
+
+    <td style="text-align: center;">
+        <div class="centered-container">
+            <a href="detalleServicio"><i class="fa-regular fa-eye fa-xl me-2"></i></a>
+            <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
+                                 
+<label for="toggle" class="switch"></label>
+                                             <i class="fa-solid fa-trash fa-xl me-2" data-bs-toggle="modal" data-bs-target="#editarpedidoModal"></i>
+
+        </div>
+    </td>
+</tr>
+<tr class="odd">
+    <td class="sorting_1">Pilates</td>
+    <td>Sophia</td>
+    <td>50.000</td>
+                                                <td>Activo</td>
+
+    <td style="text-align: center;">
+        <div class="centered-container">
+            <a href="detalleServicio"><i class="fa-regular fa-eye fa-xl me-2"></i></a>
+            <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
+                                 
+<label for="toggle" class="switch"></label>
+                                             <i class="fa-solid fa-trash fa-xl me-2" data-bs-toggle="modal" data-bs-target="#editarpedidoModal"></i>
+
+        </div>
+    </td>
+</tr>
+<tr class="even">
+    <td class="sorting_1">Zumba</td>
+    <td>Nathan</td>
+    <td>45.000</td>
+                                                <td>Activo</td>
+
+    <td style="text-align: center;">
+        <div class="centered-container">
+            <a href="detalleServicio"><i class="fa-regular fa-eye fa-xl me-2"></i></a>
+            <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
+                                 
+<label for="toggle" class="switch"></label>
+                                             <i class="fa-solid fa-trash fa-xl me-2" data-bs-toggle="modal" data-bs-target="#editarpedidoModal"></i>
+
+        </div>
+    </td>
+</tr>
+
+                                        </tbody>
+                                </table>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    </div>
+    <!-- Fin contenido --> 
+
+    <!-- Footer Section Start -->
+    <footer class="footer">
+        {{> copyright}}
+    </footer>
+    <!-- Footer Section End -->
+
+    {{> footer}}
+</body>
+</html>

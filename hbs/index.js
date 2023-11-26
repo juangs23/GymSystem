@@ -142,11 +142,11 @@ app.get('/membresiasEntrenador', (req, res)=>{
 app.get('/membresiasCliente', (req, res)=>{
     res.render('membresiasCliente')
 })
-app.get('/formularioMembresias', (req, res)=>{
-    res.render('formularioMembresias')
+app.get('/formMembresias', (req, res)=>{
+    res.render('formMembresias')
 })
-app.get('/formularioServicios', (req, res)=>{
-    res.render('formularioServicios')
+app.get('/formServicios', (req, res)=>{
+    res.render('formServicios')
 })
 
 

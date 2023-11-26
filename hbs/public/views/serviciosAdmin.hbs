@@ -29,110 +29,180 @@
               
     <!-- Inicio contenido -->      
 
-<div class="container-fluid content-inner">
-    <br>
-    <div class="position-relative">
-        <button type="submit" class="btn btn-danger position-absolute top-0 end-0 me-5">Agregar +</button>
-    </div>
-    <br>
-    <div class="container-fluid content-inner">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between">
-                        <div class="header-title">
-                            <h4 class="card-title">Servicios</h4>
+ <div class="container-fluid content-inner">
+
+        <div class="container-fluid">
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h3 class="m-0 font-weight-bold text-primary">Gestión servicios</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="dataTables_length" id="dataTable_length">
+                                                    </div>
+                                                      <div>
+                                                        <a href="formServicios"><button type="submit" class="btn btn-danger position-absolute top-0 end-0 me-5">Agregar servicio +</button></a>
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-sm-16 col-md-8"><div id="dataTable_filter" class="dataTables_filter">
+                                                        <label>Buscar:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                        <div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                        <thead>
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 257.578px;">Nombre servicio</th>
+
+
+                                                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 104.297px;">Instructor</th>
+
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 104.297px;">Precio</th>
+                                                                                                                                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 110.688px;">Estado</th>
+
+
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 93.0156px;">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="odd">
+                                            <td class="sorting_1">Aerobicos</td>
+                                            <td>Alexander</td>
+                                            <td>40.000</td>
+                                                                                        <td>Activo</td>
+
+                                           <td style="text-align: center;">
+        <div class="centered-container">
+            <a href="detalleServicio"><i class="fa-regular fa-eye fa-xl me-2"></i></a>
+            <i class="fa-regular fa-pen-to-square fa-xl me-2" ></i>
+                                 
+<label for="toggle" class="switch"></label>
+                                             <i class="fa-solid fa-trash fa-xl me-2" data-bs-toggle="modal" data-bs-target="#editarpedidoModal"></i>
+
+        </div>
+    </td>
+                                           
+                                        </tr>
+                                        
+                                           
+                                        <tr class="even">
+    <td class="sorting_1">Yoga</td>
+    <td>Emily</td>
+    <td>35.000</td>
+                                                <td>Activo</td>
+
+    <td style="text-align: center;">
+        <div class="centered-container">
+            <a href="detalleServicio"><i class="fa-regular fa-eye fa-xl me-2"></i></a>
+            <i class="fa-regular fa-pen-to-square fa-xl me-2" ></i>
+                                 
+<label for="toggle" class="switch"></label>
+                                             <i class="fa-solid fa-trash fa-xl me-2" data-bs-toggle="modal" data-bs-target="#editarpedidoModal"></i>
+
+        </div>
+    </td>
+</tr>
+<tr class="odd">
+    <td class="sorting_1">Pilates</td>
+    <td>Sophia</td>
+    <td>50.000</td>
+                                                <td>Activo</td>
+
+    <td style="text-align: center;">
+        <div class="centered-container">
+            <a href="detalleServicio"><i class="fa-regular fa-eye fa-xl me-2"></i></a>
+            <i class="fa-regular fa-pen-to-square fa-xl me-2" ></i>
+                                 
+<label for="toggle" class="switch"></label>
+                                             <i class="fa-solid fa-trash fa-xl me-2" data-bs-toggle="modal" data-bs-target="#editarpedidoModal"></i>
+
+        </div>
+    </td>
+</tr>
+<tr class="even">
+    <td class="sorting_1">Zumba</td>
+    <td>Nathan</td>
+    <td>45.000</td>
+                                                <td>Activo</td>
+
+    <td style="text-align: center;">
+        <div class="centered-container">
+            <a href="detalleServicio"><i class="fa-regular fa-eye fa-xl me-2"></i></a>
+            <i class="fa-regular fa-pen-to-square fa-xl me-2" ></i>
+                                 
+<label for="toggle" class="switch"></label>
+                                             <i class="fa-solid fa-trash fa-xl me-2" data-bs-toggle="modal" data-bs-target="#editarpedidoModal"></i>
+
+        </div>
+    </td>
+</tr>
+
+                                        </tbody>
+                                </table>
+                                </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-sm-30 col-md-40">
+                                            <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                                                <ul class="pagination">
+                                                    <li class="paginate_button page-item previous disabled" id="dataTable_previous">
+                                                        <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                                                        </li>
+                                                        <li class="paginate_button page-item active">
+                                                            <a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                                                            </li>
+                                                            <li class="paginate_button page-item ">
+                                                                <a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a>
+                                                                </li>
+                                                                <li class="paginate_button page-item ">
+                                                                    <a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a>
+                                                                    </li>
+                                                                    <li class="paginate_button page-item next" id="dataTable_next">
+                                                                        <a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">Next</a>
+                                                                        </li>
+                                                                        </ul>
+                                                                        </div>
+                                                                        </div>
+                                                                        </div>
+                                                                        </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-body p-0">
-                        <div class="table-responsive mt-4">
-                            <table id="basic-table" class="table table-striped mb-0" role="grid">
-                                <thead>
-                                    <tr>
-                                        <th>ID Servicio</th>
-                                        <th>Nombre Servicio</th>
-                                        <th>Estado</th>
-                                        <th>Precio</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Registro 1 -->
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Clases de Spinning</td>
-                                        
-                                           <td>Activo</td>
-                                        
-                                        <td>$15</td>
-                                                                                <td><div class="d-flex align-items-center mb-4">
-                                 <i class="fa-regular fa-pen-to-square fa-xl me-2" ></i>
-                                 <i class="fa-solid fa-toggle-on fa-xl" ></i>
-                                 <i class="fa-solid fa-trash fa-xl me-2"></i>
-                                
-                                 
 
-</td>
-                                    </tr>
-
-                                    <!-- Registro 2 -->
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Entrenamiento Personalizado</td>
-                                        
-<td><i class="fa-solid fa-toggle-on fa-xl" ></i></td>
-                                        
-                                        
-                                        <td>$50</td>
-  <td><div class="d-flex align-items-center mb-4">
-                                 <i class="fa-regular fa-pen-to-square fa-xl me-2" ></i>
-                                 <i class="fa-solid fa-toggle-on fa-xl" ></i>
-                                 <i class="fa-solid fa-trash fa-xl me-2"></i>
-                                
-                                    </tr>
-
-                                    <!-- Registro 3 -->
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Yoga Matutino</td>
-                                        <td><i class="fa-solid fa-toggle-on fa-xl" ></i></td>
-                                        <td>$20</td>
-                                         <td><div class="d-flex align-items-center mb-4">
-                                 <i class="fa-regular fa-pen-to-square fa-xl me-2" ></i>
-                                 
-                                 <i class="fa-regular fa-eye fa-xl me-2" ></i>
-                                 
-
-</td>
-                                    </tr>
-
-                                    <!-- Registro 4 -->
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Cardio Kickboxing</td>
-                                       <td><i class="fa-solid fa-toggle-on fa-xl" ></i></td>
-                                        <td>$25</td>
-                                                                             <td><div class="d-flex align-items-center mb-4">
-                                 <i class="fa-regular fa-pen-to-square fa-xl me-2" ></i>
-                                 
-                                 <i class="fa-regular fa-eye fa-xl me-2" ></i>
-                                 
-
-</td>
-                                    </tr>
-
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
+            </div>
+
+            <div class="modal fade" id="editarpedidoModal" tabindex="-1" aria-labelledby="editarpedidoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="m-0 font-weight-bold text-primary">Eliminar servicio</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               
+            <form action="">
+                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24">
+                <use xlink:href="#exclamation-triangle-fill" />
+                </svg>
+                <div>
+                ¿Seguro que deseas eliminar el servicio?
+                </div>
+                    </div>
+                    <button id="miBoton" type="submit" name="Guardar" class="btn btn-primary next action-button float-end" value="Next">Eliminar</button>
+                    <a href="serviciosAdmin"><button type="button" name="Cancelar" class="btn btn-dark previous action-button-previous float-end me-1" value="Previous">Cancelar</button></a>
+            </form>     
+        </div>
             </div>
         </div>
     </div>
+       </div>
+        </div> 
 </div>
-
-
 <!-- ... (código posterior) ... -->
 
     <!-- Fin contenido --> 

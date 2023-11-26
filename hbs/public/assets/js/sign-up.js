@@ -117,10 +117,7 @@ formularioRegistro.addEventListener('submit', (e) =>{
         })
 
     } else {
-        document.getElementById('formularioRegistro__mensaje').classList.add('formularioRegistro__mensaje-activo')
-        setTimeout(() =>{
-            document.getElementById('formularioRegistro__mensaje').classList.remove('formularioRegistro__mensaje-activo')
-        }, 3000)
+        errorElement.textContent = '';
     }
+});
 
-})
