@@ -36,29 +36,30 @@
         <div class="container-fluid">
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h3 class="m-0 font-weight-bold text-primary">Gestión Clientes</h3>
-                </div>
+                
                 <div class="card-body">
+                    <div class="card-header py-3">
+                    <h2 class="m-0 font-weight-bold text-primary">Gestión Clientes</h2>
+                    </div>
                     <div class="table-responsive">
                         <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="dataTables_length" id="dataTable_length">
-                                    </div>
-                                    <div>
-                                        <a href="formularioCliente"><button type="submit"
-                                                class="btn btn-danger position-absolute top-0 end-0 me-5">Agregar
-                                                cliente +</button></a>
-                                    </div>
-                                </div>
+                            <div class="card-header py-3 d-flex justify-content-between">
+                            <div class="d-flex">
                                 <div class="col-sm-16 col-md-8">
-                                    <div id="dataTable_filter" class="dataTables_filter">
-                                        <label>Buscar:<input type="search" class="form-control form-control-sm"
-                                                placeholder="" aria-controls="dataTable"></label>
-                                    </div>
+                                <div id="dataTable_filter" class="dataTables_filter">
+                                    <label>Buscar:<input type="search" class="form-control form-control-sm"
+                                            placeholder="" aria-controls="dataTable"></label>
                                 </div>
                             </div>
+                                                    </div>
+                            <div class="footer-buttons mt-1">
+                            <a href="formularioCliente" type="button" name="Cancelar"
+                                class="btn btn-danger  previous action-button-previous float-end me-2"
+                                value="Previous">
+                                Crear Cliente +
+                            </a>
+                        </div>
+                        </div>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <table class="table table-bordered dataTable" id="dataTable" width="100%"
@@ -85,10 +86,10 @@
                                                     style="width: 48.1719px;">Correo Electronico</th>
                                                 <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1" aria-label="Salary: activate to sort column ascending"
-                                                    style="width: 93.0156px;">Acciones</th>
+                                                    style="width: 93.0156px;">Estado</th>
                                                 <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1" aria-label="Salary: activate to sort column ascending"
-                                                    style="width: 93.0156px;">Estado</th>
+                                                    style="width: 93.0156px;">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -98,6 +99,7 @@
                                                 <td>Alexander Ospina</td>
                                                 <td>3135497455</td>
                                                 <td>alexander@gmail.com</td>
+                                                <td>ACTIVO</td>
                                                 <td style="text-align: center;">
                                                     <div class="centered-container">
                                                         <i class="fa-regular fa-pen-to-square fa-xl me-2"
@@ -105,11 +107,11 @@
                                                             data-bs-target="#editarClienteModal"></i>
                                                         <i class="fa-regular fa-eye fa-xl me-2"></i>
                                                         <div class="wrap-toggle" style="margin-top:10px;">
-                                                            <input type="checkbox" id="toggle" class="offscreen" />
-                                                            <label for="toggle3" class="switch"></label>
+                                                            <input type="checkbox" id="toggle1" class="offscreen" />
+                                                            <label for="toggle1" class="switch"></label>
                                                         </div>
                                                 </td>
-                                                <td>ACTIVO</td>
+                                                
                                             </tr>
                                             <tr class="even">
                                                 <td class="sorting_1">002</td>
@@ -117,6 +119,7 @@
                                                 <td>Johany Prado</td>
                                                 <td>3135465245</td>
                                                 <td>johany@gmail.com</td>
+                                                <td>ACTIVO</td>
                                                 <td style="text-align: center;">
                                                     <div class="centered-container">
                                                         <i class="fa-regular fa-pen-to-square fa-xl me-2"
@@ -124,11 +127,11 @@
                                                             data-bs-target="#editarClienteModal"></i>
                                                         <i class="fa-regular fa-eye fa-xl me-2"></i>
                                                         <div class="wrap-toggle" style="margin-top:10px;">
-                                                            <input type="checkbox" id="toggle3" class="offscreen" />
-                                                            <label for="toggle3" class="switch"></label>
+                                                            <input type="checkbox" id="toggle2" class="offscreen" />
+                                                            <label for="toggle2" class="switch"></label>
                                                         </div>
                                                 </td>
-                                                <td>ACTIVO</td>
+                                                
                                             </tr>
                                             <tr class="odd">
                                                 <td class="sorting_1">003</td>
@@ -136,6 +139,7 @@
                                                 <td>Pedro Restrepo</td>
                                                 <td>3128659475</td>
                                                 <td>pedro@gmail.com</td>
+                                                <td>ACTIVO</td>
                                                 <td style="text-align: center;">
                                                     <div class="centered-container">
                                                         <i class="fa-regular fa-pen-to-square fa-xl me-2"
@@ -147,7 +151,7 @@
                                                             <label for="toggle3" class="switch"></label>
                                                         </div>
                                                 </td>
-                                                <td>ACTIVO</td>
+                                                
                                             </tr>
                                             <tr class="even">
                                                 <td class="sorting_1">004</td>
@@ -155,6 +159,7 @@
                                                 <td>Alejandro Mazor</td>
                                                 <td>3145689523</td>
                                                 <td>alejandro@gmail.com</td>
+                                                <td>ACTIVO</td>
                                                 <td style="text-align: center;">
                                                     <div class="centered-container">
                                                         <i class="fa-regular fa-pen-to-square fa-xl me-2"
@@ -162,11 +167,11 @@
                                                             data-bs-target="#editarClienteModal"></i>
                                                         <i class="fa-regular fa-eye fa-xl me-2"></i>
                                                         <div class="wrap-toggle" style="margin-top:10px;">
-                                                            <input type="checkbox" id="toggle3" class="offscreen" />
-                                                            <label for="toggle3" class="switch"></label>
+                                                            <input type="checkbox" id="toggle4" class="offscreen" />
+                                                            <label for="toggle4" class="switch"></label>
                                                         </div>
                                                 </td>
-                                                <td>ACTIVO</td>
+                                                
                                             </tr>
                                         </tbody>
                                     </table>
@@ -206,8 +211,10 @@
                 </div>
             </div>
 
-<<<<<<< HEAD
-=======
+            
+                                                <!-- MODAL -->
+
+
             <div class="modal fade" id="editarClienteModal" tabindex="-1" aria-labelledby="editarClienteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -230,10 +237,12 @@
 
                     <br>
 
-                    <button id="miBoton" type="submit" name="Guardar" class="btn btn-primary next action-button float-end" value="Next">Guardar</button>
-                    <a href="clientes"><button type="button" name="Cancelar" class="btn btn-dark previous action-button-previous float-end me-1" value="Previous">Cancelar</button></a>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark  previous action-button-previous float-end me-2" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" value="submith" id="btn-enviar" class="btn btn-primary">Guardar</button>
+                    </div>
                 </form>
->>>>>>> d014de50ff764c3751d4e37ba5e76be3df2c9d06
+
         </div>
     </div>
 
@@ -296,6 +305,11 @@
     </div>
     </div>
     </div>
+     </div>
+      </div>
+     
+    
+    
 
     <!-- FIN DEL CONTENIDO -->
 
