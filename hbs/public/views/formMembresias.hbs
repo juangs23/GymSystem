@@ -43,14 +43,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Nombre membresia:</label>
-                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="Nombre membresia" oninput="validateNombre(this)" />
+                                        <input type="text" class="form-control" name="Nombremembresia" placeholder="Nombre membresia" oninput="validateNombre(this)" />
                                         <span class="error-message" id="nombre-error"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="tipoDocumento">Servicios</label>
-                                        <select id="tipoDocumento" name="tipoDocumento">
+                                        <select id="tipoDocumento" name="servicioagg">
                                             <option value="CedulaCiudadania">Gym</option>
                                             <option value="CedulaExtranjeria">Rumba</option>
                                         </select>
@@ -61,7 +61,7 @@
                                  <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="tipoDocumento">Frecuencia</label>
-                                        <select id="tipoDocumento" name="tipoDocumento">
+                                        <select id="tipoDocumento" name="Frecuencia">
                                             <option value="CedulaCiudadania">Mensual</option>
                                             <option value="CedulaExtranjeria">Anuela</option>
                                         </select>
@@ -72,35 +72,35 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Cantidad</label>
-                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="Dias" oninput="validateNombre(this)" />
+                                        <input type="text" class="form-control" name="cantidad" placeholder="Dias" oninput="validateNombre(this)" />
                                         <span class="error-message" id="nombre-error"></span>
                                     </div>
                                     </div>
                                     <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Fecha inicio</label>
-                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="00/00/0000" oninput="validateNombre(this)" />
+                                        <input type="text" class="form-control" name="fechaInicio" placeholder="00/00/0000" oninput="validateNombre(this)" />
                                         <span class="error-message" id="nombre-error"></span>
                                     </div>
                                     </div>
                                     <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">costo total</label>
-                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="00,0" oninput="validateNombre(this)" />
+                                        <input type="text" class="form-control" name="costoTotal" placeholder="00,0" oninput="validateNombre(this)" />
                                         <span class="error-message" id="nombre-error"></span>
                                     </div>
                                     </div>
                                  <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Fecha fin</label>
-                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="00/00/0000" oninput="validateNombre(this)" />
+                                        <input type="text" class="form-control" name="fechaFin" placeholder="00/00/0000" oninput="validateNombre(this)" />
                                         <span class="error-message" id="nombre-error"></span>
                                     </div>
                                     </div>
                                     <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Precio venta</label>
-                                        <input type="text" class="form-control" name="Nombrepedido" placeholder="00,0" oninput="validateNombre(this)" />
+                                        <input type="text" class="form-control" name="precioVenta" placeholder="00,0" oninput="validateNombre(this)" />
                                         <span class="error-message" id="nombre-error"></span>
                                     </div>
                                     </div>
@@ -216,6 +216,7 @@
     <!-- Footer Section Start -->
     <footer class="footer">
         {{> copyright}}
+        
     </footer>
     <!-- Footer Section End -->
 
