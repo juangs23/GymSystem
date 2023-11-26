@@ -12,12 +12,11 @@
       <div class="loader simple-loader">
           <div class="loader-body">
           </div>
-      </div>    </div
+      </div>    </div>
     <!-- Fin cargar -->
 
     <!-- Inicio Barra lateral -->
-
-        {{> sidebar}}    
+        {{> sidebar}} 
  
     <!-- Fin Barra lateral -->
 
@@ -27,13 +26,13 @@
     <!-- Fin Barra superior -->
 
     <!-- Inicio contenido -->
-<div class="container-fluid content-inner">
+  <div class="container-fluid content-inner">
         <div class="container-fluid">
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
+             <div class="card-header py-3 display-6">
                             <h3 class="m-0 font-weight-bold text-primary">Rutinas</h3>
                         </div>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
                         <div class="card-body">
                             <div class="table-responsive">
                                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
@@ -53,13 +52,25 @@
                                                                <a href="nueva-rutina" class="btn btn-danger">Crear Rutina</a>
                                                          </div>
                                                    </div> --}}
-                                                      <div class="col-sm-12 col-md-6 "style="aling-center">
+                                                      {{!-- <div class="col-sm-12 col-md-6 "style="aling-center">
                                                          <div id="dataTable_filter" class="dataTables_filter">
                                                                <label>Buscar:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
                                                                <a href="nueva-rutina" class="btn btn-danger">Crear Rutina</a>
                                                          </div>
-                                                      </div>
+                                                      </div> --}}
                                                    </div>
+                                                    <div class="footer-buttons">
+                                                            <!-- Agregado margen top (mt-3) para separar los botones de la tabla -->
+                                                            <a href="nueva-rutina" type="button" name="Cancelar"
+                                                                class="btn btn-dark previous action-button-previous float-end me-2"
+                                                                value="Previous">
+                                                                Crear Rutina
+                                                            </a>
+                                                            {{!-- <button type="submit" name="Guardar"
+                                                                class="btn btn-primary btn-sm next action-button float-end" value="Next">
+                                                                Informes
+                                                            </button> --}}
+                                                    </div>
                                                         <div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                                     <thead>
                                         <tr role="row"><th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 156.25px;">Nombre Rutina</th>
@@ -178,6 +189,7 @@
                     </div>
 
                 </div>
+<<<<<<< HEAD
             </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -233,6 +245,9 @@
 
 =======
 >>>>>>> da02b745cbac01ef7a305d847c3de9ab385313d3
+=======
+    </div>
+>>>>>>> 966a5d01d6ef359f6b56b5f8d35380ff6ad939b1
 
 <!-- Modal eliminar -->
 <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
