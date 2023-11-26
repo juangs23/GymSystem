@@ -68,45 +68,16 @@ inputs.forEach((input)=>{
     input.addEventListener('blur',validarformularioProductos);
     });
 
-    formularioRegistro.addEventListener('submit', (e) =>{
-        e.preventDefault();
-    
-        const terminos = document.getElementById('terminos')
-        if (campos.nombres && campos.apellidos && campos.documento && campos.correo && campos.edad && campos.telefono && 
-            campos.direccion && campos.password && terminos.checked) {
-            formularioRegistro.reset()
-    
-            document.getElementById('formularioRegistro__mensaje-exito').classList.add('formularioRegistro__mensaje-exito-activo');
-            setTimeout(() =>{
-                document.getElementById('formularioRegistro__mensaje-exito').classList.remove('formularioRegistro__mensaje-exito-activo');
-            }, 3000)
-            document.querySelectorAll('.formularioRegistro__grupo-correcto').forEach((icono) => {
-                icono.classList.remove('formularioRegistro__grupo-correcto')
-            })
-    
-        } else {
-            errorCondiciones.textContent = '';
-        }
-    });
-    
-    const form = document.getElementById('registroForm');
-    
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-    
-        // Resto del código de validación...
-    
-        const errorElements = document.querySelectorAll('.error-message');
-        const hasErrors = Array.from(errorElements).some((errorElement) => errorElement.textContent !== '');
-    
-        if (!checkbox.checked || hasErrors) {
-            // Validación del checkbox al momento de enviar el formulario
-            if (!checkbox.checked) {
-                errorCondiciones.textContent = 'Debe aceptar las condiciones para continuar';
-            }
-            return; // No envía el formulario si hay errores
-        }
-    
-        alert('Formulario válido. Redirigiendo al login...');
-        // Resto del código para redirigir al usuario...
-    });
+formularioProductos.addEventListener('submit',(e) => {
+    e.preventDefault();
+    if(campos.Nombreproducto && campos.Precioproducto && campos.Productosingresar && campos.Ivaproducto){
+        formularioRegistro.reset()
+
+        document.getElementById('formularioRegistro__mensaje-exito').classList.add('formularioRegistro__mensaje-exito-activo');
+        alert("good")
+    } else {
+        alert("malo")
+        errorCondiciones.textContent = '';
+
+    }
+});
