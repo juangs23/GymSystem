@@ -72,7 +72,23 @@ formularioproductos.addEventListener('submit',(e) => {
     e.preventDefault();
     if(campos.Nombreproducto && campos.Precioproducto && campos.Productosingresar && campos.Ivaproducto){
         formularioproductos.reset()
-        alert("good")
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+            }
+          });
         document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
         setTimeout(() => {
             document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
@@ -89,3 +105,4 @@ formularioproductos.addEventListener('submit',(e) => {
 
     }
 });
+
