@@ -145,26 +145,21 @@ app.get('/membresiasCliente', (req, res)=>{
 //Rutinas
 
 app.get('/rutinas', (req, res)=>{
-    res.render('rutinas', { datos: formArray});
+    res.render('rutinas');
 });
 
 app.get('/nueva-rutina', (req, res)=>{
     res.render('formRutina')
 });
 
-app.post('/guardar-rutinas', (req, res)=>{
-    const { nombreRutina, dia, exercise1, repeticion } = req.body;
-
-    formArray.push ({ nombreRutina, dia, exercise1, repeticion });
-
-    res.redirect('/rutinas');
+app.get('/agenda-servicios', (req, res) => {
+    res.render('calendario')
 });
 
 //
 
 
 
-//FIN WEIMAR
 
 // FIN SERVICIOS
 
