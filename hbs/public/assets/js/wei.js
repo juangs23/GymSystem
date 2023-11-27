@@ -1,1 +1,1 @@
-sss
+const formularioRegistro = document.getElementById('formularioRegistro')
