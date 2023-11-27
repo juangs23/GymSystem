@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categoria Productos</title>
     {{> header}}
-    <script src="../assets/js/compras.js"></script>
+    <link rel="stylesheet" href="../assets/css/Productos.css" />
 </head>
 <body class="  ">
         <!-- Inicio del cargar -->
@@ -45,16 +45,27 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="formularioCategoria">
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Nombre categoria:</label>
-            <input type="text" class="form-control" id="nombrecategoria">
-          </div>
+                            <form action="" class="formularioCategoria" id="formularioCategoria" >
+                                    <div class="col-md-6"class="formulario__grupo" id="grupo__Nombrecategoria" >
+                                        <div class="form-group" id="grupo__Nombrecategoria">
+                                            <label class="form-label" >Nombre Cateogoria Producto*</label>
+                                            <div class="formulario__grupo-input">
+                                            <input type="text" class="form-control " name="Nombrecategoria" placeholder="Nombre Producto" id="Nombrecategoria" />
+                                            <i  class="formulario__validacion-estado fas fa-times-circle"></i>
+                                            </div>
+                                            <p class="formulario__input-error">ojo</p>
+                                        </div>
+                                    </div>  
+                                    <div class="formulario__mensaje" id="formulario__mensaje">
+                                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                                    </div>
+                                        <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                                    </div>
 
-      </div>
+      
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" value="submith" id="btn-enviar1" class="btn btn-primary">Agregar categoria</button>
+        <button type="button" class="btn btn-secondary" >Cancelar</button>
+        <button type="submit"  class="btn btn-primary next action-button float-end" >Agregar Categoria</button>
       </div>
       </form>
     </div>
@@ -77,12 +88,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="formularioCategoria">
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Nombre categoria:</label>
-            <input type="text" class="form-control" id="nombrecategoria">
+        <form action="" class="formularioCategoria" id="formularioCategoria">
+          <div class="mb-3" class="form-group" id="grupo__Categoria">
+            <label for="recipient-name" class="col-form-label" class="form-label">Nombre categoria:</label>
+            <div class="formulario__grupo-input">
+            <input type="text" class="form-control" id="categoria" placeholder="Nombre categoria" id="categoria">
+            <i  class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">ojo</p>
           </div>
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -254,7 +268,7 @@
         {{> copyright}}
     </footer>
    <!-- Footer Section End -->
-
+   <script src="../assets/js/cateogriaproductos.js"></script>
     {{> footer}}
 </body>
 </html>

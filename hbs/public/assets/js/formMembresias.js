@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('FormularioMembresias');
 
     const expresiones = {
-        nombres: /^[a-zA-ZÀ-ÿ\s]{1,20}$/,
-        servicioagg: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+        Nombremembresia: /^[a-zA-ZÀ-ÿ\s]{1,50}$/,
+        servicioagg: /^[a-zA-ZÀ-ÿ\s]{1,50}$/,
+        Frecuencia: /^[a-zA-ZÀ-ÿ\s]{1,50}$/,
         cantidad: /^[0-9]+$/,
         fechaInicio: /^\d{2}\/\d{2}\/\d{4}$/,
         costoTotal: /^\d+(\.\d{1,2})?$/,
@@ -35,31 +36,40 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function validarFormulario(event) {
-        switch (event.target.name) {
-            case 'Nombremembresia':
-                validarCampo(expresiones.nombres, event.target, 'Nombremembresia');
-                break;
-            case 'servicioagg':
-                validarCampo(expresiones.servicioagg, event.target, 'servicioagg');
-                break;
-            case 'Frecuencia':
-                campos['Frecuencia'] = true; // Se puede personalizar según tus necesidades
-                break;
-            case 'cantidad':
-                validarCampo(expresiones.cantidad, event.target, 'cantidad');
-                break;
-            case 'fechaInicio':
-                validarCampo(expresiones.fechaInicio, event.target, 'fechaInicio');
-                break;
-            case 'costoTotal':
-                validarCampo(expresiones.costoTotal, event.target, 'costoTotal');
-                break;
-            case 'fechaFin':
-                validarCampo(expresiones.fechaFin, event.target, 'fechaFin');
-                break;
-            case 'precioVenta':
-                validarCampo(expresiones.precioVenta, event.target, 'precioVenta');
-                break;
+        if (event.target.tagName === 'INPUT' || event.target.tagName === 'SELECT') {
+            switch (event.target.name) {
+                case 'Nombremembresia':
+                    validarCampo(expresiones.Nombremembresia, event.target, 'Nombremembresia');
+                    break;
+                case 'servicioagg':
+                    validarCampo(expresiones.servicioagg, event.target, 'servicioagg');
+                    break;
+                case 'Frecuencia':
+                    validarCampo(expresiones.Frecuencia, event.target, 'Frecuencia');
+                    break;
+                case 'cantidad':
+                    validarCampo(expresiones.cantidad, event.target, 'cantidad');
+                    break;
+                case 'fechaInicio':
+                    validarCampo(expresiones.fechaInicio, event.target, 'fechaInicio');
+                    break;
+                case 'costoTotal':
+                    validarCampo(expresiones.costoTotal, event.target, 'costoTotal');
+                    break;
+                case 'fechaFin':
+                    validarCampo(expresiones.fechaFin, event.target, 'fechaFin');
+                    break;
+                case 'precioVenta':
+                    validarCampo(expresiones.precioVenta, event.target, 'precioVenta');
+                    break;
+            }
+        }
+
+        const isFormValid = Object.values(campos).every((campo) => campo);
+
+        if (isFormValid) {
+            // Puedes agregar lógica adicional cuando el formulario es válido en tiempo real
+            console.log('Formulario válido en tiempo real');
         }
     }
 

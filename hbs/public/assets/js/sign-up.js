@@ -117,7 +117,35 @@ formularioRegistro.addEventListener('submit', (e) =>{
         })
 
     } else {
+<<<<<<< HEAD
         errorElement.textContent = '';
     }
 });
 
+=======
+        errorCondiciones.textContent = '';
+    }
+});
+
+const form = document.getElementById('registroForm');
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    // Resto del código de validación...
+
+    const errorElements = document.querySelectorAll('.error-message');
+    const hasErrors = Array.from(errorElements).some((errorElement) => errorElement.textContent !== '');
+
+    if (!checkbox.checked || hasErrors) {
+        // Validación del checkbox al momento de enviar el formulario
+        if (!checkbox.checked) {
+            errorCondiciones.textContent = 'Debe aceptar las condiciones para continuar';
+        }
+        return; // No envía el formulario si hay errores
+    }
+
+    alert('Formulario válido. Redirigiendo al login...');
+    // Resto del código para redirigir al usuario...
+});
+>>>>>>> 7b14635cb78a0ad208921d7b766c149040d7b27d

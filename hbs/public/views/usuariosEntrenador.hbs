@@ -180,9 +180,9 @@
    
                                         <td>Actividad</td>
 
-    <<td>
+    <td>
                               <div class="d-flex align-items-center mb-4">
-                                 <i class="fa-regular fa-pen-to-square fa-xl me-2" ></i>
+<i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
                                  <i class="fa-solid fa-trash fa-xl me-2" ></i>
                                  <i class="fa-regular fa-eye fa-xl me-2" ></i>
                                  <i class="fa-solid fa-toggle-on fa-xl" ></i>
@@ -219,6 +219,35 @@
                         <!-- ... (código de paginación) ... -->
                     </div>
                 </div>
+                
+            </div>
+        
+        </div>
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="m-0 font-weight-bold text-primary">Editar beneficiario</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               
+                <form>
+                    <!-- Campos del formulario -->
+                    <label for="nombre">Documento:</label>
+                    <input type="text" id="Documento" name="Documento" class="form-control">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="Nombre" name="Nombre" class="form-control">
+                    <label for="nombre">Teléfono:</label>
+                    <input type="text" id="Telefono" name="Telefono" class="form-control">
+                    <label for="nombre">Correo Electronico:</label>
+                    <input type="text" id="Correo" name="Correo" class="form-control">
+
+                    <br>
+
+                    <button id="miBoton" type="submit" name="Guardar" class="btn btn-primary next action-button float-end" value="Next">Guardar</button>
+                    <a href="beneficiarios"><button type="button" name="Cancelar" class="btn btn-dark previous action-button-previous float-end me-1" value="Previous">Cancelar</button></a>
+                </form>
+        </div>
             </div>
         </div>
     </div>
