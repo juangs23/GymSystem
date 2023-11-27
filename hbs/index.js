@@ -78,9 +78,34 @@ app.get('/Categoriaprod', (req, res)=>{
     res.render('Categoriaprod')
 })
 
+app.get('/formDevolucioncom', (req, res)=>{
+    res.render('formDevolucioncom')
+})
+
 app.get('/formproveedores', (req, res)=>{
     res.render('formproveedores')
 })
+
+app.get('/formcompras', (req, res)=>{
+    res.render('formcompras')
+})
+
+app.get('/formproductos', (req, res)=>{
+    res.render('formproductos')
+})
+
+app.get('/DevolucionEditar', (req, res)=>{
+    res.render('DevolucionEditar')
+})
+
+app.get('/ProductosEditar', (req, res)=>{
+    res.render('ProductosEditar')
+})
+
+app.get('/ProveedoresEditar', (req, res)=>{
+    res.render('ProveedoresEditar')
+})
+
 
 // FIN COMPRAS
 
@@ -125,19 +150,15 @@ app.get('/membresiasCliente', (req, res)=>{
 
 
 app.get('/rutinas', (req, res)=>{
-    res.render('rutinas', { datos: formArray});
+    res.render('rutinas');
 });
 
 app.get('/nueva-rutina', (req, res)=>{
     res.render('formRutina')
 });
 
-app.post('/guardar-rutinas', (req, res)=>{
-    const { nombreRutina, dia, exercise1, repeticion } = req.body;
-
-    formArray.push ({ nombreRutina, dia, exercise1, repeticion });
-
-    res.redirect('/rutinas');
+app.get('/agenda-servicios', (req, res) => {
+    res.render('calendario')
 });
 
 // FIN RUTINAS 
@@ -155,6 +176,15 @@ app.get('/roles', (req, res)=>{
     res.render('roles')
 })
 
+app.get('/CrearRol', (req, res)=>{
+    res.render('CrearRol')
+})
+
+//PRUEBAS TABLAS
+
+
+//FIN PRUEBA
+
 // FIN ROLES
 
 // Inicio Ventas *YONIER*
@@ -168,8 +198,14 @@ app.get('/beneficiarios', (req, res)=>{
 app.get('/formularioCliente', (req, res)=>{
     res.render('formularioCliente')
 })
+app.get('/editarCliente', (req, res)=>{
+    res.render('editarCliente')
+})
 app.get('/formularioBeneficiario', (req, res)=>{
     res.render('formularioBeneficiario')
+})
+app.get('/detallePedido', (req, res)=>{
+    res.render('detallePedido')
 })
 app.get('/formularioPedido', (req, res)=>{
     res.render('formularioPedido')
@@ -180,9 +216,7 @@ app.get('/pedidos', (req, res)=>{
 app.get('/ventas', (req, res)=>{
     res.render('ventas')
 })
-app.get('/devoluciones', (req, res)=>{
-    res.render('devoluciones')
-})
+
 
 // JOHANY
 
@@ -193,6 +227,15 @@ app.get('/GestionVentas', (req, res)=>{
 app.get('/GestionDevoluciones', (req, res)=>{
     res.render('GestionDevoluciones')
 })
+
+app.get('/formulDevolucion', (req, res)=>{
+    res.render('formulDevolucion')
+})
+
+app.get('/formuVenta', (req, res)=>{
+    res.render('formuVenta')
+})
+
 
 // FIN JOHANY
 

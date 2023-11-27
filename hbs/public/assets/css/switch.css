@@ -1,6 +1,6 @@
 :root {
     --bg: #110921;
-    --purple: rgba(47, 32, 180, 0.219);
+    --grey: rgba(47, 32, 180, 0.219);
     --green: rgb(53, 187, 41);
     --font: 'Roboto Mono', sans-serif;
   }
@@ -18,7 +18,7 @@
     display: inline-block;
     width: 40px;
     height: 20px;
-    background-color: var(--purple);
+    background-color: var(--grey);
     border-radius: 40px;
     transition: all 0.3s;
     cursor: pointer;
@@ -49,3 +49,37 @@
     position: absolute;
     left: -9999px;
   }
+
+  .centered-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Esto alinea los elementos a la derecha */
+
+}
+
+.centered-container-catprod {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Esto alinea los elementos a la derecha */
+  padding:0;
+  margin-left:-180px;
+  margin-right:0;
+}
+
+.productoContainer{
+  display:flex;
+  align-items: center;
+  
+
+}
+
+.form-group {
+  margin-right: 000px; /* Ajusta el margen según sea necesario */
+}
+
+
+
+.btn-soft-info,
+.btn-soft-danger {
+  margin-top: 10px;
+}
