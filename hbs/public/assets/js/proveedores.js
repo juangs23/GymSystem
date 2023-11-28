@@ -3,10 +3,10 @@ const inputs = document.querySelectorAll('#formularioProveedores input');
 
 
 const expresiones = {
-	Nombreproveedor: /^[a-zA-Z]+$/, 
-    Contactoproveedor: /^(?:\d{1,3}(?:,\d{3})*(?:\.\d{1,2})?|\d+(?:\.\d{1,2})?)$/,
-    Telefono: /^[0-9]+$/,
-	Direccion:  /^([1-9]|[1-9][0-9]|100)%?$/,
+	Nombreproveedor: /^[a-zA-ZÀ-ÿ\s]{1,20}$/, 
+    Contactoproveedor: /^[a-zA-ZÀ-ÿ\s]{1,20}$/,
+    Telefono: /^(\(\+?\d{2,3}\)[\*|\s|\-|\.]?(([\d][\*|\s|\-|\.]?){6})(([\d][\s|\-|\.]?){2})?|(\+?[\d][\s|\-|\.]?){8}(([\d][\s|\-|\.]?){2}(([\d][\s|\-|\.]?){2})?)?)$/,
+	Direccion:  /^[A-Za-z0-9\s#áéíóúÁÉÍÓÚüÜ.,-]+$/,
     Nit:/^[0-9]+$/
 }
 
