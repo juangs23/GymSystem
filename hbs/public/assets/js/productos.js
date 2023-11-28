@@ -87,15 +87,10 @@ formularioproductos.addEventListener('submit',(e) => {
             icon: "success",
             title: "Guardado correctamente"
           });
-        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-        setTimeout(() => {
-            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-        }, 3000);
         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono)=>{
             icono.classList.remove('formulario__grupo-correcto')
         });
     } else {
-        alert("malo")
         const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -111,11 +106,6 @@ formularioproductos.addEventListener('submit',(e) => {
             icon: "error",
             title: "Ingrese los datos correctamente"
           });
-        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo')
-        setTimeout(() => {
-            document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
-        }, 3000);
-
     }
 });
 
