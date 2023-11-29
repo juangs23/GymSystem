@@ -72,37 +72,40 @@ formularioproductos.addEventListener('submit',(e) => {
     e.preventDefault();
     if(campos.Nombreproducto && campos.Precioproducto && campos.Productosingresar && campos.Ivaproducto){
         formularioproductos.reset()
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-          }).then((result) => {
-            if (result.isConfirmed) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success"
-              });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
             }
           });
-        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-        setTimeout(() => {
-            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-        }, 3000);
+          Toast.fire({
+            icon: "success",
+            title: "Guardado correctamente"
+          });
         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono)=>{
             icono.classList.remove('formulario__grupo-correcto')
         });
     } else {
-        alert("malo")
-        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo')
-        setTimeout(() => {
-            document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
-        }, 3000);
-
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "error",
+            title: "Ingrese los datos correctamente"
+          });
     }
 });
 

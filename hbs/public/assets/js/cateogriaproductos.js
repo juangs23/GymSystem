@@ -3,7 +3,7 @@ const inputs = document.querySelectorAll('#formularioCategoria input');
 
 
 const expresiones = {
-	Nombrecategoria: /^[a-zA-Z]+$/ 
+	Nombrecategoria: /^[a-zA-ZÀ-ÿ\s]{1,20}$/ 
 }
 
 const campos={
@@ -51,20 +51,40 @@ formulariocategoria.addEventListener('submit',(e) => {
     e.preventDefault();
     if(campos.Nombrecategoria){
         formulariocategoria.reset()
-        alert("good")
-        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-        setTimeout(() => {
-            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-        }, 3000);
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "success",
+            title: "Guardado correctamente"
+          });
         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono)=>{
             icono.classList.remove('formulario__grupo-correcto')
         });
     } else {
-        alert("malo")
-        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo')
-        setTimeout(() => {
-            document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
-        }, 3000);
-
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "error",
+            title: "Ingrese los datos correctamente"
+          });
     }
 });
+
