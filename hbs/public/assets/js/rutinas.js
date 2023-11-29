@@ -289,3 +289,28 @@ document.querySelectorAll('[data-bs-target="#exampleModal"]').forEach(button => 
         
     });
 });
+
+
+// mini
+
+function mostrarFormulario(id) {
+    const formularioMostrar = document.getElementById(id);
+    const isVisible = formularioMostrar.style.display === 'block';
+  
+    const formularios = document.querySelectorAll('.mini-formulario');
+    formularios.forEach(formulario => {
+      formulario.style.display = 'none';
+    });
+  
+    if (!isVisible) {
+      formularioMostrar.style.display = 'block';
+  
+      const botonDia = document.querySelector(`a[href="#"][onclick="mostrarFormulario('${id}')"]`);
+      const botonPos = botonDia.getBoundingClientRect();
+      formularioMostrar.style.position = 'fixed';
+      formularioMostrar.style.top = `${botonPos.bottom}px`;
+      formularioMostrar.style.left = `${botonPos.left}px`;
+    }
+  }
+  
+  

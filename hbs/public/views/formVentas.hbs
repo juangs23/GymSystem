@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario ventas</title>
 
-    <link rel="stylesheet" href="../assets/css/validacionesForms.css" />
+    <link rel="stylesheet" href="../assets/css/validacionVentas.css" />
     {{> header}}
 </head>
 
@@ -37,111 +37,136 @@
         <div class="row">
             <div class="col-sm-12 col-lg-12">
                 <div class="card">
-                    <div class="card-header d-flex justify-content-between">
+                    <div class="card-header d-flex justify-content-between align-items-center">
                         <div class="header-title">
                             <h4 class="card-title m-0 font-weight-bold text-primary">Agregar Venta</h4>
                         </div>
                     </div>
                     <div class="card-body">
 
-                        <form class="formularioRegistro" id="formularioRegistro">
+                        <form class="formularioVenta" id="formularioVenta">
                             <div class="row">
+                                <div class="col-lg-6 formularioVenta__grupo">
+                                    <label for="cliente" id="clientes" style="display: block;">Clientes: </label>
+                                    <div style="display: flex; align-items: center;">
+                                        <select id="selectProducto" name="productos[]"
+                                            style="width: 300px; margin-right: 10px;">
+                                            <option selected="" disabled="">Seleccione cliente</option>
+                                            <option value="cliente1">Johany Ocampo</option>
+                                            <option value="cliente2">Weimar Lopez</option>
+                                            <option value="cliente3">Alejo Builes</option>
+                                            <option value="cliente4">Esteban Ortiz</option>
+                                            <!-- Agrega más opciones según tus necesidades -->
+                                        </select>
+                                        <a href="registrar-usuario" type="button" class="btn btn-soft-info"><i
+                                                class="fa-solid fa-plus fa-lg"></i></a>
+                                    </div>
+                                </div>
+
 
                                 {{!-- Campo Nombres --}}
-                                <div class="col-lg-6 formularioRegistro__grupo" id="grupo__nombres">
-                                    <label for="nombres" class="formularioRegistro__label">Nombres *</label>
-                                    <div class="formularioRegistro__grupo-input">
+                                <div class="col-lg-6 formularioVenta__grupo" id="grupo__nombres">
+                                    <label for="nombres" class="formularioVenta__label">Nombres *</label>
+                                    <div class="formularioVenta__grupo-input">
                                         <input type="text" class="form-control" name="nombres" id="nombres">
-                                        <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
+                                        <i class="formularioVenta__validacion-estado fas fa-times-circle "></i>
                                     </div>
-                                    <p class="formularioRegistro__input-error">Los nombres no puede contener numeros o
+                                    <p class="formularioVenta__input-error">Los nombres no puede contener numeros o
                                         caracteres especiales</p>
                                 </div>
 
                                 {{!-- Campo #Doc --}}
-                                <div class="col-lg-6 formularioRegistro__grupo" id="grupo__documento">
-                                    <label for="documento" class="formularioRegistro__label"># Documento *</label>
-                                    <div class="formularioRegistro__grupo-input">
+                                <div class="col-lg-6 formularioVenta__grupo" id="grupo__documento">
+                                    <label for="documento" class="formularioVenta__label"># Documento *</label>
+                                    <div class="formularioVenta__grupo-input">
                                         <input type="text" class="form-control" name="documento" id="documento">
-                                        <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
+                                        <i class="formularioVenta__validacion-estado fas fa-times-circle "></i>
                                     </div>
-                                    <p class="formularioRegistro__input-error">Ingresa un documento valido</p>
+                                    <p class="formularioVenta__input-error">Ingresa un documento valido</p>
                                 </div>
 
                                 {{!-- Campo Correo --}}
-                                <div class="col-lg-6 formularioRegistro__grupo" id="grupo__correo">
-                                    <label for="correo" class="formularioRegistro__label">Correo Electronico *</label>
-                                    <div class="formularioRegistro__grupo-input">
+                                <div class="col-lg-6 formularioVenta__grupo" id="grupo__correo">
+                                    <label for="correo" class="formularioVenta__label">Correo Electronico *</label>
+                                    <div class="formularioVenta__grupo-input">
                                         <input type="email" class="form-control" name="correo" id="correo">
-                                        <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
+                                        <i class="formularioVenta__validacion-estado fas fa-times-circle "></i>
                                     </div>
-                                    <p class="formularioRegistro__input-error">El correo no es valido</p>
+                                    <p class="formularioVenta__input-error">El correo no es valido</p>
                                 </div>
 
                                 {{!-- Campo Numero Cel --}}
-                                <div class="col-lg-6 formularioRegistro__grupo" id="grupo__telefono">
-                                    <label for="telefono" class="formularioRegistro__label">Telefono *</label>
-                                    <div class="formularioRegistro__grupo-input">
+                                <div class="col-lg-6 formularioVenta__grupo" id="grupo__telefono">
+                                    <label for="telefono" class="formularioVenta__label">Telefono *</label>
+                                    <div class="formularioVenta__grupo-input">
                                         <input type="text" class="form-control" name="telefono" id="telefono">
-                                        <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
+                                        <i class="formularioVenta__validacion-estado fas fa-times-circle "></i>
                                     </div>
-                                    <p class="formularioRegistro__input-error">El numero no es valido.</p>
+                                    <p class="formularioVenta__input-error">El numero no es valido.</p>
                                 </div>
 
                                 {{!-- Campo direccion --}}
-                                <div class="col-lg-6 formularioRegistro__grupo" id="grupo__direccion">
-                                    <label for="direccion" class="formularioRegistro__label">Direccion *</label>
-                                    <div class="formularioRegistro__grupo-input">
+                                <div class="col-lg-6 formularioVenta__grupo" id="grupo__direccion">
+                                    <label for="direccion" class="formularioVenta__label">Direccion *</label>
+                                    <div class="formularioVenta__grupo-input">
                                         <input type="text" class="form-control" name="direccion" id="direccion"
                                             placeholder="Ej: Cra 19 # 52-102">
-                                        <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
+                                        <i class="formularioVenta__validacion-estado fas fa-times-circle "></i>
                                     </div>
-                                    <p class="formularioRegistro__input-error">Ingrese una direccion valida.</p>
+                                    <p class="formularioVenta__input-error">Ingrese una direccion valida.</p>
+                                </div>
+
+                                <div class="col-lg-6 formularioVenta__grupo">
+                                    <label for="membresia" id="membresias">Membresía: </label>
+                                    <select id="selectMembresia" name="membresias[]" style="width: 400px;">
+                                        <option selected="" disabled="">Seleccione membresía</option>
+                                        <option value="membresia1">Membresía Oro</option>
+                                        <option value="membresia2">Membresía Plata</option>
+                                        <option value="membresia3">Membresía Bronce</option>
+                                        <!-- Agrega más opciones según tus necesidades -->
+                                    </select>
+                                </div>
+
+                                <!-- Campo Producto -->
+                                <div class="col-lg-6 formularioVenta__grupo">
+                                    <label for="producto" id="productos" style="display: block;">Productos: </label>
+                                    <div style="display: flex; align-items: center;">
+                                        <select id="selectProducto" name="productos[]"
+                                            style="width: 300px; margin-right: 10px;">
+                                            <option selected="" disabled="">Seleccione producto</option>
+                                            <option value="producto1">Producto A</option>
+                                            <option value="producto2">Producto B</option>
+                                            <option value="producto3">Producto C</option>
+                                            <!-- Agrega más opciones según tus necesidades -->
+                                        </select>
+                                        <a href="registrar-producto" type="button" class="btn btn-soft-info" style="background-color:  #FF5733; padding: 7px;">
+                                              <i class="fa-solid fa-plus fa-lg bold-icon"  ></i></a>
+                                    </div>
                                 </div>
                             </div>
+
+
+                            <div class="formularioVenta__grupo-btn-enviar">
+                                <button type="submit" class="btn btn-danger">Registrar</button>
+
+                                <a href="GestionVentas" type="button" name="Cancelar"
+                                    class="btn btn-dark  action-button-previous" value="Previous">Cancelar</a>
+
+                                <p class="formularioVenta__mensaje-exito alert alert-succes"
+                                    id="formularioVenta__mensaje-exito">Registro exitoso!</p>
+                                <div class="formularioVenta__mensaje" id="formularioVenta__mensaje">
+                                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el
+                                        formulario
+                                        correctamente. </p>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-
-
-                    <div class="formularioRegistro__grupo formularioRegistro__grupo-btn-enviar d-flex justify-content-right">
-                        <button type="submit" class="btn btn-danger">Registrar</button>
-
-                        <a href="GestionVentas" type="button" name="Cancelar"
-                                class="btn btn-dark previous action-button-previous float-end me-1"
-                                value="Previous">Cancelar</a>
-
-                        <p class="formularioRegistro__mensaje-exito alert alert-succes"
-                            id="formularioRegistro__mensaje-exito">Registro exitoso!</p>
-                        <div class="formularioRegistro__mensaje" id="formularioRegistro__mensaje">
-                            <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario
-                                correctamente. </p>
-                        </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Eliminación</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ¿Estás seguro de que deseas eliminar este elemento?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger" id="confirmDeleteButton">Eliminar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    
     <!-- Fin contenido -->
 
     <!-- Footer Section Start -->
@@ -150,7 +175,7 @@
     </footer>
     <!-- Footer Section End -->
     <script src="../assets/js/formVentas.js"></script>
-
+    <script></script>
     {{> footer}}
 </body>
 

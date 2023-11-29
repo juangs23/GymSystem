@@ -1,5 +1,5 @@
-const formularioRegistro = document.getElementById('formularioVenta')
-const inputs = document.querySelectorAll('#formularioVenta input')
+const formularioRegistro = document.getElementById('formularioDevolucion')
+const inputs = document.querySelectorAll('#formularioDevolucion input')
 
 const expresiones = {
 	nombres: /^[a-zA-ZÀ-ÿ\s]{1,20}$/, // Letras y espacios, pueden llevar acentos.
@@ -49,18 +49,18 @@ const validarFormulario = (e) => {
 
 const validarCampo = (expresion, input, campo) => {
     if (expresion.test(input.value)) {
-        document.getElementById(`grupo__${campo}`).classList.remove('formularioVenta__grupo-incorrecto')
-        document.getElementById(`grupo__${campo}`).classList.add('formularioVenta__grupo-correcto')
+        document.getElementById(`grupo__${campo}`).classList.remove('formularioDevolucion__grupo-incorrecto')
+        document.getElementById(`grupo__${campo}`).classList.add('formularioDevolucion__grupo-correcto')
         document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle')
         document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle')
-        document.querySelector(`#grupo__${campo} .formularioVenta__input-error`).classList.remove('formularioVenta__input-error-activo')
+        document.querySelector(`#grupo__${campo} .formularioDevolucion__input-error`).classList.remove('formularioDevolucion__input-error-activo')
         campos[campo] = true
     }else {
-        document.getElementById(`grupo__${campo}`).classList.add('formularioVenta__grupo-incorrecto')
-        document.getElementById(`grupo__${campo}`).classList.remove('formularioVenta__grupo-correcto')
+        document.getElementById(`grupo__${campo}`).classList.add('formularioDevolucion__grupo-incorrecto')
+        document.getElementById(`grupo__${campo}`).classList.remove('formularioDevolucion__grupo-correcto')
         document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle')
         document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle')
-        document.querySelector(`#grupo__${campo} .formularioVenta__input-error`).classList.add('formularioVenta__input-error-activo')
+        document.querySelector(`#grupo__${campo} .formularioDevolucion__input-error`).classList.add('formularioDevolucion__input-error-activo')
         campo[false]
     }
 }
@@ -79,18 +79,18 @@ formularioRegistro.addEventListener('submit', (e) =>{
         campos.direccion && campos.password && terminos.checked) {
         formularioRegistro.reset()
 
-        document.getElementById('formularioVenta__mensaje-exito').classList.add('formularioVenta__mensaje-exito-activo');
+        document.getElementById('formularioDevolucion__mensaje-exito').classList.add('formularioDevolucion__mensaje-exito-activo');
         setTimeout(() =>{
-            document.getElementById('formularioVenta__mensaje-exito').classList.remove('formularioVenta__mensaje-exito-activo');
+            document.getElementById('formularioDevolucion__mensaje-exito').classList.remove('formularioDevolucion__mensaje-exito-activo');
         }, 3000)
-        document.querySelectorAll('.formularioVenta__grupo-correcto').forEach((icono) => {
-            icono.classList.remove('formularioVenta__grupo-correcto')
+        document.querySelectorAll('.formularioDevolucion__grupo-correcto').forEach((icono) => {
+            icono.classList.remove('formularioDevolucion__grupo-correcto')
         })
 
     } else {
-        document.getElementById('formularioVenta__mensaje').classList.add('formularioVenta__mensaje-activo')
+        document.getElementById('formularioDevolucion__mensaje').classList.add('formularioDevolucion__mensaje-activo')
         setTimeout(() =>{
-            document.getElementById('formularioVenta__mensaje').classList.remove('formularioVenta__mensaje-activo')
+            document.getElementById('formularioDevolucion__mensaje').classList.remove('formularioDevolucion__mensaje-activo')
         }, 3000)
     }
 

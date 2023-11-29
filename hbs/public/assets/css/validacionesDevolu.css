@@ -1,0 +1,133 @@
+.productoContiner{
+	position: absolute;
+	right: 10px;
+}
+.formularioDevolucion__label {
+    margin-bottom: 1rem;
+}
+
+.formularioDevolucion__grupo-input {
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.formularioDevolucion__input {
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.formularioDevolucion__input:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formularioDevolucion__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formularioDevolucion__input-error-activo {
+	display: block;
+}
+
+.formularioDevolucion__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formularioDevolucion__checkbox {
+	margin-right: 10px;
+}
+
+.formularioDevolucion__mensaje,
+.formularioDevolucion__grupo-btn-enviar {
+	
+}
+
+.formularioDevolucion__mensaje {
+	color: #000;
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+	margin-top: 20px;
+}
+
+.formularioDevolucion__mensaje-activo {
+	display: block;
+}
+
+.formularioDevolucion__mensaje p {
+	margin-top: 10px;
+	margin: 0;
+}
+
+.formularioDevolucion__grupo-btn-enviar {
+
+}
+
+.formularioDevolucion__btn {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.formularioDevolucion__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formularioDevolucion__mensaje-exito {
+	margin-top: 20px;
+	color: #000;
+	height: 45px;
+	line-height: 45px;
+	background: #119200;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formularioDevolucion__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formularioDevolucion__grupo-correcto .formularioDevolucion__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formularioDevolucion__grupo-incorrecto .formularioDevolucion__label {
+	color: #bb2929;
+}
+
+.formularioDevolucion__grupo-incorrecto .formularioDevolucion__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formularioDevolucion__grupo-incorrecto .formularioDevolucion__input {
+	border: 3px solid #bb2929;
+}
+

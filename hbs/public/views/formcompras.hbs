@@ -44,7 +44,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label">Fecha compra*</label>
-                                            <input type="text" class="form-control" name="Nombre Proveedor" placeholder="Fecha compra" />
+                                            <input type="date" class="form-control" name="Nombre Proveedor" placeholder="Fecha compra" />
                                             <div id="errorFechaCompra" class="error-message"></div>
                                         </div>
                                     </div>
@@ -77,18 +77,20 @@
                                             <!-- Agrega más opciones según tus necesidades -->
                                         </select>
 
-                                        <label  for="cantidad" style="margin-left:200px" >Cantidad:</label>
+                                        <label  for="cantidad" style="margin-left:50px" >Cantidad:</label>
                                         <input style="width:90px" type="number"  name="cantidades[]" value="1" min="1" required>
 
 
-                                        <label  for="Valor" style="margin-left:100px" >Valor:</label>
+                                        <label  for="Valor" style="margin-left:50px" >Valor:</label>
                                         <label  for="Valor" > $ 25.000</label>
-                                        </div>
                                         <div class="productoContainer">
-                                        <button type="button" class="btn btn-soft-info mt-2" onclick="agregarProducto()"><i class="fa-solid fa-plus fa-lg"></i></button>
+                                        <button type="button" class="btn btn-soft-info mt-2" onclick="agregarProducto()"style="margin-left:50px"><i class="fa-solid fa-plus fa-lg"></i></button>
                                         </div>
+                                        </div>
+                                        
+
                                         <div id="productosAgregados">
-                                            <br>
+                                            
                                             <!-- Aquí se agregarán dinámicamente los nuevos campos de selección -->
                                             
                                         </div>
