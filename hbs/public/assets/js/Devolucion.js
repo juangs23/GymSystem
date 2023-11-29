@@ -31,7 +31,7 @@ function agregarProducto() {
 
     var btnEliminar = document.createElement("button");
     btnEliminar.type = "button";
-    btnEliminar.className = "btn btn-soft-danger mt-2"; // Agrega la clase deseada
+    btnEliminar.className = "btn btn-soft-danger  mt-2"; // Agrega la clase deseada
     btnEliminar.innerHTML = '<i class="fa-solid fa-minus fa-lg"></i>';
     btnEliminar.style.marginLeft = "50px"
     btnEliminar.onclick = function () {
