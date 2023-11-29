@@ -106,7 +106,7 @@
                                 </div>
 
                                 {{!-- Campo direccion --}}
-                                <div class="col-lg-6 formularioVenta__grupo" id="grupo__direccion">
+                                {{!-- <div class="col-lg-6 formularioVenta__grupo" id="grupo__direccion">
                                     <label for="direccion" class="formularioVenta__label">Direccion *</label>
                                     <div class="formularioVenta__grupo-input">
                                         <input type="text" class="form-control" name="direccion" id="direccion"
@@ -114,7 +114,7 @@
                                         <i class="formularioVenta__validacion-estado fas fa-times-circle "></i>
                                     </div>
                                     <p class="formularioVenta__input-error">Ingrese una direccion valida.</p>
-                                </div>
+                                </div> --}}
 
                                 <div class="col-lg-6 formularioVenta__grupo">
                                     <label for="membresia" id="membresias">Membresía: </label>
@@ -127,21 +127,44 @@
                                     </select>
                                 </div>
 
-                                <!-- Campo Producto -->
                                 <div class="col-lg-6 formularioVenta__grupo">
-                                    <label for="producto" id="productos" style="display: block;">Productos: </label>
-                                    <div style="display: flex; align-items: center;">
-                                        <select id="selectProducto" name="productos[]"
-                                            style="width: 300px; margin-right: 10px;">
-                                            <option selected="" disabled="">Seleccione producto</option>
-                                            <option value="producto1">Producto A</option>
-                                            <option value="producto2">Producto B</option>
-                                            <option value="producto3">Producto C</option>
-                                            <!-- Agrega más opciones según tus necesidades -->
-                                        </select>
-                                        <a href="registrar-producto" type="button" class="btn btn-soft-info" style="background-color:  #FF5733; padding: 7px;">
-                                              <i class="fa-solid fa-plus fa-lg bold-icon"  ></i></a>
+                                    <label for="formaPago" id="formasPago">Forma de Pago: </label>
+                                    <select id="selectFormaPago" name="formasPago[]" style="width: 400px;">
+                                        <option selected="" disabled="">Seleccione forma de pago</option>
+                                        <option value="qr">Pago QR</option>
+                                        <option value="efectivo">Efectivo</option>
+                                        <!-- Agrega más opciones según tus necesidades -->
+                                    </select>
+                                </div>
+
+                                <!-- Campo Producto -->
+                                <label for="productoContainer">Seleccione producto</label>
+                                <div class="productoContainer">
+                                    <select id="selectProducto" name="productos[]" style="margin-right: 10px;">
+                                        <option selected="" disabled="">Agregar producto a la Devolucion</option>
+                                        <option value="producto1">Creatina</option>
+                                        <option value="producto2">Aminoacidos</option>
+                                        <option value="producto3">Elite</option>
+                                        <option value="producto3">Agua</option>
+                                        <!-- Agrega más opciones según tus necesidades -->
+                                    </select>
+
+                                    <label for="cantidad" style="margin-left:50px">Cantidad:</label>
+                                    <input style="width:90px" type="number" name="cantidades[]" value="1" min="1">
+
+
+                                    <label for="Valor" style="margin-left:55px">Valor:</label>
+                                    <label>$25.000</label>
+                                    <div class="productoContainer">
+                                        <button type="button" class="btn btn-soft-info btn mt-2"
+                                            onclick="agregarProducto()" style="margin-left:50px"><i
+                                                class="fa-solid fa-plus fa-lg"></i></button>
                                     </div>
+
+                                </div>
+                                <div id="productosAgregados">
+                                    <!-- Aquí se agregarán dinámicamente los nuevos campos de selección -->
+
                                 </div>
                             </div>
 
@@ -155,7 +178,7 @@
                                 <p class="formularioVenta__mensaje-exito alert alert-succes"
                                     id="formularioVenta__mensaje-exito">Registro exitoso!</p>
                                 <div class="formularioVenta__mensaje" id="formularioVenta__mensaje">
-                                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el
+                                    <p><i class="fas fa-exclamation-triangle" ></i> <b>Error:</b> Por favor rellena el
                                         formulario
                                         correctamente. </p>
                                 </div>
@@ -175,7 +198,7 @@
     </footer>
     <!-- Footer Section End -->
     <script src="../assets/js/formVentas.js"></script>
-    <script></script>
+    <script src="../assets/js/Devolucion.js"></script>
     {{> footer}}
 </body>
 
