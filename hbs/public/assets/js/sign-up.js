@@ -108,37 +108,36 @@ formularioRegistro.addEventListener('submit', (e) =>{
         campos.direccion && campos.password && terminos.checked) {
         formularioRegistro.reset()
 
-        document.getElementById('formularioRegistro__mensaje-exito').classList.add('formularioRegistro__mensaje-exito-activo');
-        setTimeout(() =>{
-            document.getElementById('formularioRegistro__mensaje-exito').classList.remove('formularioRegistro__mensaje-exito-activo');
-        }, 3000)
+        Swal.fire({
+            title: "Excelente!",
+            text: "Te has registrado con exito!",
+            icon: "success"
+          });
         document.querySelectorAll('.formularioRegistro__grupo-correcto').forEach((icono) => {
             icono.classList.remove('formularioRegistro__grupo-correcto')
         })
 
     } else {
-        errorCondiciones.textContent = '';
-    }
-});
-
-const form = document.getElementById('registroForm');
-
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    // Resto del código de validación...
-
-    const errorElements = document.querySelectorAll('.error-message');
-    const hasErrors = Array.from(errorElements).some((errorElement) => errorElement.textContent !== '');
-
-    if (!checkbox.checked || hasErrors) {
-        // Validación del checkbox al momento de enviar el formulario
-        if (!checkbox.checked) {
-            errorCondiciones.textContent = 'Debe aceptar las condiciones para continuar';
-        }
-        return; // No envía el formulario si hay errores
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Debes completar el formulario!"
+          });
     }
 
-    alert('Formulario válido. Redirigiendo al login...');
-    // Resto del código para redirigir al usuario...
-});
+})
+
+function mostrar(){
+    var campoPass = document.getElementById("password");
+      var icono = document.getElementById("iconoMostrar");
+
+      if (campoPass.type === "password") {
+        campoPass.type = "text";
+        icono.classList.remove("fa-eye");
+        icono.classList.add("fa-eye-slash");
+      } else {
+        campoPass.type = "password";
+        icono.classList.remove("fa-eye-slash");
+        icono.classList.add("fa-eye");
+      }
+}

@@ -131,3 +131,7 @@
 	border: 3px solid #bb2929;
 }
 
+.custom-icon {
+    margin-left: -100px; /* Ajusta el valor según lo que necesites */
+}
+

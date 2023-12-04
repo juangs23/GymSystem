@@ -26,196 +26,200 @@
     <!-- Fin Barra superior -->
 
     <!-- Inicio contenido -->
-  <div class="container-fluid content-inner">
+    <div class="container-fluid content-inner">
+            <div class="card-header py-2">
+                    <h2 class="m-2 font-weight-bold text-primary">Rutinas</h2>
+            </div>
         <div class="container-fluid">
-             <div class="card-header py-3 display-6">
-                            <h3 class="m-0 font-weight-bold text-primary">Rutinas</h3>
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                
+                <div class="card-body">
+                    
+                    <div class="table-responsive">
+                        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                            <div class="card-header py-3 d-flex justify-content-between">
+                            <div class="d-flex">
+                                <div class="col-sm-16 col-md-8">
+                                <div id="dataTable_filter" class="dataTables_filter">
+                                    <label>Buscar:<input type="search" class="form-control form-control-sm"
+                                            placeholder="" aria-controls="dataTable"></label>
+                                </div>
+                            </div>
+                                                    </div>
+                            <div class="footer-buttons mt-1">
+                            <a href="nueva-rutina" type="button" name="Cancelar"
+                                class="btn btn-danger  previous action-button-previous float-end me-2"
+                                value="Previous">
+                                Crear Rutina +
+                            </a>
                         </div>
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-6">
-                                            {{!-- <div class="dataTables_length" id="dataTable_length">
-                                                <label>Filtrar tabla<select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm">
-                                                    <option value="10">10</option>
-                                                    <option value="25">25</option>
-                                                    <option value="50">50</option>
-                                                    <option value="100">100</option>
-                                                    </select></label>
-                                                    </div> --}}
-                                                    </div>
-                                                    {{!-- <div class="col-md-6 d-flex align-items-start justify-content-end">
-                                                         <div style="margin-bottom: 10px;">
-                                                               <a href="nueva-rutina" class="btn btn-danger">Crear Rutina</a>
-                                                         </div>
-                                                   </div> --}}
-                                                      {{!-- <div class="col-sm-12 col-md-6 "style="aling-center">
-                                                         <div id="dataTable_filter" class="dataTables_filter">
-                                                               <label>Buscar:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
-                                                               <a href="nueva-rutina" class="btn btn-danger">Crear Rutina</a>
-                                                         </div>
-                                                      </div> --}}
-                                                   </div>
-                                                    <div class="footer-buttons">
-                                                            <!-- Agregado margen top (mt-3) para separar los botones de la tabla -->
-                                                            <a href="nueva-rutina" type="button" name="Cancelar"
-                                                                class="btn btn-dark previous action-button-previous float-end me-2"
-                                                                value="Previous">
-                                                                Crear Rutina
-                                                            </a>
-                                                            {{!-- <button type="submit" name="Guardar"
-                                                                class="btn btn-primary btn-sm next action-button float-end" value="Next">
-                                                                Informes
-                                                            </button> --}}
-                                                    </div>
-                                                        <div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
-                                    <thead>
-                                        <tr role="row"><th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 156.25px;">Nombre Rutina</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 257.578px;">Ejercicios</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 110.688px;">Clientes Asignados</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 93.0156px;">Acciones</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 93.0156px;">Estado</th>
-                                        </tr>
-                                    </thead>
-                                    {{!-- <tfoot>
-                                        <tr><th rowspan="1" colspan="1">IDCliente</th>
-                                        <th rowspan="1" colspan="1">Nombre</th>
-                                        <th rowspan="1" colspan="1">Dirección</th>
-                                        <th rowspan="1" colspan="1">Teléfono</th>
-                                        <th rowspan="1" colspan="1">Documento</th>
-                                        <th rowspan="1" colspan="1">Acciones</th>
-                                         <th rowspan="1" colspan="1">Cambiar Estado</th>
-                                        </tr>
-                                    </tfoot> --}}
-                                    <tbody>
-                                    <tr class="odd">
-                                            <td class="sorting_1">Ectomorfo</td>
-                                            <td>Abdomen, pecho...</td>
-                                            <td>10</td>
-                                            <td>
-                                                <div class="centered-container">
-                                                      <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
-                                                      <i class="fa-regular fa-eye fa-xl me-2"></i>
-                                                      <i class="fa-solid fa-trash fa-xl me-2 trash-icon" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"></i>
-                                                <div class="wrap-toggle" style="margin-top:10px;">
-                                                      <input type="checkbox" id="toggle5" class="offscreen" />
-                                                      <label for="toggle5" class="switch"></label>
-                                                </div>
-                                            </td>
-                                            <td>Activo</td>
-                                        </tr><tr class="even">
-                                            <td class="sorting_1">Especial VIP</td>
-                                            <td>Gluteos, Abdomen...</td>
-                                            <td>5</td>
-                                            <td>
-                                                <div class="centered-container">
-                                                      <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
-                                                      <i class="fa-regular fa-eye fa-xl me-2"></i>
-                                                      <i class="fa-solid fa-trash fa-xl me-2"></i>
-                                                <div class="wrap-toggle" style="margin-top:10px;">
-                                                      <input type="checkbox" id="toggle5" class="offscreen" />
-                                                      <label for="toggle5" class="switch"></label>
-                                                </div>
-                                            </td>
-                                            <td>Activo</td>
-                                        </tr><tr class="odd">
-                                            <td class="sorting_1">Mesomorfo</td>
-                                            <td>Espalda, brazos...</td>
-                                            <td>25</td>
-                                            <td>
-                                                <div class="centered-container">
-                                                      <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
-                                                      <i class="fa-regular fa-eye fa-xl me-2"></i>
-                                                      <label for="confirmDeleteCheckbox">
-                                                         <i class="fa-solid fa-trash fa-xl me-2"></i>
-                                                      </label>
-                                                <div class="wrap-toggle" style="margin-top:10px;">
-                                                      <input type="checkbox" id="toggle5" class="offscreen" />
-                                                      <label for="toggle5" class="switch"></label>
-                                                </div>
-                                            </td>
-                                            <td>Activo</td>
-                                        </tr><tr class="odd">
-                                            <td class="sorting_1">Endomorfo</td>
-                                            <td>Cintura, piernas...</td>
-                                            <td>7</td>
-                                            <td>
-                                                <div class="centered-container">
-                                                      <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
-                                                      <i class="fa-regular fa-eye fa-xl me-2"></i>
-                                                      <i class="fa-solid fa-trash fa-xl me-2"></i>
-                                                <div class="wrap-toggle" style="margin-top:10px;">
-                                                      <input type="checkbox" id="toggle5" class="offscreen" />
-                                                      <label for="toggle5" class="switch"></label>
-                                                </div>
-                                            </td>
-                                            <td>Activo</td>
-                                        </tr>
+                        </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table table-bordered dataTable" id="dataTable" width="100%"
+                                        cellspacing="0" role="grid" aria-describedby="dataTable_info"
+                                        style="width: 100%;">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable"
+                                                    rowspan="1" colspan="1" aria-sort="ascending"
+                                                    aria-label="Name: activate to sort column descending"
+                                                    style="width: 156.25px;">Nombre Rutina</th>
+                                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                    colspan="1"
+                                                    aria-label="Start date: activate to sort column ascending"
+                                                    style="width: 104.297px;">Clientes Asignados</th>
+                                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                    colspan="1" aria-label="Salary: activate to sort column ascending"
+                                                    style="width: 93.0156px;">Estado</th>
+                                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                    colspan="1" aria-label="Salary: activate to sort column ascending"
+                                                    style="width: 93.0156px;">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="odd">
+                                                <td>Endomorfo</td>
+                                                <td>25</td>
+                                                <td>ACTIVO</td>
+                                                <td style="text-align: center;">
+                                                    <div class="centered-container">
+                                                        <a href="nueva-rutina " style="color: black;">
+                                                        <i class="fa-regular fa-pen-to-square fa-xl me-2"></i>
+                                                        </a>
+                                                        <a href="nueva-rutina " style="color: black;">
+                                                        <i class="fa-regular fa-eye fa-xl me-2"></i>
+                                                        </a>
+                                                        <div class="wrap-toggle" style="margin-top:10px;">
+                                                            <input type="checkbox" id="toggle1" class="offscreen" />
+                                                            <label for="toggle1" class="switch"></label>
+                                                        </div>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr class="even">
+                                                <td>EctoEctomorfo</td>
+                                                <td>15</td>
+                                                <td>ACTIVO</td>
+                                                <td style="text-align: center;">
+                                                    <div class="centered-container">
+                                                        <i class="fa-regular fa-pen-to-square fa-xl me-2"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#editarClienteModal"></i>
+                                                        <i class="fa-regular fa-eye fa-xl me-2"></i>
+                                                        <div class="wrap-toggle" style="margin-top:10px;">
+                                                            <input type="checkbox" id="toggle2" class="offscreen" />
+                                                            <label for="toggle2" class="switch"></label>
+                                                        </div>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr class="odd">
+                                                <td>Rutina VIP</td>
+                                                <td>30</td>
+                                                <td>ACTIVO</td>
+                                                <td style="text-align: center;">
+                                                    <div class="centered-container">
+                                                        <i class="fa-regular fa-pen-to-square fa-xl me-2"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#editarClienteModal"></i>
+                                                        <i class="fa-regular fa-eye fa-xl me-2"></i>
+                                                        <div class="wrap-toggle" style="margin-top:10px;">
+                                                            <input type="checkbox" id="toggle3" class="offscreen" />
+                                                            <label for="toggle3" class="switch"></label>
+                                                        </div>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr class="even">
+                                                <td>Mesomorfo</td>
+                                                <td>10</td>
+                                                <td>ACTIVO</td>
+                                                <td style="text-align: center;">
+                                                    <div class="centered-container">
+                                                        <i class="fa-regular fa-pen-to-square fa-xl me-2"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#editarClienteModal"></i>
+                                                        <i class="fa-regular fa-eye fa-xl me-2"></i>
+                                                        <div class="wrap-toggle" style="margin-top:10px;">
+                                                            <input type="checkbox" id="toggle4" class="offscreen" />
+                                                            <label for="toggle4" class="switch"></label>
+                                                        </div>
+                                                </td>
+                                                
+                                            </tr>
                                         </tbody>
-                                </table>
+                                    </table>
                                 </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-30 col-md-40 p-2 float-end">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                                        <ul class="pagination">
+                                            <li class="paginate_button page-item previous disabled"
+                                                id="dataTable_previous">
+                                                <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0"
+                                                    class="page-link">Previous</a>
+                                            </li>
+                                            <li class="paginate_button page-item active">
+                                                <a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0"
+                                                    class="page-link">1</a>
+                                            </li>
+                                            <li class="paginate_button page-item ">
+                                                <a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0"
+                                                    class="page-link">2</a>
+                                            </li>
+                                            <li class="paginate_button page-item ">
+                                                <a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0"
+                                                    class="page-link">3</a>
+                                            </li>
+                                            <li class="paginate_button page-item next" id="dataTable_next">
+                                                <a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0"
+                                                    class="page-link">Next</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-14 col-md-10">
-                                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Monstrando 1 de 25</div>
-                                        </div>
-                                        <div class="col-sm-30 col-md-40">
-                                            <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
-                                                <ul class="pagination">
-                                                    <li class="paginate_button page-item previous disabled" id="dataTable_previous">
-                                                        <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
-                                                        </li>
-                                                        <li class="paginate_button page-item active">
-                                                            <a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a>
-                                                            </li>
-                                                            <li class="paginate_button page-item ">
-                                                                <a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a>
-                                                                </li>
-                                                                <li class="paginate_button page-item ">
-                                                                    <a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a>
-                                                                    </li>
-                                                                    <li class="paginate_button page-item next" id="dataTable_next">
-                                                                        <a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">Next</a>
-                                                                     </li>
-                                             </ul>
-                                       </div>
-                                    </div> </div>
-                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-    </div>
-
-<!-- Modal eliminar -->
-<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Eliminación</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                ¿Estás seguro de que deseas eliminar este elemento?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger" id="confirmDeleteButton">Eliminar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+       </div>  
+    </div>          
     <!-- Fin contenido --> 
 
    <!-- Footer Section Start -->
     <footer class="footer">
         {{> copyright}}
     </footer>
+
+    <script>
+        
+    document.getElementById('deleteIcon').addEventListener('click', function() {
+    Swal.fire({
+        title: "¿Estás seguro?",
+        text: "¡No podrás revertir esto!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, eliminarlo"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: "¡Eliminado!",
+                text: "Tu archivo ha sido eliminado.",
+                icon: "success"
+            });
+            // Aquí puedes agregar la lógica para eliminar el elemento
+        }
+    });
+});
+
+
+    </script>
   
     {{> footer}}
 </body>

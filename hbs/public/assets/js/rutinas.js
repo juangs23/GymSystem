@@ -1,316 +1,80 @@
-// Funciones para construir el contenido del formulario por día
-function construirFormularioLunes() {
-    return `
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label for="routine" class="col-form-label">Tipo ejercicio</label>
-                    <input type="text" class="form-control" id="routine">
-                </div>
-                <div class="col-md-4">
-                    <label for="exercise" class="col-form-label">Ejercicio</label>
-                    <input type="text" class="form-control" id="exercise">
-                </div>
-                <div class="col-md-4">
-                    <label for="reps" class="col-form-label">Repeticiones</label>
-                    <input type="number" class="form-control" id="reps" style="width: 90px;">
-                </div>
-            </div>
-            <button type="button" class="btn btn-soft-info mt-2">
-                <i class="fa-solid fa-plus fa-lg"></i>
-            </button>
 
-            <button type="button" class="btn btn-soft-danger mt-2">
-                <i class="fa-solid fa-minus fa-lg"></i>
-            </button>
-        </form>
-    `;
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const botonesDia = document.querySelectorAll('.dia-btn');
 
-function construirFormularioMartes() {
-    return `
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label for="routine" class="col-form-label">Tipo ejercicio</label>
-                    <input type="text" class="form-control" id="routine">
-                </div>
-                <div class="col-md-4">
-                    <label for="exercise" class="col-form-label">Ejercicio</label>
-                    <input type="text" class="form-control" id="exercise">
-                </div>
-                <div class="col-md-4">
-                    <label for="reps" class="col-form-label">Repeticiones</label>
-                    <input type="number" class="form-control" id="reps" style="width: 90px;">
-                </div>
-            </div>
-            <button type="button" class="btn btn-soft-info mt-2">
-                <i class="fa-solid fa-plus fa-lg"></i>
-            </button>
+    botonesDia.forEach(function(boton) {
+        boton.addEventListener('click', function() {
+            const dia = this.getAttribute('data-dia');
+            const formDia = document.querySelector(`.form-dia[data-dia="${dia}"]`);
 
-            <button type="button" class="btn btn-soft-danger mt-2">
-                <i class="fa-solid fa-minus fa-lg"></i>
-            </button>
-        </form>
-    `;
-}
+            // Si el formulario del día está abierto, lo cierra
+            if (formDia.style.display === 'block') {
+                formDia.style.display = 'none';
+            } else {
+                // Oculta todos los formularios excepto el del día clicado
+                document.querySelectorAll('.form-dia').forEach(function(form) {
+                    if (form !== formDia) {
+                        form.style.display = 'none';
+                    }
+                });
 
-function construirFormularioMiercoles() {
-    return `
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label for="routine" class="col-form-label">Tipo ejercicio</label>
-                    <input type="text" class="form-control" id="routine">
-                </div>
-                <div class="col-md-4">
-                    <label for="exercise" class="col-form-label">Ejercicio</label>
-                    <input type="text" class="form-control" id="exercise">
-                </div>
-                <div class="col-md-4">
-                    <label for="reps" class="col-form-label">Repeticiones</label>
-                    <input type="number" class="form-control" id="reps" style="width: 90px;">
-                </div>
-            </div>
-            <button type="button" class="btn btn-soft-info mt-2">
-                <i class="fa-solid fa-plus fa-lg"></i>
-            </button>
-
-            <button type="button" class="btn btn-soft-danger mt-2">
-                <i class="fa-solid fa-minus fa-lg"></i>
-            </button>
-        </form>
-    `;
-}
-
-function construirFormularioJueves() {
-    return `
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label for="routine" class="col-form-label">Tipo ejercicio</label>
-                    <input type="text" class="form-control" id="routine">
-                </div>
-                <div class="col-md-4">
-                    <label for="exercise" class="col-form-label">Ejercicio</label>
-                    <input type="text" class="form-control" id="exercise">
-                </div>
-                <div class="col-md-4">
-                    <label for="reps" class="col-form-label">Repeticiones</label>
-                    <input type="number" class="form-control" id="reps" style="width: 90px;">
-                </div>
-            </div>
-            <button type="button" class="btn btn-soft-info mt-2">
-                <i class="fa-solid fa-plus fa-lg"></i>
-            </button>
-
-            <button type="button" class="btn btn-soft-danger mt-2">
-                <i class="fa-solid fa-minus fa-lg"></i>
-            </button>
-        </form>
-    `;
-}
-
-function construirFormularioViernes() {
-    return `
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label for="routine" class="col-form-label">Tipo ejercicio</label>
-                    <input type="text" class="form-control" id="routine">
-                </div>
-                <div class="col-md-4">
-                    <label for="exercise" class="col-form-label">Ejercicio</label>
-                    <input type="text" class="form-control" id="exercise">
-                </div>
-                <div class="col-md-4">
-                    <label for="reps" class="col-form-label">Repeticiones</label>
-                    <input type="number" class="form-control" id="reps" style="width: 90px;">
-                </div>
-            </div>
-
-            <button type="button" class="btn btn-soft-info mt-2">
-                <i class="fa-solid fa-plus fa-lg"></i>
-            </button>
-
-            <button type="button" class="btn btn-soft-danger mt-2">
-                <i class="fa-solid fa-minus fa-lg"></i>
-            </button>
-
-        </form>
-    `;
-}
-
-function construirFormularioSabado() {
-    return `
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label for="routine" class="col-form-label">Tipo ejercicio</label>
-                    <input type="text" class="form-control" id="routine">
-                </div>
-                <div class="col-md-4">
-                    <label for="exercise" class="col-form-label">Ejercicio</label>
-                    <input type="text" class="form-control" id="exercise">
-                </div>
-                <div class="col-md-4">
-                    <label for="reps" class="col-form-label">Repeticiones</label>
-                    <input type="number" class="form-control" id="reps" style="width: 90px;">
-                </div>
-            </div>
-            <button type="button" class="btn btn-soft-info mt-2">
-                <i class="fa-solid fa-plus fa-lg"></i>
-            </button>
-
-            <button type="button" class="btn btn-soft-danger mt-2">
-                <i class="fa-solid fa-minus fa-lg"></i>
-            </button>
-        </form>
-    `;
-}
-
-function construirFormularioDomingo() {
-    return `
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label for="routine" class="col-form-label">Tipo ejercicio</label>
-                    <input type="text" class="form-control" id="routine">
-                </div>
-                <div class="col-md-4">
-                    <label for="exercise" class="col-form-label">Ejercicio</label>
-                    <input type="text" class="form-control" id="exercise">
-                </div>
-                <div class="col-md-4">
-                    <label for="reps" class="col-form-label">Repeticiones</label>
-                    <input type="number" class="form-control" id="reps" style="width: 90px;">
-                </div>
-            </div>
-            
-            <button type="button" class="btn btn-soft-info mt-2">
-                <i class="fa-solid fa-plus fa-lg"></i>
-            </button>
-
-            <button type="button" class="btn btn-soft-danger mt-2">
-                <i class="fa-solid fa-minus fa-lg"></i>
-            </button>
-        </form>
-    `;
-}
-
-// Event listener para cada botón de día
-document.querySelectorAll('[data-bs-target="#exampleModal"]').forEach(button => {
-    button.addEventListener('click', function () {
-        const dia = this.getAttribute('data-dia');
-        const modalTitle = document.querySelector('.modal-title');
-        const modalBody = document.querySelector('.modal-body');
-
-        // Cambiar el título del modal según el día seleccionado
-        modalTitle.textContent = `Rutina ${dia}`;
-
-        let formulario;
-
-        // Asigna el formulario correspondiente según el día seleccionado
-        switch (dia) {
-            case 'Lunes':
-                formulario = construirFormularioLunes();
-                break;
-            case 'Martes':
-                formulario = construirFormularioMartes();
-                break;
-            case 'Miercoles':
-                formulario = construirFormularioMiercoles();
-                break;
-            case 'Jueves':
-                formulario = construirFormularioJueves();
-                break;
-            case 'Viernes':
-                formulario = construirFormularioViernes();
-                break;
-            case 'Sabado':
-                formulario = construirFormularioSabado();
-                break;
-            case 'Domingo':
-                formulario = construirFormularioDomingo();
-                break;   
-            default:
-                formulario = 'Formulario no disponible para este día';
-                break;
-        }
-
-        // Establece el contenido del formulario en el modal
-        modalBody.innerHTML = formulario;
-
- // Obtener botones de agregar y eliminar
- const addButton = modalBody.querySelector('.btn-soft-info');
- const minusButton = modalBody.querySelector('.btn-soft-danger');
-
- addButton.addEventListener('click', function () {
-     const form = modalBody.querySelector('form'); // Selecciona el formulario dentro del modal
- 
-     // Encuentra el conjunto de campos que quieres clonar
-     const originalFields = form.querySelector('.row.mb-3');
- 
-     // Clona el conjunto de campos
-     const clonedFields = originalFields.cloneNode(true);
- 
-     // Modifica los campos clonados si es necesario
-     // Por ejemplo, podrías limpiar los valores de los campos clonados
-     clonedFields.querySelectorAll('input').forEach(input => {
-         input.value = ''; // Limpiar los valores de los inputs
-     });
- 
-     // Agrega los campos clonados al formulario
-     form.appendChild(clonedFields);
- });
- 
- 
- // Agregar evento al botón de eliminar
- minusButton.addEventListener('click', function () {
-     const form = modalBody.querySelector('form'); // Selecciona el formulario dentro del modal
- 
-     // Encuentra todos los conjuntos de campos agregados (puedes ser más específico si se necesitas)
-     const fields = form.querySelectorAll('.row.mb-3');
- 
-     // Verifica que haya campos agregados antes de intentar eliminar
-     if (fields.length > 0) {
-         // Encuentra el último conjunto de campos agregados (el más reciente)
-         const lastField = fields[fields.length - 1];
- 
-         // Elimina el último conjunto de campos del formulario
-         form.removeChild(lastField);
-     }
- });
-
- const buttonsContainer = modalBody.querySelector('.buttons-container');
- buttonsContainer.innerHTML = ''; // Limpia el contenedor antes de agregar los botones
- buttonsContainer.appendChild(addButton);
- buttonsContainer.appendChild(minusButton);
-        
+                // Muestra el formulario del día clicado
+                formDia.style.display = 'block';
+            }
+        });
     });
 });
 
+$(document).ready(function() {
+    $('.add-field').click(function() {
+        var newField = `
+            <div class="added-field mb-3">
+                <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="ejercicio" class="col-form-label">Ejercicio</label>
+                    <select class="form-select" id="ejercicio">
+                        <option value="pecho">Seleccione el ejercicio</option>
+                        <option value="pecho">Pecho</option>
+                        <option value="espalda">Espalda</option>
+                        <option value="piernas">Piernas</option>
+                        <!-- Agrega más opciones según sea necesario -->
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group formularioRegistro__grupo" id="grupo__tipoEjercicio">
+                        <div class="formularioRegistro__grupo-input" >
+                        <label class="tipoEjercicio" class="formularioRegistro__label">Tipo Ejercicio</label>
+                        <input type="text" class="form-control" name="tipoEjercicio" placeholder="Nombre" />
+                        <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
+                        </div>
+                            <p class="formularioRegistro__input-error">Ingrese el nombre del Tipo Ejercicio correctamente</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex align-items-center">
+                    <div class="form-group formularioRegistro__grupo" id="grupo__repeticiones">
+                        <div class="formularioRegistro__grupo-input" >
+                        <label class="repeticiones" class="formularioRegistro__label">Repeticiones</label>
+                        <input type="number" class="form-control" name="repeticiones" style="width: 100px;"/>
+                        <i class="formularioRegistro__validacion-estado fas fa-times-circle "></i>
+                        </div>
+                            <p class="formularioRegistro__input-error">Ingrese el dato correctamente</p>
+                    </div>
 
-// mini
+                    <button type="button" class="btn btn-soft-danger ms-2 delete-field">
+                        <i class="fa-solid fa-minus fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+            </div>`;
+            
 
-function mostrarFormulario(id) {
-    const formularioMostrar = document.getElementById(id);
-    const isVisible = formularioMostrar.style.display === 'block';
-  
-    const formularios = document.querySelectorAll('.mini-formulario');
-    formularios.forEach(formulario => {
-      formulario.style.display = 'none';
+
+        $('.form-dia form').append(newField);
+        
     });
-  
-    if (!isVisible) {
-      formularioMostrar.style.display = 'block';
-  
-      const botonDia = document.querySelector(`a[href="#"][onclick="mostrarFormulario('${id}')"]`);
-      const botonPos = botonDia.getBoundingClientRect();
-      formularioMostrar.style.position = 'fixed';
-      formularioMostrar.style.top = `${botonPos.bottom}px`;
-      formularioMostrar.style.left = `${botonPos.left}px`;
-    }
-  }
-  
-  
+
+    // Función para eliminar el campo al hacer clic en el botón de eliminar ("-")
+    $(document).on('click', '.delete-field', function() {
+        $(this).closest('.added-field').remove();
+    });
+});

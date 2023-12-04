@@ -48,8 +48,15 @@ document.querySelector('#btnEnviarDatos').addEventListener('click', () => {
                 emailError.textContent = '';
                 passwordError.textContent = '';
 
-                alert(mensaje); // Muestra un mensaje de bienvenida
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
                 window.location.href = '/'; // Redirige al usuario al inicio de la página
+                
             })
             .catch(error => {
                 if (error === 'Datos incorrectos') {
